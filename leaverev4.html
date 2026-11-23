@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leave a Review - Alaa Ahmed</title>
+<!-- Load Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#075985',
+              btn: '#0b57d0',
+              accent: '#0d5be1',
+              bg: '#f4f7fc',
+              success: '#10b981',
+              mint: '#ecfdf5',
+              subtext: '#64748b',
+              title: '#1e293b',
+              dark: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f4f7fb] text-slate-800 antialiased min-h-screen flex flex-col justify-between p-6 md:p-8 lg:p-10 font-sans select-none">
+<!-- BEGIN: MainContentWrapper -->
+<div class="max-w-[1360px] w-full mx-auto flex-1 flex flex-col justify-between">
+<div>
+<!-- BEGIN: TopBar -->
+<header class="relative flex items-center justify-center mb-6 pt-1">
+<!-- Back Navigation Button -->
+<button aria-label="Go back" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors" type="button">
+<svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-[20px] font-bold text-slate-900 tracking-tight">Leave a Review</h1>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: SessionInfoCard -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 mb-8 flex items-center gap-4" data-purpose="session-information-banner">
+<!-- Tutor Avatar -->
+<img alt="Alaa Ahmed" class="w-14 h-14 rounded-full object-cover border border-slate-100 flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMX72yIDBHb-vo-fE5I6mE6UgkFCp1a16Z5Qgfm1q1I_gLEJpFTw_U2yWGJt4NqiA4iXSMr-t2Tg9_z1SvwZo014iTwbC5UQxtvbAaUGbacaE2Ag2CulRqt1K3Fg6Hsbwva6QRsbF0ckrRKiTDvo5N9vTuIx7hCQERniPRo1buhQG_0iG0nziJbJvr9hEkWH2nIB6RUU4_8JINVu6iZ7QJfhndt9YsmSTiLrmw4s_PEpslv5dv5LgXGA">
+<!-- Session and Tutor Details -->
+<div class="flex flex-col">
+<span class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-0.5">SESSION WITH</span>
+<h2 class="text-xl font-bold text-[#0d5be1] leading-tight">Alaa Ahmed</h2>
+<span class="text-xs text-slate-500 font-medium mt-0.5">IT Engineer</span>
+</div>
+</section>
+<!-- END: SessionInfoCard -->
+<!-- BEGIN: StarRatingSection -->
+<section class="text-center mb-8" data-purpose="rating-selector">
+<h3 class="text-sm font-semibold text-slate-800 mb-3">How was your experience?</h3>
+<!-- Star Icons (4 Gold Outlined/Filled, 1 Gray) -->
+<div class="flex items-center justify-center gap-2 mb-2">
+<!-- Star 1 -->
+<svg class="w-8 h-8 text-amber-400 fill-amber-50 stroke-amber-400" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<!-- Star 2 -->
+<svg class="w-8 h-8 text-amber-400 fill-amber-50 stroke-amber-400" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<!-- Star 3 -->
+<svg class="w-8 h-8 text-amber-400 fill-amber-50 stroke-amber-400" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<!-- Star 4 -->
+<svg class="w-8 h-8 text-amber-400 fill-amber-50 stroke-amber-400" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<!-- Star 5 (Unselected) -->
+<svg class="w-8 h-8 text-slate-400 fill-transparent stroke-slate-400" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<!-- Rating Feedback Text -->
+<span class="text-xs font-semibold text-emerald-500">Very Good (4/5)</span>
+</section>
+<!-- END: StarRatingSection -->
+<!-- BEGIN: TopicSelectionSection -->
+<section class="mb-6" data-purpose="topic-selection">
+<label class="block text-[13px] font-semibold text-slate-800 mb-2.5">
+          What topic did you learn? (Optional)
+        </label>
+<div class="flex items-center gap-2 flex-wrap">
+<!-- Selected Pill: Cybersecurity -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-emerald-500 bg-emerald-50/70 text-emerald-600 text-xs font-semibold shadow-xs transition-colors" type="button">
+<svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Cybersecurity</span>
+</button>
+<!-- Pill: Fitness Training -->
+<button class="inline-flex items-center px-4 py-1.5 rounded-full border border-slate-300 bg-white text-slate-600 hover:border-slate-400 text-xs font-medium transition-colors" type="button">
+<span>Fitness Training</span>
+</button>
+<!-- Pill: French -->
+<button class="inline-flex items-center px-4 py-1.5 rounded-full border border-slate-300 bg-white text-slate-600 hover:border-slate-400 text-xs font-medium transition-colors" type="button">
+<span>French</span>
+</button>
+</div>
+</section>
+<!-- END: TopicSelectionSection -->
+<!-- BEGIN: ReviewTextareaSection -->
+<section class="mb-8" data-purpose="written-review-box">
+<label class="block text-[13px] font-semibold text-slate-800 mb-2.5" for="review-input">
+          Write your review
+        </label>
+<div class="w-full bg-white rounded-xl border border-slate-200 shadow-sm p-4 h-36">
+<textarea class="w-full h-full border-none p-0 text-xs text-slate-800 placeholder-slate-400 focus:ring-0 resize-none font-normal leading-relaxed" id="review-input" rows="4">Alaa was incredibly patient during our Python Programming session! She broke down the chord transitions in a way that finally clicked for me. Definitely recommend her.</textarea>
+</div>
+</section>
+<!-- END: ReviewTextareaSection -->
+</div>
+<!-- BEGIN: SubmitAction -->
+<div class="w-full pt-4 pb-2" data-purpose="submit-action-container">
+<button class="w-full py-3.5 px-6 rounded-full bg-[#0d5be1] hover:bg-blue-700 text-white font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center" type="button">
+        Submit Review
+      </button>
+</div>
+<!-- END: SubmitAction -->
+</div>
+<!-- END: MainContentWrapper -->
+
+
+</body></html>

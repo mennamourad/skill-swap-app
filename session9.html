@@ -1,0 +1,105 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Session - Teaching Network</title>
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            session: {
+              bg: '#0c1322',
+              card: 'rgba(255, 255, 255, 0.05)',
+              cardBorder: 'rgba(255, 255, 255, 0.2)',
+              btnDark: '#1e293b',
+              btnDarkHover: '#334155',
+              recRed: '#ef4444',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specific styling -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #0c1322;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="h-full w-full select-none overflow-hidden bg-[#0c1322] flex flex-col justify-between relative">
+<!-- BEGIN: TopBar -->
+<header class="w-full flex items-center justify-between px-6 py-5 z-20" data-purpose="top-navigation">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center transition-all duration-200 focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Recording Indicator Badge -->
+<div class="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#ef4444] text-white rounded-full text-xs font-semibold tracking-wide shadow-sm" data-purpose="recording-indicator">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span>REC 45:12</span>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 flex flex-col items-center justify-center -mt-6 z-10 px-4" data-purpose="call-center-stage">
+<!-- Instructor Avatar -->
+<div class="relative mb-5" data-purpose="instructor-profile">
+<div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 ring-2 ring-white/20 bg-slate-800 shadow-2xl flex items-center justify-center overflow-hidden">
+<img alt="Alaa Ahmed - Instructor" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXAD461faRA-yXoYfrfhY1v2U8rdjSdmgUmDRMQ23n1hLe4F9FCYlthjmHSlfPhmeMGmozNZ-EORhmFUNHjnYHjKNBD8IxXAb24MpzXsWPf0kD7JahR4XPVsNDdt4gzFb7NI-zA3FQrECX7Qst1KB7-QWlpqMf_XU-u7zOPmefSGCLgK2Zik0jRTRICRCPr6fntN4zbhGYY6Trs1jOKiC2B-uy6nPAZwrch5QFJoVnoV6BDr0eR4lrfw">
+</div>
+</div>
+<!-- Instructor Info -->
+<div class="text-center mb-8" data-purpose="instructor-details">
+<h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">Alaa Ahmed</h1>
+<p class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">Teaching Network</p>
+</div>
+<!-- Floating Action Controls -->
+<div class="flex items-center gap-4 sm:gap-5" data-purpose="session-controls">
+<!-- Microphone Button -->
+<button aria-label="Toggle Microphone" class="w-13 h-13 p-3.5 rounded-full bg-[#1e293b]/90 hover:bg-[#334155] text-white flex items-center justify-center transition-colors focus:outline-none shadow-lg border border-slate-700/50" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3v6a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Camera Button -->
+<button aria-label="Toggle Camera" class="w-13 h-13 p-3.5 rounded-full bg-[#1e293b]/90 hover:bg-[#334155] text-white flex items-center justify-center transition-colors focus:outline-none shadow-lg border border-slate-700/50" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- End Call Button -->
+<button aria-label="Leave Call" class="w-13 h-13 p-3.5 rounded-full bg-[#ef4444] hover:bg-red-600 text-white flex items-center justify-center transition-colors focus:outline-none shadow-lg shadow-red-500/20" type="button">
+<svg class="w-5 h-5 transform rotate-[135deg]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"></path>
+</svg>
+</button>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: RightFloatingSidebar -->
+<aside class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20" data-purpose="participant-thumbnails">
+<!-- User/Self Card -->
+<div class="w-24 h-28 sm:w-28 sm:h-32 bg-slate-900/60 backdrop-blur-md rounded-xl border border-white/20 p-2.5 flex flex-col items-center justify-center text-center shadow-lg transition-transform hover:scale-105 cursor-pointer" data-purpose="user-card">
+<div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden mb-2 ring-1 ring-white/30">
+<img alt="Salme (You)" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0p1CC92Mtc75Ll6r_M4YFmomUspoq5XMk7Mb9FyXdgvA0LtR40SvLzWgNr6wziL1xhKNo9P3npfBFcXCZWBaOXMN42EbJyyA49MVg8xUH1nx1wx1MCD55VXRuzcxtxSzPpFpslpeWvkS1LYjlnJQGttfXJKELmjVtYOhgFV-Qc8X_J30OrQr9bTNzGLBBdRwWwFevqzuvYE_sYpBcPRgPPDVDbz36Tjlt4Y_XAe7Sa2BCE5WfmurliQ">
+</div>
+<span class="text-[11px] sm:text-xs font-medium text-slate-200 leading-tight">Salme (You)</span>
+</div>
+<!-- AI Learning Summary Assistant Card -->
+<div class="w-24 h-28 sm:w-28 sm:h-32 bg-slate-900/60 backdrop-blur-md rounded-xl border border-white/20 p-2.5 flex flex-col items-center justify-center text-center shadow-lg transition-transform hover:scale-105 cursor-pointer" data-purpose="ai-assistant-card">
+<div class="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center mb-2"><div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-md shadow-cyan-500/20 ring-1 ring-cyan-300/40"><svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.38-1 1.72V7h2a5 5 0 0 1 5 5v1h1a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h1v-1a5 5 0 0 1 5-5h2V5.72A2.002 2.002 0 0 1 10 4a2 2 0 0 1 2-2m-3.5 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-6.5 6a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"></path></svg></div></div>
+<span class="text-[11px] sm:text-xs font-medium text-slate-200 leading-tight">Learning Summary</span>
+</div>
+</aside>
+<!-- END: RightFloatingSidebar -->
+
+
+</body></html>

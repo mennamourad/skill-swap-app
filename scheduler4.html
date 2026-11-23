@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - Swap with Laila Ahmed</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style data-purpose="custom-layout">
+    /* Subtle custom scrollbar and precision sizing matching 1440x1024 baseline */
+    .sidebar-w {
+      width: 230px;
+    }
+  </style>
+</head>
+<body class="bg-[#f8faff] text-gray-800 antialiased min-h-screen flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="sidebar-w bg-white border-r border-[#eaedf3] flex flex-col justify-between py-7 px-6 min-h-screen shrink-0" data-purpose="main-sidebar">
+<!-- Top Branding & Navigation -->
+<div>
+<!-- Brand Logo -->
+<div class="mb-8 pl-1">
+<span class="text-[#0d59cf] font-bold text-xl tracking-tight">SKILLSWAP</span>
+</div>
+<!-- Section: Overview -->
+<div class="mb-2">
+<h3 class="text-[11px] font-bold uppercase tracking-wider text-gray-800 mb-4 pl-1">OVERVIEW</h3>
+<nav aria-label="Overview Navigation" class="space-y-3.5">
+<!-- Home -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-[#0d59cf] px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Swap -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Chat -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 text-sm font-medium text-gray-600 hover:text-gray-900 px-1 py-1 rounded-md transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Section: Settings -->
+<div class="pt-6" data-purpose="settings-section">
+<h3 class="text-[11px] font-bold uppercase tracking-wider text-gray-800 mb-4 pl-1">SETTINGS</h3>
+<!-- Logout link -->
+<a class="flex items-center gap-2.5 text-sm font-medium text-[#f04438] hover:text-red-700 px-1 transition-colors" data-purpose="logout-button" href="#">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-8 lg:px-12 py-8 overflow-y-auto" data-purpose="booking-view">
+<!-- Page Header Title -->
+<header class="mb-6">
+<h1 class="text-[#0d59cf] font-bold text-xl md:text-[22px]">Swap with Laila Ahmed</h1>
+</header>
+<div class="max-w-[700px] w-full">
+<!-- BEGIN: CalendarSection -->
+<!-- Calendar Card Container -->
+<section class="bg-[#edf3fe] rounded-[24px] pt-6 pb-6 px-8 mb-8" data-purpose="calendar-card">
+<!-- Month Navigation Header -->
+<div class="flex items-center justify-between max-w-[280px] mx-auto mb-5 text-[#1e293b]">
+<!-- Prev Month Arrow -->
+<button aria-label="Previous month" class="text-gray-500 hover:text-gray-800 transition-colors p-1" type="button">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Month and Year -->
+<h2 class="text-[17px] font-semibold tracking-tight text-[#111827]">Nov, 2026</h2>
+<!-- Next Month Arrow -->
+<button aria-label="Next month" class="text-gray-500 hover:text-gray-800 transition-colors p-1" type="button">
+<svg class="w-4 h-4 stroke-[2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Calendar Days Grid Container -->
+<div class="max-w-[310px] mx-auto text-center" data-purpose="calendar-grid">
+<!-- Weekday Labels -->
+<div class="grid grid-cols-7 text-[13px] font-medium text-gray-700 mb-3">
+<span>S</span>
+<span>M</span>
+<span>T</span>
+<span>W</span>
+<span>T</span>
+<span>F</span>
+<span>S</span>
+</div>
+<!-- Calendar Dates -->
+<div class="grid grid-cols-7 gap-y-2 text-[13px] font-normal text-gray-800 items-center">
+<!-- Row 1 -->
+<span class="py-1">1</span>
+<span class="py-1">2</span>
+<span class="py-1">3</span>
+<span class="py-1">4</span>
+<span class="py-1">5</span>
+<!-- Active Selected Date (6th Nov) -->
+<div class="flex items-center justify-center">
+<span class="w-[26px] h-[26px] rounded-full bg-[#0d59cf] text-white flex items-center justify-center font-medium shadow-sm">6</span>
+</div>
+<span class="py-1">7</span>
+<!-- Row 2 -->
+<span class="py-1">8</span>
+<span class="py-1">9</span>
+<span class="py-1">10</span>
+<span class="py-1">11</span>
+<span class="py-1">12</span>
+<span class="py-1">13</span>
+<span class="py-1">14</span>
+<!-- Row 3 -->
+<span class="py-1">15</span>
+<span class="py-1">16</span>
+<span class="py-1">17</span>
+<span class="py-1">18</span>
+<span class="py-1">19</span>
+<span class="py-1">20</span>
+<span class="py-1">21</span>
+<!-- Row 4 -->
+<span class="py-1">22</span>
+<span class="py-1">23</span>
+<span class="py-1">24</span>
+<span class="py-1">25</span>
+<span class="py-1">26</span>
+<span class="py-1">27</span>
+<span class="py-1">28</span>
+<!-- Row 5 (Includes overlap dates: 2, 3, 4, 5) -->
+<span class="py-1">29</span>
+<span class="py-1">30</span>
+<span class="py-1">31</span>
+<span class="py-1 text-gray-500">2</span>
+<span class="py-1 text-gray-500">3</span>
+<span class="py-1 text-gray-500">4</span>
+<span class="py-1 text-gray-500">5</span>
+</div>
+<!-- Action Buttons Inside Calendar Card -->
+<div class="flex items-center justify-center gap-3 mt-6">
+<!-- Cancel Button -->
+<button class="w-[90px] py-1.5 bg-[#cc2222] hover:bg-[#b51c1c] text-white text-xs font-medium rounded-md flex items-center justify-center gap-1 transition-colors shadow-xs" data-purpose="cancel-button" type="button">
+<span class="text-[11px]">✕</span>
+<span>Cancel</span>
+</button>
+<!-- Apply Button -->
+<button class="w-[90px] py-1.5 bg-[#0d59cf] hover:bg-[#0b4bb3] text-white text-xs font-medium rounded-md transition-colors shadow-xs" data-purpose="apply-button" type="button">
+              Apply
+            </button>
+</div>
+</div>
+</section>
+<!-- END: CalendarSection -->
+<!-- BEGIN: AvailableSlotsSection -->
+<section class="mb-5" data-purpose="slots-section">
+<!-- Section Title -->
+<h2 class="text-[11px] font-bold uppercase tracking-wider text-gray-700 mb-3">AVAILABLE SLOTS</h2>
+<!-- Slots List -->
+<div class="space-y-3">
+<!-- Slot 1: Unselected -->
+<button class="w-full bg-white border border-[#e1e6ef] hover:border-gray-300 text-[#0d59cf] font-semibold text-[13px] py-3 rounded-lg text-center shadow-xs transition-colors" data-purpose="time-slot" type="button">
+            10:00 AM
+          </button>
+<!-- Slot 2: Selected -->
+<button class="w-full bg-[#0d59cf] hover:bg-[#0b4bb3] text-white font-semibold text-[13px] py-3 rounded-lg text-center shadow-xs transition-colors" data-purpose="time-slot-selected" type="button">
+            4:00 PM
+          </button>
+<!-- Slot 3: Unselected -->
+<button class="w-full bg-white border border-[#e1e6ef] hover:border-gray-300 text-[#0d59cf] font-semibold text-[13px] py-3 rounded-lg text-center shadow-xs transition-colors" data-purpose="time-slot" type="button">
+            5:30 PM
+          </button>
+</div>
+</section>
+<!-- END: AvailableSlotsSection -->
+<!-- BEGIN: BookingConfirmationSection -->
+<section class="pt-2" data-purpose="booking-confirmation">
+<!-- Trade Information -->
+<p class="text-center text-xs font-normal text-gray-700 mb-2.5">
+          You'll trade: <span class="text-[#00ab6b] font-medium">Cooking</span>
+</p>
+<!-- Main CTA Button -->
+<button class="w-full bg-[#00b074] hover:bg-[#009b66] text-white font-semibold text-sm py-3.5 rounded-full shadow-sm transition-colors" data-purpose="confirm-booking-btn" type="button">
+          Confirm booking
+        </button>
+</section>
+<!-- END: BookingConfirmationSection -->
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

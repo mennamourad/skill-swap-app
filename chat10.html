@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Chat - Salma Mohammed</title>
+<!-- Tailwind CSS CDN with forms plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0057C2',
+              hover: '#004BB0',
+              chatBg: '#f0f4f9'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Font Awesome for matching iconography -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style data-purpose="custom-layout">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-white antialiased text-gray-800 h-screen overflow-hidden flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[240px] flex-shrink-0 bg-white border-r border-gray-100 flex flex-col justify-between py-6 px-6 select-none h-full z-10" data-purpose="sidebar">
+<!-- Top Navigation Section -->
+<div class="flex flex-col gap-8">
+<!-- App Logo / Title -->
+<div class="px-2 pt-1">
+<h1 class="text-xl font-black tracking-wide text-[#0057C2]">SKILLSWAP</h1>
+</div>
+<!-- Overview Navigation Links -->
+<div class="flex flex-col">
+<span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-4 px-2">OVERVIEW</span>
+<nav class="flex flex-col space-y-3.5">
+<!-- Home -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-solid fa-house text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-solid fa-magnifying-glass text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Search</span>
+</a>
+<!-- Swap -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-solid fa-rotate text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Swap</span>
+</a>
+<!-- Chat (Active Link) -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-paper-plane text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-clock text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-credit-card text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-money-bill-1 text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-bell text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-[#0057C2] transition-colors group" href="#">
+<i class="fa-regular fa-user text-base text-gray-400 group-hover:text-[#0057C2] transition-colors w-5"></i>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Settings & Logout Section -->
+<div class="flex flex-col pb-4">
+<span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-4 px-2">SETTINGS</span>
+<a class="flex items-center gap-3 px-2 py-1 text-sm font-medium text-rose-500 hover:text-rose-600 transition-colors" href="#">
+<i class="fa-solid fa-arrow-right-from-bracket text-base"></i>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col h-full bg-[#f0f4f9] relative overflow-hidden" data-purpose="chat-container">
+<!-- BEGIN: ChatHeader -->
+<header class="h-[54px] bg-[#0057C2] px-6 flex items-center gap-4 text-white shadow-sm flex-shrink-0" data-purpose="chat-header">
+<!-- Back Arrow Navigation -->
+<button aria-label="Go back" class="text-white hover:text-gray-200 focus:outline-none transition-colors">
+<i class="fa-solid fa-arrow-left text-base"></i>
+</button>
+<!-- User Avatar and Status -->
+<div class="flex items-center gap-3.5">
+<div class="relative w-8 h-8 rounded-full overflow-hidden bg-slate-300 ring-1 ring-white/20">
+<img alt="Salma Mohammed" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuCkFMGXfNzbqzRMbbYUruc4PJv4TpTOeVk8_SyAYADsAxfUH2HJW80Liye4n16PScoMoxvF4qtKiG7U_lLg8TOfEKV2C95ckRvYknOQm1-Ixj1rjWJn_60u0koV53g4HQPEhg1IGZ2Oio-AfCmJCsoPN2LfoszjMVtNMVulaPxkKxIWpJXU-wYSGVQ70lwXvL6ypZqtK3QRWud3fFg6O5drGgEcy1UZRhDNuHxYcLG-yLl4xBLB2EZQ">
+</div>
+<!-- Contact Name -->
+<h2 class="text-base font-semibold tracking-normal text-white">Salma Mohammed</h2>
+</div>
+</header>
+<!-- END: ChatHeader -->
+<!-- BEGIN: ChatMessagesThread -->
+<div class="flex-1 overflow-y-auto px-8 py-6 space-y-6 custom-scrollbar" data-purpose="message-history">
+<!-- Message 1: Incoming from Salma -->
+<div class="flex justify-start">
+<div class="bg-white text-gray-800 text-[14px] px-5 py-2.5 rounded-2xl max-w-lg shadow-[0_1px_3px_rgba(0,0,0,0.02)] leading-relaxed">
+          Hi! Can you teach UI/UX?
+        </div>
+</div>
+<!-- Message 2: Outgoing reply -->
+<div class="flex justify-end pt-1">
+<div class="bg-[#0057C2] text-white text-[14px] px-5 py-3 rounded-2xl max-w-sm shadow-sm leading-relaxed">
+          Sure! Sat 4pm? Swap for Python help?
+        </div>
+</div>
+<!-- Message 3: Incoming confirmation -->
+<div class="flex justify-start pt-1">
+<div class="bg-white text-gray-800 text-[14px] px-5 py-2.5 rounded-2xl max-w-lg shadow-[0_1px_3px_rgba(0,0,0,0.02)] leading-relaxed">
+          Deal! Swapped.
+        </div>
+</div>
+</div>
+<!-- END: ChatMessagesThread -->
+<!-- BEGIN: ChatInputBar -->
+<footer class="p-6 bg-[#f0f4f9] flex-shrink-0" data-purpose="chat-input-bar">
+<div class="max-w-full flex items-center gap-3">
+<!-- Message Input Field -->
+<div class="flex-1 relative">
+<input class="w-full bg-white text-gray-700 placeholder-gray-400 text-sm px-6 py-3.5 rounded-full border border-gray-100 shadow-[0_1px_4px_rgba(0,0,0,0.02)] focus:outline-none focus:ring-1 focus:ring-[#0057C2] focus:border-transparent transition" placeholder="Type a message" type="text">
+</div>
+<!-- Send Button -->
+<button aria-label="Send message" class="w-11 h-11 bg-[#0057C2] hover:bg-[#004BB0] text-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm transition-transform active:scale-95" type="button">
+<i class="fa-solid fa-arrow-right text-sm"></i>
+</button>
+</div>
+</footer>
+<!-- END: ChatInputBar -->
+</main>
+<!-- END: MainContentArea -->
+
+
+</body></html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report User</title>
+<!-- Tailwind CSS v3 with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="base-typography">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #F7FAFC;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col text-slate-900 antialiased">
+<!-- BEGIN: TopHeader -->
+<header class="w-full px-6 pt-6 pb-4 flex items-center gap-3" data-purpose="page-header">
+<!-- Back navigation button -->
+<button aria-label="Go back" class="p-1 -ml-1 text-slate-900 hover:text-slate-600 transition-colors focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-900">Report User</h1>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 w-full px-6 pb-8 flex flex-col">
+<!-- Report target heading and instructions -->
+<section class="mt-2" data-purpose="report-intro">
+<h2 class="text-base font-bold text-slate-900">Report Mohammed Ahmed</h2>
+<p class="text-xs text-slate-500 mt-1">Help us maintain a safe and productive exchange workspace. Why are you reporting this user?</p>
+</section>
+<!-- Report form containing reason options, details textarea, and submit button -->
+<form class="mt-6 flex-1 flex flex-col" data-purpose="report-form" id="report-user-form">
+<!-- BEGIN: ReasonOptions -->
+<fieldset class="space-y-3" data-purpose="reason-options">
+<legend class="sr-only">Reason for reporting</legend>
+<!-- Option 1: Didn't show up -->
+<label class="report-option flex items-center justify-between w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg cursor-pointer transition-colors hover:border-slate-300">
+<input class="sr-only" name="report_reason" type="radio" value="didnt_show_up"/>
+<span class="option-label text-sm font-semibold text-slate-800">Didn't show up</span>
+<span class="radio-indicator w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0">
+<span class="radio-dot w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</label>
+<!-- Option 2: Inappropriate behavior (Selected by default) -->
+<label class="report-option flex items-center justify-between w-full px-4 py-3.5 bg-[#EBF3FE] border border-[#1D63DC] rounded-lg cursor-pointer transition-colors">
+<input checked="" class="sr-only" name="report_reason" type="radio" value="inappropriate_behavior"/>
+<span class="option-label text-sm font-semibold text-[#1D63DC]">Inappropriate behavior</span>
+<span class="radio-indicator w-4 h-4 rounded-full border-[1.5px] border-[#1D63DC] flex items-center justify-center shrink-0">
+<span class="radio-dot w-2 h-2 rounded-full bg-[#1D63DC]"></span>
+</span>
+</label>
+<!-- Option 3: Poor skill competency -->
+<label class="report-option flex items-center justify-between w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg cursor-pointer transition-colors hover:border-slate-300">
+<input class="sr-only" name="report_reason" type="radio" value="poor_skill_competency"/>
+<span class="option-label text-sm font-semibold text-slate-800">Poor skill competency</span>
+<span class="radio-indicator w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0">
+<span class="radio-dot w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</label>
+<!-- Option 4: Spam or scam attempt -->
+<label class="report-option flex items-center justify-between w-full px-4 py-3.5 bg-white border border-slate-200 rounded-lg cursor-pointer transition-colors hover:border-slate-300">
+<input class="sr-only" name="report_reason" type="radio" value="spam_or_scam"/>
+<span class="option-label text-sm font-semibold text-slate-800">Spam or scam attempt</span>
+<span class="radio-indicator w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0">
+<span class="radio-dot w-2 h-2 rounded-full bg-transparent"></span>
+</span>
+</label>
+</fieldset>
+<!-- END: ReasonOptions -->
+<!-- BEGIN: DetailsInput -->
+<div class="relative mt-6" data-purpose="details-container">
+<textarea aria-label="Details" class="w-full h-48 bg-white border border-slate-500 rounded-lg p-4 text-sm text-slate-800 resize-none focus:outline-none focus:border-[#1D63DC] focus:ring-1 focus:ring-[#1D63DC]" id="report-details" name="details"></textarea>
+<!-- Centered placeholder overlay -->
+<span class="pointer-events-none absolute inset-0 flex items-center justify-center text-base text-slate-500" id="details-placeholder">
+          Details
+        </span>
+</div>
+<!-- END: DetailsInput -->
+<!-- BEGIN: SubmitAction -->
+<div class="mt-auto pt-12" data-purpose="submit-container">
+<button class="w-full py-3.5 rounded-full bg-[#FDE8E8] hover:bg-[#FBD5D5] text-[#B91C1C] font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-[#B91C1C]/30" type="submit">
+          Submit Report
+        </button>
+</div>
+<!-- END: SubmitAction -->
+</form>
+</main>
+<!-- END: MainContent -->
+<!-- Handle radio card selection styling -->
+<script data-purpose="radio-selection-handler">
+    const optionLabels = document.querySelectorAll('.report-option');
+
+    optionLabels.forEach((label) => {
+      const radio = label.querySelector('input[type="radio"]');
+      radio.addEventListener('change', () => {
+        optionLabels.forEach((item) => {
+          const itemRadio = item.querySelector('input[type="radio"]');
+          const itemText = item.querySelector('.option-label');
+          const itemIndicator = item.querySelector('.radio-indicator');
+          const itemDot = item.querySelector('.radio-dot');
+
+          if (itemRadio.checked) {
+            item.classList.remove('bg-white', 'border-slate-200', 'hover:border-slate-300');
+            item.classList.add('bg-[#EBF3FE]', 'border-[#1D63DC]');
+            itemText.classList.remove('text-slate-800');
+            itemText.classList.add('text-[#1D63DC]');
+            itemIndicator.classList.remove('border-slate-500', 'border');
+            itemIndicator.classList.add('border-[1.5px]', 'border-[#1D63DC]');
+            itemDot.classList.remove('bg-transparent');
+            itemDot.classList.add('bg-[#1D63DC]');
+          } else {
+            item.classList.add('bg-white', 'border-slate-200', 'hover:border-slate-300');
+            item.classList.remove('bg-[#EBF3FE]', 'border-[#1D63DC]');
+            itemText.classList.add('text-slate-800');
+            itemText.classList.remove('text-[#1D63DC]');
+            itemIndicator.classList.add('border', 'border-slate-500');
+            itemIndicator.classList.remove('border-[1.5px]', 'border-[#1D63DC]');
+            itemDot.classList.add('bg-transparent');
+            itemDot.classList.remove('bg-[#1D63DC]');
+          }
+        });
+      });
+    });
+  </script>
+<!-- Handle centered placeholder visibility for details textarea -->
+<script data-purpose="textarea-placeholder-handler">
+    const textarea = document.getElementById('report-details');
+    const placeholder = document.getElementById('details-placeholder');
+
+    const updatePlaceholder = () => {
+      if (textarea.value.trim().length > 0 || document.activeElement === textarea) {
+        placeholder.classList.add('hidden');
+      } else {
+        placeholder.classList.remove('hidden');
+      }
+    };
+
+    textarea.addEventListener('focus', updatePlaceholder);
+    textarea.addEventListener('blur', updatePlaceholder);
+    textarea.addEventListener('input', updatePlaceholder);
+  </script>
+</body></html>

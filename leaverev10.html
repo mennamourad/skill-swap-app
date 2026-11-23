@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leave a Review - Laila Ahmed</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0055b8',
+              'blue-hover': '#00469b',
+              lightBg: '#f2f5f9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f0f4f9] min-h-screen text-[#1e293b] flex flex-col justify-between p-6 sm:p-8 lg:p-10 select-none">
+<!-- BEGIN: MainContent -->
+<main class="w-full max-w-[1360px] mx-auto flex flex-col gap-6">
+<!-- BEGIN: TopBar -->
+<header class="relative flex items-center justify-center py-2" data-purpose="header">
+<!-- Back Button -->
+<button aria-label="Go back" class="absolute left-0 w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition cursor-pointer text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" type="button">
+<svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-xl font-bold text-slate-800 tracking-tight">Leave a Review</h1>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: InstructorHeaderCard -->
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100/80 flex items-center gap-4" data-purpose="instructor-card">
+<!-- Avatar -->
+<div class="relative w-14 h-14 rounded-full overflow-hidden shrink-0 border border-slate-200">
+<img alt="Laila Ahmed" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs8AzEWp7QUrtCzmXk7Qyx8YmqtT6ZN08FRaDd_0pkP6-qk17VubaQaV5zNhchrY8pXSHCmAMd2EdfZlJj3ycY_u7j6NPsUsF-btiC5vCxqKY9_9pteVRAXzu-UxFCn3fnzxZ6u3kHDL75iCcaD-ceQrDs88gKSNE1Fc8AWze-Cn8uEXk_o3AGNJupE2rk0m9LpJW3ptSBKcGo0VwJFGnfdKSof_U0DEh17dUhSE5HUSF395rI2lb0iQ">
+</div>
+<!-- Instructor Info -->
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">SESSION WITH</span>
+<h2 class="text-xl font-extrabold text-[#004e9a] leading-tight">Laila Ahmed</h2>
+<span class="text-sm text-slate-500 font-medium">Programmer</span>
+</div>
+</section>
+<!-- END: InstructorHeaderCard -->
+<!-- BEGIN: RatingSection -->
+<section class="flex flex-col items-center justify-center pt-2 pb-1" data-purpose="rating-section">
+<h3 class="text-base font-semibold text-slate-700 mb-3">How was your experience?</h3>
+<!-- Stars Row -->
+<div class="flex items-center gap-2 mb-2" data-purpose="star-rating">
+<!-- Star 1 (Active) -->
+<button class="focus:outline-none text-[#f59e0b] hover:scale-110 transition-transform" type="button">
+<svg class="w-8 h-8 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 2 (Active) -->
+<button class="focus:outline-none text-[#f59e0b] hover:scale-110 transition-transform" type="button">
+<svg class="w-8 h-8 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 3 (Active) -->
+<button class="focus:outline-none text-[#f59e0b] hover:scale-110 transition-transform" type="button">
+<svg class="w-8 h-8 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 4 (Active) -->
+<button class="focus:outline-none text-[#f59e0b] hover:scale-110 transition-transform" type="button">
+<svg class="w-8 h-8 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 5 (Inactive) -->
+<button class="focus:outline-none text-slate-300 hover:scale-110 transition-transform" type="button">
+<svg class="w-8 h-8 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+</div>
+<!-- Rating Status -->
+<span class="text-sm font-semibold text-emerald-500">Very Good (4/5)</span>
+</section>
+<!-- END: RatingSection -->
+<!-- BEGIN: TopicSelection -->
+<section class="flex flex-col gap-2.5" data-purpose="topic-selection">
+<label class="text-sm font-semibold text-slate-800">What topic did you learn? (Optional)</label>
+<!-- Pill Badges -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Selected Pill -->
+<button class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#eaf8f1] border border-[#a6e6c4] text-[#168a52] transition hover:bg-[#dcf4e7]" type="button">
+<svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Python Programming</span>
+</button>
+<!-- Unselected Pills -->
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition" type="button">
+          Data Structures
+        </button>
+<button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition" type="button">
+          Web Development
+        </button>
+</div>
+</section>
+<!-- END: TopicSelection -->
+<!-- BEGIN: ReviewInputSection -->
+<section class="flex flex-col gap-2" data-purpose="review-input">
+<label class="text-sm font-semibold text-slate-800" for="review-text">Write your review</label>
+<div class="w-full">
+<textarea class="w-full rounded-2xl border border-slate-200/90 bg-white p-4 text-sm text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-none leading-relaxed shadow-sm font-normal" id="review-text" rows="6">Salma was incredibly patient during our Python Programming session! She broke down the chord transitions in a way that finally clicked for me. Definitely recommend her.</textarea>
+</div>
+</section>
+<!-- END: ReviewInputSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomAction -->
+<footer class="w-full max-w-[1360px] mx-auto pt-6 pb-2" data-purpose="footer-action">
+<button class="w-full py-3.5 px-6 rounded-full bg-[#0055b8] hover:bg-[#00479e] active:scale-[0.99] text-white font-semibold text-base shadow-sm transition-all text-center focus:outline-none focus:ring-4 focus:ring-blue-300" type="button">
+      Submit Review
+    </button>
+</footer>
+<!-- END: BottomAction -->
+
+
+</body></html>

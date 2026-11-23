@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Skill Management - SKILLSWAP</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0256B8',
+              hover: '#014594',
+              light: '#EBF3FC',
+            },
+            neutral: {
+              bg: '#F5F7FA',
+              border: '#E8ECF2',
+              card: '#FFFFFF',
+              dark: '#141A29',
+              muted: '#717D96',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-overrides">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen text-[#141A29] antialiased flex bg-[#F8FAFC]">
+<!-- BEGIN: Sidebar -->
+<aside class="w-[260px] bg-white border-r border-[#EAEFF5] flex flex-col justify-between shrink-0 min-h-screen py-7 px-6 z-20" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="px-2 mb-8" data-purpose="app-logo">
+<span class="text-2xl font-black tracking-tight text-[#0055D6] uppercase">SKILLSWAP</span>
+</div>
+<!-- Main Action Button -->
+<div class="mb-8">
+<a class="flex items-center justify-center w-full py-2.5 px-4 bg-[#0055D6] hover:bg-[#0047B3] text-white text-sm font-semibold rounded-lg shadow-sm transition-all duration-150" href="#">
+          Admin Dashboard
+        </a>
+</div>
+<!-- Navigation Section -->
+<nav class="space-y-1" data-purpose="management-menu">
+<p class="text-[11px] font-semibold tracking-wider text-[#94A3B8] uppercase px-3 mb-3">Management</p>
+<!-- Users Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#0055D6] hover:bg-[#F0F5FD] transition" href="#">
+<i class="fa-solid fa-users-viewfinder w-5 text-center text-base"></i>
+<span>Users</span>
+</a>
+<!-- Skills Link (Active) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#0055D6] bg-[#EFF6FF] transition" href="#">
+<i class="fa-solid fa-graduation-cap w-5 text-center text-base text-[#0055D6]"></i>
+<span>Skills</span>
+</a>
+<!-- Sessions Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#0055D6] hover:bg-[#F0F5FD] transition" href="#">
+<i class="fa-solid fa-calendar-check w-5 text-center text-base"></i>
+<span>Sessions</span>
+</a>
+<!-- Wallets Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#0055D6] hover:bg-[#F0F5FD] transition" href="#">
+<i class="fa-solid fa-wallet w-5 text-center text-base"></i>
+<span>Wallets</span>
+</a>
+<!-- Fees Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#0055D6] hover:bg-[#F0F5FD] transition" href="#">
+<i class="fa-solid fa-file-invoice-dollar w-5 text-center text-base"></i>
+<span>Fees</span>
+</a>
+<!-- Settings Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[#64748B] hover:text-[#0055D6] hover:bg-[#F0F5FD] transition" href="#">
+<i class="fa-solid fa-gear w-5 text-center text-base"></i>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: Main Layout -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- BEGIN: Topbar -->
+<header class="h-20 bg-white/70 backdrop-blur-md border-b border-[#EAEFF5] px-8 flex items-center justify-between sticky top-0 z-10" data-purpose="topbar">
+<!-- Search Input -->
+<div class="relative w-80">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#94A3B8]">
+<i class="fa-solid fa-magnifying-glass text-sm"></i>
+</span>
+<input class="w-full pl-10 pr-4 py-2 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg text-sm text-[#334155] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#0055D6] focus:border-[#0055D6] transition" placeholder="Search here" type="text">
+</div>
+<!-- Right Profile & Notification Controls -->
+<div class="flex items-center gap-3">
+<!-- Notification Button -->
+<button aria-label="Notifications" class="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white flex items-center justify-center text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC] transition" type="button">
+<i class="fa-regular fa-bell text-sm"></i>
+</button>
+<!-- Fullscreen Button -->
+<button aria-label="Full screen" class="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white flex items-center justify-center text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC] transition" type="button">
+<i class="fa-solid fa-expand text-sm"></i>
+</button>
+<!-- User Profile -->
+<div class="flex items-center gap-3 pl-2 cursor-pointer select-none">
+<img alt="Rana Maher" class="w-10 h-10 rounded-full object-cover border border-[#E2E8F0]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbK9-HaVk-YOxThFjfe_nBp1knJehaXjESqADxlBtPiCQ3Qmu9S-8Rw1BEEu3T7fdsWByx18PhTPrcKOs4TzTBgVnWrU9bgLZDvTodR98i0BFnws9NRklLrcSL4p6leYqq0o-cCsHjzbf8cVGEDjp5gCRUMUgnlevdmaICefqSCYJdpWG4mfEyOsDSnxkS5vJqCrCDXR5n_dt_bm0P4cseisDnjc2Vs9y5mSpvXPmmty_fM8Fo8JENsw">
+<div class="text-left hidden sm:block">
+<h4 class="text-sm font-semibold text-[#1E293B] leading-tight">Rana Maher</h4>
+<span class="text-xs font-normal text-[#0055D6]">Administrator</span>
+</div>
+<i class="fa-solid fa-chevron-down text-[11px] text-[#94A3B8] ml-1"></i>
+</div>
+</div>
+</header>
+<!-- END: Topbar -->
+<!-- BEGIN: Content Area -->
+<main class="flex-1 p-8 space-y-7 max-w-[1500px] w-full mx-auto">
+<!-- Page Header -->
+<div data-purpose="page-header">
+<h1 class="text-2xl font-bold tracking-tight text-[#0F172A]">Skill Management</h1>
+<p class="text-sm text-[#64748B] mt-1">Review, organize, and manage the skills shared across SkillSwap.</p>
+</div>
+<!-- BEGIN: Metric Summary Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" data-purpose="metrics-row">
+<!-- Total Skills -->
+<div class="bg-white rounded-xl p-5 border border-[#EDF2F7] shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-[#8A99AD] tracking-wider uppercase">TOTAL SKILLS</span>
+<span class="text-3xl font-extrabold text-[#0F172A] my-1">1,248</span>
+<span class="text-xs font-semibold text-[#10B981]">+8.2% this month</span>
+</div>
+<!-- Pending Review -->
+<div class="bg-white rounded-xl p-5 border border-[#EDF2F7] shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-[#8A99AD] tracking-wider uppercase">PENDING REVIEW</span>
+<span class="text-3xl font-extrabold text-[#0F172A] my-1">36</span>
+<span class="text-xs font-medium text-[#F59E0B]">Needs your attention</span>
+</div>
+<!-- Approved Skills -->
+<div class="bg-white rounded-xl p-5 border border-[#EDF2F7] shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-[#8A99AD] tracking-wider uppercase">APPROVED SKILLS</span>
+<span class="text-3xl font-extrabold text-[#0F172A] my-1">1,172</span>
+<span class="text-xs font-medium text-[#10B981]">Active and visible</span>
+</div>
+<!-- Reported Skills -->
+<div class="bg-white rounded-xl p-5 border border-[#EDF2F7] shadow-sm flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-[#8A99AD] tracking-wider uppercase">REPORTED SKILLS</span>
+<span class="text-3xl font-extrabold text-[#0F172A] my-1">12</span>
+<span class="text-xs font-medium text-[#EF4444]">Requires moderation</span>
+</div>
+</section>
+<!-- END: Metric Summary Cards -->
+<!-- BEGIN: Table Container Section -->
+<section class="bg-white rounded-2xl border border-[#EDF2F7] shadow-sm overflow-hidden p-6" data-purpose="skills-table-section">
+<!-- Top bar of the card -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="text-lg font-bold text-[#0F172A]">All Skills</h2>
+<p class="text-xs text-[#64748B] mt-0.5">Manage submitted skills and review their status.</p>
+</div>
+<div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0055D6] hover:bg-[#0047B3] text-white text-xs font-semibold rounded-lg shadow-sm transition" type="button">
+<i class="fa-solid fa-plus text-[10px]"></i>
+<span>Add Category</span>
+</button>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="flex flex-col sm:flex-row items-center gap-3 mb-6">
+<!-- Keyword Search -->
+<div class="relative flex-1 w-full sm:max-w-md">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#94A3B8]">
+<i class="fa-solid fa-magnifying-glass text-xs"></i>
+</span>
+<input class="w-full pl-9 pr-4 py-2 bg-white border border-[#E2E8F0] rounded-lg text-xs text-[#334155] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#0055D6] focus:border-[#0055D6] transition" placeholder="Search skill or instructor..." type="text">
+</div>
+<!-- Category Dropdown -->
+<div class="w-full sm:w-44">
+<select class="w-full py-2 pl-3 pr-8 bg-white border border-[#E2E8F0] rounded-lg text-xs text-[#475569] focus:outline-none focus:ring-1 focus:ring-[#0055D6] focus:border-[#0055D6]">
+<option>All Categories</option>
+<option>Design</option>
+<option>Technology</option>
+<option>Music</option>
+<option>Business</option>
+<option>Arts</option>
+</select>
+</div>
+<!-- Status Dropdown -->
+<div class="w-full sm:w-40">
+<select class="w-full py-2 pl-3 pr-8 bg-white border border-[#E2E8F0] rounded-lg text-xs text-[#475569] focus:outline-none focus:ring-1 focus:ring-[#0055D6] focus:border-[#0055D6]">
+<option>All Status</option>
+<option>Approved</option>
+<option>Pending</option>
+<option>Reported</option>
+</select>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b border-[#F1F5F9]">
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase">SKILL NAME</th>
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase">CATEGORY</th>
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase">INSTRUCTOR</th>
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase">SUBMITTED</th>
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase">STATUS</th>
+<th class="py-3 px-4 text-[11px] font-bold text-[#64748B] tracking-wider uppercase text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#F1F5F9] text-xs">
+<!-- Row 1: UI / UX Design -->
+<tr class="hover:bg-[#FBFDFF] transition-colors">
+<td class="py-4 px-4">
+<div class="font-bold text-[#0F172A] text-xs">UI / UX Design</div>
+<div class="text-[11px] text-[#94A3B8] font-normal">Design user experiences</div>
+</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Design</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Sarah Ahmed</td>
+<td class="py-4 px-4 text-[#64748B]">Nov 21, 2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#E6F8F0] text-[#059669]">
+                    Approved
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-[#0055D6] hover:underline font-bold text-xs" href="#">View</a>
+</td>
+</tr>
+<!-- Row 2: Python Programming -->
+<tr class="hover:bg-[#FBFDFF] transition-colors">
+<td class="py-4 px-4">
+<div class="font-bold text-[#0F172A] text-xs">Python Programming</div>
+<div class="text-[11px] text-[#94A3B8] font-normal">Learn coding fundamentals</div>
+</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Technology</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Omar Hassan</td>
+<td class="py-4 px-4 text-[#64748B]">Nov 21, 2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FEF3C7] text-[#D97706]">
+                    Pending
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-[#0055D6] hover:underline font-bold text-xs" href="#">Review</a>
+</td>
+</tr>
+<!-- Row 3: Guitar Basics -->
+<tr class="hover:bg-[#FBFDFF] transition-colors">
+<td class="py-4 px-4">
+<div class="font-bold text-[#0F172A] text-xs">Guitar Basics</div>
+<div class="text-[11px] text-[#94A3B8] font-normal">Beginner acoustic guitar</div>
+</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Music</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Laila Mostafa</td>
+<td class="py-4 px-4 text-[#64748B]">Nov 20, 2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#E6F8F0] text-[#059669]">
+                    Approved
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-[#0055D6] hover:underline font-bold text-xs" href="#">View</a>
+</td>
+</tr>
+<!-- Row 4: Digital Marketing -->
+<tr class="hover:bg-[#FBFDFF] transition-colors">
+<td class="py-4 px-4">
+<div class="font-bold text-[#0F172A] text-xs">Digital Marketing</div>
+<div class="text-[11px] text-[#94A3B8] font-normal">Social media strategy</div>
+</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Business</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Youssef Ali</td>
+<td class="py-4 px-4 text-[#64748B]">Nov 19, 2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FEE2E2] text-[#DC2626]">
+                    Reported
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-[#0055D6] hover:underline font-bold text-xs" href="#">Review</a>
+</td>
+</tr>
+<!-- Row 5: Photography -->
+<tr class="hover:bg-[#FBFDFF] transition-colors">
+<td class="py-4 px-4">
+<div class="font-bold text-[#0F172A] text-xs">Photography</div>
+<div class="text-[11px] text-[#94A3B8] font-normal">Mobile photography tips</div>
+</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Arts</td>
+<td class="py-4 px-4 text-[#475569] font-medium">Mariam Adel</td>
+<td class="py-4 px-4 text-[#64748B]">Nov 18, 2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FEF3C7] text-[#D97706]">
+                    Pending
+                  </span>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-[#0055D6] hover:underline font-bold text-xs" href="#">Review</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- END: Table Container Section -->
+</main>
+<!-- END: Content Area -->
+</div>
+<!-- END: Main Layout -->
+
+
+</body></html>

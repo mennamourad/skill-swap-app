@@ -1,0 +1,133 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Call - Teaching Network</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            callbg: '#0c1322',
+            controlbg: '#1e2638',
+            recordred: '#ea384c',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for precise alignments and icons -->
+<style data-purpose="base-layout">
+    body {
+      background-color: #0c1322;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="h-full w-full overflow-hidden text-white flex flex-col justify-between p-6 sm:p-8 font-sans antialiased relative">
+<!-- BEGIN: TopBar -->
+<header class="w-full flex items-center justify-between z-20" data-purpose="call-header">
+<!-- Back / Exit Session Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-slate-800/80 hover:bg-slate-700/80 transition-colors flex items-center justify-center text-slate-200 focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M19 12H5m7 7-7-7 7-7"></path>
+</svg>
+</button>
+<!-- Recording Indicator Badge -->
+<div class="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#e13b4c] text-white text-xs font-semibold tracking-wide shadow-sm" data-purpose="recording-indicator">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span>REC 45:12</span>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 flex flex-col items-center justify-center -mt-6 z-10" data-purpose="main-speaker-view">
+<!-- Center Avatar & Info -->
+<div class="flex flex-col items-center text-center">
+<!-- Main Presenter Avatar Container -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 shadow-xl ring-2 ring-slate-700/40 bg-slate-800">
+<img alt="Amira Ahmed" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29JPvmwMEk9XW192rUrhWIwhRMzu-Cx1-CeemveOQEXBI4KniU1PSlyQWwO3kldkNKmfFIBbxlFrSZfPFVI71YMQmweEFkrpif3usYw7t8Yy9YND1Lmi7DCsF1UJ3UE9nbsltCNsybyZlTgRG81yuHu8Vcvmz4_fJh1IOCR9wkqfR-vz-V4n-f4z7SJmjOyOVTzlMoi7QJV9uP9YdBDPX-orf_ryVWbg23Hy45K0vMIuQP0_3kk5YIA">
+</div>
+<!-- Presenter Name & Role -->
+<h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">
+        Amira Ahmed
+      </h1>
+<p class="text-sm text-slate-400 font-medium">
+        Teaching Network
+      </p>
+<!-- Call Action Controls Toolbar -->
+<div class="flex items-center justify-center gap-4 mt-8" data-purpose="call-controls">
+<!-- Microphone Button -->
+<button aria-label="Microphone" class="w-12 h-12 rounded-full bg-[#1b2537] hover:bg-[#253249] text-white flex items-center justify-center transition-colors shadow-lg focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+<path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+<line x1="12" x2="12" y1="19" y2="22"></line>
+</svg>
+</button>
+<!-- Video Off Button -->
+<button aria-label="Turn off camera" class="w-12 h-12 rounded-full bg-[#1b2537] hover:bg-[#253249] text-white flex items-center justify-center transition-colors shadow-lg focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+<rect height="12" rx="2" width="14" x="2" y="6"></rect>
+<line x1="2" x2="22" y1="2" y2="22"></line>
+</svg>
+</button>
+<!-- End Call Button -->
+<button aria-label="End call" class="w-12 h-12 rounded-full bg-[#e13b4c] hover:bg-[#c93241] text-white flex items-center justify-center transition-colors shadow-lg focus:outline-none" type="button">
+<svg class="w-5 h-5 transform rotate-[135deg]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.28-.27.36-.66.25-1.01A11.36 11.36 0 0 1 8.5 4.34c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.56-.45-1.01-.99-1.06z"></path>
+</svg>
+</button>
+</div>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: RightFloatingSidebar -->
+<aside class="absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20" data-purpose="floating-side-tiles">
+<!-- User Thumbnail Card (Salme) -->
+<div class="w-24 h-28 sm:w-28 sm:h-32 bg-[#0c1322] border-2 border-white/90 rounded-2xl p-2 flex flex-col items-center justify-center shadow-2xl transition hover:border-white">
+<div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-slate-700 mb-2 border border-slate-600">
+<img alt="Salme (You)" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMoVdPhoYCyDgWMWDL9-IunYOGxrD7xcKLWdXLJcf-O3btIuT55uq5L0JfaZn9URglgVKa1Q9t1GKv49doRXRJufhF_7333ciT-odD63gR_KFGsrb-LZsSWJ1c6cRxtM07pYLMP7pJWRVpWkaLl7BqroOd3Sq5EaBgcoVWj3vrvle0uf_jLm9GS8kCJDsEHeDu4d6xPgk-91s7a7Al7iG-lMmX0nTlrXshyfQQj_7yzAN9vn6qtLKoXg">
+</div>
+<span class="text-[11px] font-medium text-white tracking-tight">Salme (You)</span>
+</div>
+<!-- AI / Learning Summary Card -->
+<div class="w-24 h-28 sm:w-28 sm:h-32 bg-[#0c1322] border-2 border-white/90 rounded-2xl p-2 flex flex-col items-center justify-center shadow-2xl transition hover:border-white">
+<!-- Cute Robot Icon/Graphic -->
+<div class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center mb-1 text-blue-400">
+<svg class="w-9 h-9" fill="none" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<!-- Robot Head -->
+<rect fill="#3b82f6" fill-opacity="0.2" height="30" rx="15" stroke="#60a5fa" stroke-width="2.5" width="36" x="14" y="16"></rect>
+<!-- Antennas -->
+<circle cx="32" cy="9" fill="#60a5fa" r="3"></circle>
+<line stroke="#60a5fa" stroke-width="2" x1="32" x2="32" y1="12" y2="16"></line>
+<!-- Ears / Side knobs -->
+<rect fill="#60a5fa" height="8" rx="2.5" width="5" x="9" y="27"></rect>
+<rect fill="#60a5fa" height="8" rx="2.5" width="5" x="50" y="27"></rect>
+<!-- Face Visor -->
+<rect fill="#1e293b" height="18" rx="8" width="26" x="19" y="22"></rect>
+<!-- Eyes -->
+<circle cx="26" cy="30" fill="#38bdf8" r="3"></circle>
+<circle cx="38" cy="30" fill="#38bdf8" r="3"></circle>
+<path d="M25 29a1 1 0 0 1 2 0" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5"></path>
+<path d="M37 29a1 1 0 0 1 2 0" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Smile -->
+<path d="M30 35c1 1 3 1 4 0" stroke="#38bdf8" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Hand Waving -->
+<path d="M12 38c-3 1-5 5-2 8 2 2 5-1 4-4" stroke="#f59e0b" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<span class="text-[10px] leading-tight font-medium text-white text-center tracking-tight px-1">
+        Learning Summary
+      </span>
+</div>
+</aside>
+<!-- END: RightFloatingSidebar -->
+
+
+
+
+</body></html>

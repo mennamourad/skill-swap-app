@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - Coins Wallet</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0B57D0',
+              sidebarActive: '#1A67DE',
+              badgeGreen: '#10B981',
+              lightGreen: '#E6F8F0',
+              textGreen: '#059669',
+              lightRed: '#FEECEC',
+              textRed: '#EA4335',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #F4F7FC;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F7FC] text-slate-800 antialiased min-h-screen flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between py-7 px-6 shrink-0 h-screen sticky top-0" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="px-2 mb-8">
+<h1 class="text-[#0B57D0] font-black text-2xl tracking-wider uppercase select-none">SKILLSWAP</h1>
+</div>
+<!-- Navigation Section: Overview -->
+<div class="mb-6">
+<p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 px-3">OVERVIEW</p>
+<nav class="space-y-1">
+<!-- Home -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 9.75L12 3l9 6.75M4.5 10.5V20.25A1.5 1.5 0 006 21.75h12a1.5 1.5 0 001.5-1.5V10.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Home
+          </a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Search
+          </a>
+<!-- Swap -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M4.5 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M15 15l3 3m0 0l3-3m-3 3V9M9 9L6 6m0 0L3 9m3-3v12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Swap
+          </a>
+<!-- Chat -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Chat
+          </a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Session
+          </a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Points Wallet
+          </a>
+<!-- Coins Wallet (Active) -->
+<a aria-current="page" class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-semibold text-[#0B57D0] bg-blue-50/60 transition-colors" href="#">
+<svg class="w-5 h-5 text-[#0B57D0] stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<rect height="12" rx="2" stroke-width="1.75" width="20" x="2" y="6"></rect>
+<circle cx="12" cy="12" r="2.5" stroke-width="1.75"></circle>
+<path d="M6 12h.01M18 12h.01" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+            Coins Wallet
+          </a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Notifications
+          </a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[14px] font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Profile
+          </a>
+</nav>
+</div>
+</div>
+<!-- Navigation Section: Settings / Logout -->
+<div class="pt-6 border-t border-slate-100">
+<p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 px-3">SETTINGS</p>
+<a class="flex items-center gap-3.5 px-3 py-2 rounded-xl text-[14px] font-medium text-rose-500 hover:bg-rose-50 transition-colors" href="#">
+<svg class="w-5 h-5 text-rose-500 stroke-[1.75]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+        Logout
+      </a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 overflow-y-auto px-12 py-10" data-purpose="main-dashboard-body">
+<!-- Header Section -->
+<header class="mb-8" data-purpose="page-header">
+<h2 class="text-[28px] font-extrabold text-slate-900 tracking-tight">Coins Wallet</h2>
+<p class="text-[14px] text-slate-500 mt-1">Manage your coins, track activity, and unlock more learning opportunities.</p>
+</header>
+<!-- BEGIN: BalanceHeroCard -->
+<section class="bg-[#0B57D0] rounded-3xl p-8 mb-8 text-white relative shadow-sm" data-purpose="current-balance-banner">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<span class="text-[11px] font-bold tracking-widest text-blue-100 uppercase opacity-90">YOUR CURRENT BALANCE</span>
+<div class="flex items-baseline gap-3.5 mt-2">
+<span class="text-6xl font-extrabold tracking-tight">350</span>
+<span class="text-2xl font-medium text-blue-50">Coins</span>
+</div>
+<p class="text-[13px] text-blue-100 mt-2 font-normal opacity-90">Keep learning and sharing your skills to earn more!</p>
+</div>
+<!-- Earn More Coins Action Button -->
+<div class="relative">
+<button class="flex items-center gap-2 bg-white/20 hover:bg-white/25 text-white font-medium text-[13px] px-6 py-3.5 rounded-xl border border-white/10 transition-all backdrop-blur-sm" type="button">
+<span>+</span> Earn More Coins
+          </button>
+<!-- Floating Green Accent Indicator -->
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#10B981] rounded-full border-2 border-[#0B57D0] flex items-center justify-center text-white text-[10px] font-bold leading-none">
+            +
+          </div>
+</div>
+</div>
+</section>
+<!-- END: BalanceHeroCard -->
+<!-- BEGIN: SummaryStatCards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10" data-purpose="stat-metrics">
+<!-- Card 1: Coins Earned -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-2">COINS EARNED</span>
+<div class="flex items-baseline gap-2.5">
+<span class="text-3xl font-extrabold text-slate-900">180</span>
+<span class="text-xs font-semibold text-[#10B981]">+12 this month</span>
+</div>
+</div>
+<!-- Card 2: Coins Spent -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-2">COINS SPENT</span>
+<div class="flex items-baseline gap-2.5">
+<span class="text-3xl font-extrabold text-slate-900">95</span>
+<span class="text-xs font-normal text-slate-500">Across 8 sessions</span>
+</div>
+</div>
+<!-- Card 3: Total Rewards -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 flex flex-col items-center justify-center text-center">
+<span class="text-[11px] font-bold text-slate-400 tracking-wider uppercase mb-2">TOTAL REWARDS</span>
+<div>
+<span class="text-3xl font-extrabold text-slate-900">5</span>
+</div>
+</div>
+</section>
+<!-- END: SummaryStatCards -->
+<!-- Section Title -->
+<div class="mb-4">
+<h3 class="text-[18px] font-bold text-slate-900 tracking-tight">Recent Transactions</h3>
+</div>
+<!-- BEGIN: DualColumnContent -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start" data-purpose="tables-and-actions">
+<!-- Left Column: Recent Transactions Table -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100" data-purpose="transactions-list">
+<h4 class="text-[15px] font-bold text-slate-900 mb-4">Recent Transactions</h4>
+<!-- Table Column Subtitles -->
+<div class="flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-wider pb-3 border-b border-slate-100">
+<span class="pl-11">ACTIVITY</span>
+<span>Coins</span>
+</div>
+<div class="divide-y divide-slate-50">
+<!-- Row 1: Teaching Session -->
+<div class="flex items-center justify-between py-4">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-full bg-[#E6F8F0] flex items-center justify-center text-[#10B981] font-medium text-base shrink-0">
+                +
+              </div>
+<div>
+<p class="text-[13px] font-semibold text-slate-900 leading-snug">Completed a teaching session</p>
+<p class="text-[11px] text-slate-400 mt-0.5">Today, 10:30 AM</p>
+</div>
+</div>
+<span class="text-[13px] font-bold text-[#10B981] tracking-tight">+30 coins</span>
+</div>
+<!-- Row 2: Booked Session -->
+<div class="flex items-center justify-between py-4">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-full bg-[#FEECEC] flex items-center justify-center text-[#EA4335] font-medium text-base shrink-0">
+                -
+              </div>
+<div>
+<p class="text-[13px] font-semibold text-slate-900 leading-snug">Booked a learning session</p>
+<p class="text-[11px] text-slate-400 mt-0.5">Yesterday, 02:15 PM</p>
+</div>
+</div>
+<span class="text-[13px] font-bold text-[#EA4335] tracking-tight">-20 coins</span>
+</div>
+<!-- Row 3: Weekly Reward -->
+<div class="flex items-center justify-between py-4">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-full bg-[#E6F8F0] flex items-center justify-center text-[#10B981] font-medium text-base shrink-0">
+                +
+              </div>
+<div>
+<p class="text-[13px] font-semibold text-slate-900 leading-snug">Weekly activity reward</p>
+<p class="text-[11px] text-slate-400 mt-0.5">Nov 18, 2026</p>
+</div>
+</div>
+<span class="text-[13px] font-bold text-[#10B981] tracking-tight">+10 coins</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Ways to Earn Coins -->
+<div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100" data-purpose="ways-to-earn">
+<h4 class="text-[15px] font-bold text-slate-900 mb-4">Ways to Earn Coins</h4>
+<div class="space-y-3">
+<!-- Way 1: Teach a skill -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-[#F8FAFD] hover:bg-slate-50 transition-colors">
+<div>
+<p class="text-[13px] font-bold text-slate-900">Teach a skill</p>
+<p class="text-[11px] text-slate-500 mt-0.5">Share what you know</p>
+</div>
+<span class="text-[13px] font-bold text-[#10B981]">+30</span>
+</div>
+<!-- Way 2: Weekly challenge -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-[#F8FAFD] hover:bg-slate-50 transition-colors">
+<div>
+<p class="text-[13px] font-bold text-slate-900">Weekly challenge</p>
+<p class="text-[11px] text-slate-500 mt-0.5">Stay active this week</p>
+</div>
+<span class="text-[13px] font-bold text-[#10B981]">+15</span>
+</div>
+<!-- Way 3: Complete your profile -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-[#F8FAFD] hover:bg-slate-50 transition-colors">
+<div>
+<p class="text-[13px] font-bold text-slate-900">Complete your profile</p>
+<p class="text-[11px] text-slate-500 mt-0.5">Add your skills and bio</p>
+</div>
+<span class="text-[13px] font-bold text-[#10B981]">+10</span>
+</div>
+</div>
+</div>
+</div>
+<!-- END: DualColumnContent -->
+</main>
+<!-- END: MainContent -->
+</body></html>

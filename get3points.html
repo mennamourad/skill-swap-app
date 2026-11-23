@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>You Earned Points! - SkillSwap</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0052cc',
+              hover: '#0047b3',
+              dark: '#172b4d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styling for Specific Visual Accents -->
+<style data-purpose="decorations">
+    /* Subtle 3D Coin & Star Styling */
+    .coin-outer-glow {
+      box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#eef2fc] flex items-center justify-center p-4 antialiased selection:bg-blue-100 selection:text-blue-900 font-sans">
+<!-- BEGIN: CelebrationModalWrapper -->
+<!-- Relative container allowing decorative confetti shapes to overflow slightly into viewport space -->
+<main class="relative w-full max-w-[580px] flex justify-center items-center" data-purpose="modal-wrapper">
+<!-- BEGIN: FloatingConfettiAccents -->
+<!-- Exterior Left Large Yellow Star -->
+<div aria-hidden="true" class="absolute -left-8 top-[24%] -translate-y-1/2 pointer-events-none z-10" data-purpose="decorative-element">
+<svg class="w-12 h-12 text-[#ffbe00] drop-shadow-sm" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0L14.4 8.6L23 11L14.4 13.4L12 22L9.6 13.4L1 11L9.6 8.6L12 0Z"></path>
+</svg>
+</div>
+<!-- Exterior Left Small Blue Dot -->
+<div aria-hidden="true" class="absolute -left-3 top-[44%] pointer-events-none z-10" data-purpose="decorative-element">
+<span class="block w-2.5 h-2.5 rounded-full bg-[#004bb5]"></span>
+</div>
+<!-- Exterior Right Small Yellow Star -->
+<div aria-hidden="true" class="absolute -right-6 top-[28%] -translate-y-1/2 pointer-events-none z-10" data-purpose="decorative-element">
+<svg class="w-10 h-10 text-[#ffbe00] drop-shadow-sm" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0L14.2 8.8L23 11L14.2 13.2L12 22L9.8 13.2L1 11L9.8 8.8L12 0Z"></path>
+</svg>
+</div>
+<!-- Exterior Right Deep Blue Star -->
+<div aria-hidden="true" class="absolute -right-6 top-[48%] pointer-events-none z-10" data-purpose="decorative-element">
+<svg class="w-8 h-8 text-[#0047b3]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0L14.5 8.5L23 11L14.5 13.5L12 22L9.5 13.5L1 11L9.5 8.5L12 0Z"></path>
+</svg>
+</div>
+<!-- END: FloatingConfettiAccents -->
+<!-- BEGIN: MainCard -->
+<section class="relative w-full bg-white rounded-[40px] shadow-[0_20px_50px_rgba(180,195,225,0.45)] px-8 pt-10 pb-12 flex flex-col items-center overflow-hidden" data-purpose="reward-card">
+<!-- BEGIN: CardInternalConfetti -->
+<!-- Top teal dash -->
+<div aria-hidden="true" class="absolute top-12 left-[18%] w-1.5 h-5 bg-[#52bca7] rounded-full transform -rotate-12 pointer-events-none"></div>
+<!-- Top-left yellow dash -->
+<div aria-hidden="true" class="absolute top-18 left-[13%] w-2 h-5 bg-[#fab500] rounded-full transform -rotate-45 pointer-events-none"></div>
+<!-- Mid-left blue pill dash -->
+<div aria-hidden="true" class="absolute top-[35%] left-[7%] w-7 h-2 bg-[#0052cc] rounded-full transform -rotate-12 pointer-events-none"></div>
+<!-- Top-right teal dash -->
+<div aria-hidden="true" class="absolute top-19 right-[19%] w-1.5 h-5 bg-[#52bca7] rounded-full transform rotate-45 pointer-events-none"></div>
+<!-- Mid-right yellow pill dash -->
+<div aria-hidden="true" class="absolute top-[35%] right-[11%] w-6 h-2 bg-[#fab500] rounded-full transform rotate-12 pointer-events-none"></div>
+<!-- END: CardInternalConfetti -->
+<!-- BEGIN: CoinIllustration -->
+<div class="relative w-48 h-48 mb-8 flex items-center justify-center" data-purpose="coin-badge">
+<!-- Outermost Pale Cream Halo Layer -->
+<div class="w-48 h-48 rounded-full bg-[#fef5db] flex items-center justify-center p-3">
+<!-- Main Gold Outer Rim -->
+<div class="w-full h-full rounded-full bg-gradient-to-b from-[#e39c1e] to-[#f4b834] p-3 flex items-center justify-center shadow-inner">
+<!-- Coin Recessed Face -->
+<div class="w-full h-full rounded-full bg-[#fad355] border-2 border-[#ea9d1b] flex items-center justify-center relative shadow-[inset_0_4px_8px_rgba(217,119,6,0.25)]">
+<!-- Star Graphic Inside Coin -->
+<svg class="w-24 h-24 text-white drop-shadow-[0_2px_4px_rgba(180,83,9,0.15)]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 1.5L15.3 8.2L22.7 9.3L17.3 14.6L18.6 22L12 18.5L5.4 22L6.7 14.6L1.3 9.3L8.7 8.2L12 1.5Z"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- END: CoinIllustration -->
+<!-- BEGIN: TextContent -->
+<div class="text-center w-full max-w-sm flex flex-col items-center">
+<!-- Sub-label -->
+<p class="text-[#899cb6] text-base font-semibold tracking-wide mb-2" data-purpose="reward-congratulations">
+          Congratulations
+        </p>
+<!-- Main Heading -->
+<h1 class="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight mb-4" data-purpose="reward-heading">
+          You Earned Points!
+        </h1>
+<!-- Points Stat Display -->
+<div class="flex flex-col items-center my-1" data-purpose="points-counter">
+<span class="text-5xl sm:text-6xl font-black text-[#0052cc] tracking-tight leading-none mb-2">
+            +3
+          </span>
+<span class="text-sm font-bold uppercase tracking-wider text-[#475569]">
+            POINTS
+          </span>
+</div>
+<!-- Description Supporting Text -->
+<p class="text-sm text-[#738499] font-medium mt-6 mb-8" data-purpose="encouragement-message">
+          Keep swapping skills and growing together.
+        </p>
+<!-- Action Button -->
+<button class="w-full max-w-[280px] h-[52px] bg-[#0052cc] hover:bg-[#0047b3] active:scale-[0.98] transition-all duration-150 rounded-2xl text-white font-semibold text-base flex items-center justify-center shadow-[0_4px_14px_rgba(0,82,204,0.3)] focus:outline-none focus:ring-4 focus:ring-blue-300" data-purpose="continue-button" type="button">
+          Continue
+        </button>
+</div>
+<!-- END: TextContent -->
+</section>
+<!-- END: MainCard -->
+</main>
+<!-- END: CelebrationModalWrapper -->
+</body></html>

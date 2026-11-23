@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>User Management - SkillSwap Admin</title>
+<!-- Tailwind CSS v3 CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0055d2',
+              cyan: '#58c7cc',
+              dark: '#1e293b',
+              grayNav: '#64748b',
+              bgLight: '#f8fafc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    /* Subtle rounded shadows */
+    .card-shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex antialiased text-slate-700">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col shrink-0 min-h-screen" data-purpose="sidebar-navigation">
+<!-- Brand Logo -->
+<div class="h-20 flex items-center px-8">
+<span class="text-xl font-extrabold tracking-wider text-blue-700">SKILLSWAP</span>
+</div>
+<!-- Admin Dashboard Action Button -->
+<div class="px-6 mb-8">
+<button class="w-full bg-[#0d59cf] hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-lg shadow-sm text-sm transition-colors text-center" type="button">
+        Admin Dashboard
+      </button>
+</div>
+<!-- Nav Section: Management -->
+<div class="px-6 flex-1">
+<p class="text-xs font-semibold text-slate-400 tracking-wider mb-4">Management</p>
+<nav class="space-y-3.5">
+<!-- Users Link (Active) -->
+<a class="flex items-center space-x-3.5 text-sm font-semibold text-[#0d59cf] transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Users</span>
+</a>
+<!-- Skills Link -->
+<a class="flex items-center space-x-3.5 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Skills</span>
+</a>
+<!-- Sessions Link -->
+<a class="flex items-center space-x-3.5 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Sessions</span>
+</a>
+<!-- Wallets Link -->
+<a class="flex items-center space-x-3.5 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Wallets</span>
+</a>
+<!-- Fees Link -->
+<a class="flex items-center space-x-3.5 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Fees</span>
+</a>
+<!-- Settings Link -->
+<a class="flex items-center space-x-3.5 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- BEGIN: TopBar -->
+<header class="h-20 bg-white border-b border-slate-100 flex items-center justify-between px-10">
+<!-- Search Input Container -->
+<div class="relative w-80">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-white" placeholder="Search here" type="text">
+</div>
+<!-- Right Header Actions & Profile -->
+<div class="flex items-center space-x-6">
+<!-- Notification Bell -->
+<button class="p-2 text-slate-400 hover:text-slate-600 bg-slate-50 rounded-full border border-slate-100" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Maximize / Focus Icon -->
+<button class="p-2 text-slate-400 hover:text-slate-600 bg-slate-50 rounded-full border border-slate-100" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- User Profile Pill -->
+<div class="flex items-center space-x-3 cursor-pointer">
+<img alt="Rana Maher avatar" class="w-10 h-10 rounded-full object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWlZzbHYw0mN2nkYVWVZ4QQNigUJb0gWqb6yGDSXEqwpFhLg2mZmf_d7z1LqyBtwZP8kPnEJJnRibAL3Elfvxq9wR3wLYFSYqoPlOKIuvAWUAGKCkxRbQnD3bSBSrMrgxGtBlekk9448VB6ucTdFxTaGeiYX6jcEzVH5S3ViM0Wqt9MFMMlZAoEw4H8M35xpXWbSYP_Bzti7UCXFFOa1iwKu-MszxdVw7chP6f3_mW2_hXQfvxuwMVQ">
+<div class="text-left text-xs leading-snug">
+<p class="font-bold text-slate-800 text-sm">Rana Maher</p>
+<p class="text-blue-600 font-medium">Administrator</p>
+</div>
+<svg class="w-4 h-4 text-slate-400 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- Main Workspace Section -->
+<main class="p-10 max-w-7xl">
+<!-- Title & Breadcrumbs -->
+<div class="flex items-center justify-between mb-8">
+<h1 class="text-2xl font-bold text-slate-800">User Management</h1>
+<div class="text-sm font-medium text-slate-500">
+<span class="text-blue-600 font-medium">User Management</span> <span class="mx-1 text-slate-300">/</span> Admin
+        </div>
+</div>
+<!-- BEGIN: MetricCards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-purpose="metrics-summary">
+<!-- Metric 1: Users -->
+<div class="bg-white rounded-2xl p-6 text-center card-shadow border border-slate-100 flex flex-col justify-center items-center h-32">
+<p class="text-sm font-medium text-slate-500 mb-1">Users</p>
+<h2 class="text-2xl font-bold text-slate-900">50055</h2>
+</div>
+<!-- Metric 2: Points -->
+<div class="bg-white rounded-2xl p-6 text-center card-shadow border border-slate-100 flex flex-col justify-center items-center h-32">
+<p class="text-sm font-medium text-slate-500 mb-1">Points</p>
+<h2 class="text-2xl font-bold text-slate-900">50000+</h2>
+</div>
+<!-- Metric 3: Revenue -->
+<div class="bg-white rounded-2xl p-6 text-center card-shadow border border-slate-100 flex flex-col justify-center items-center h-32">
+<p class="text-sm font-medium text-slate-500 mb-1">Revenue</p>
+<h2 class="text-2xl font-bold text-slate-900">$505</h2>
+</div>
+</section>
+<!-- END: MetricCards -->
+<!-- BEGIN: OverviewChart -->
+<section class="bg-white rounded-2xl p-6 mb-8 card-shadow border border-slate-100" data-purpose="overview-graph">
+<!-- Chart Header -->
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-base font-bold text-slate-800">Overview</h3>
+<div class="flex items-center space-x-6 text-xs font-medium text-slate-500">
+<!-- Learner Legend -->
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#4361ee]"></span>
+<span>Learner</span>
+</div>
+<!-- Teacher Legend -->
+<div class="flex items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#58c7cc]"></span>
+<span>Teacher</span>
+</div>
+<!-- Action Icon -->
+<button class="text-slate-400 hover:text-slate-600 pl-2" type="button">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- SVG Line Chart Area -->
+<div class="w-full relative pt-2">
+<svg class="w-full h-auto overflow-visible" preserveAspectRatio="none" viewBox="0 0 760 220">
+<!-- Grid Lines & Y-axis labels -->
+<!-- 80 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="20" y2="20"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="24">80</text>
+<!-- 70 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="50" y2="50"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="54">70</text>
+<!-- 60 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="80" y2="80"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="84">60</text>
+<!-- 50 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="110" y2="110"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="114">50</text>
+<!-- 40 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="140" y2="140"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="144">40</text>
+<!-- 30 -->
+<line stroke="#f1f5f9" stroke-width="1.5" x1="28" x2="760" y1="170" y2="170"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="174">30</text>
+<!-- 20 Base Line -->
+<line stroke="#cbd5e1" stroke-width="1.5" x1="28" x2="760" y1="200" y2="200"></line>
+<text fill="#94a3b8" font-size="11" text-anchor="end" x="14" y="204">20</text>
+<!-- Line 1: Learner (Royal Blue) -->
+<path d="M 30,128 
+                 C 70,125 100,85 150,75 
+                 C 200,65 240,30 270,30 
+                 C 310,30 330,98 380,105 
+                 C 420,110 460,135 520,135 
+                 C 580,135 620,138 670,165 
+                 C 710,185 730,188 760,188" fill="none" stroke="#4361ee" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- Line 2: Teacher (Cyan) -->
+<path d="M 30,195 
+                 C 60,190 90,140 140,122 
+                 C 180,110 210,100 270,95 
+                 C 330,90 350,155 400,155 
+                 C 450,155 520,150 560,118 
+                 C 600,86 640,135 680,185 
+                 C 710,200 730,196 760,194" fill="none" stroke="#58c7cc" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between pl-7 pr-2 pt-3 text-[11px] font-medium text-slate-500">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+</div>
+</div>
+</section>
+<!-- END: OverviewChart -->
+<!-- BEGIN: StarUsersTable -->
+<section class="bg-white rounded-2xl card-shadow border border-slate-100 overflow-hidden" data-purpose="star-users-table">
+<!-- Table Header Panel -->
+<div class="px-7 py-5 flex items-center justify-between border-b border-slate-50">
+<h3 class="text-base font-bold text-slate-800">Star Users</h3>
+<button class="text-slate-400 hover:text-slate-600" type="button">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+</svg>
+</button>
+</div>
+<!-- Table Element -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead>
+<tr class="bg-slate-50 text-slate-600 font-semibold border-b border-slate-100">
+<th class="py-3.5 px-8" scope="col">ID</th>
+<th class="py-3.5 px-6" scope="col">Users</th>
+<th class="py-3.5 px-6" scope="col">Status</th>
+<th class="py-3.5 px-6 text-center" scope="col">Wallet</th>
+<th class="py-3.5 px-8 text-right" scope="col">Sessions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-slate-600">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-3.5 px-8 font-normal text-slate-500">PRE2209</td>
+<td class="py-3.5 px-6 font-medium text-slate-800">
+<div class="flex items-center space-x-3">
+<img alt="Mohammed Ahmed" class="w-7 h-7 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAhf8v_HGrNj0BDiQx7YUSqHlf4RN_6CEjjI70G7bMKT1UazxlTW8HBaawx8gKgY3Q4HMJ5OVdeXYymIbS23TOp_IfGDrG1CFv7eczv1pi-IlM7cS0KGjTwUDfBbAhGfVX3ELdzsS4bVNirZtjJbLM19hFWH2wx_94oko4rj6dReeHHax43IcOx9-7LNvwflq0lHYnu8sw2cEORz5V_4RMuICHCfYWnXkqQOjW4p6Q">
+<span>Mohammed Ahmed</span>
+</div>
+</td>
+<td class="py-3.5 px-6 text-slate-600">Active</td>
+<td class="py-3.5 px-6 text-center text-slate-600">100</td>
+<td class="py-3.5 px-8 text-right text-slate-600">5</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-3.5 px-8 font-normal text-slate-500">PRE1245</td>
+<td class="py-3.5 px-6 font-medium text-slate-800">
+<div class="flex items-center space-x-3">
+<img alt="Salma Mohammed" class="w-7 h-7 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80cxYUW2uNf4gx2Lo17OtTgWvwzNVDlvgW9BcXQ8WsohwM0MdNviJAHWjQx-n7yT-sDtQmGZrQK4P20V7E3S1jSONMcU86Wn_3Iw215B6pNOR9SQXXOqm8bm3jwXpHkf4Rwgv976KviwMYvtUw6gJuDHuTx7k6mtzxzX3tvvJj3_VDieKb2XvtGb2YIg_toEP0QeQX3lNDdbGyTYs_X4IjGMbbdHtFItbsHyb4-1i">
+<span>Salma Mohammed</span>
+</div>
+</td>
+<td class="py-3.5 px-6 text-slate-600">Active</td>
+<td class="py-3.5 px-6 text-center text-slate-600">200</td>
+<td class="py-3.5 px-8 text-right text-slate-600">10</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-3.5 px-8 font-normal text-slate-500">PRE1625</td>
+<td class="py-3.5 px-6 font-medium text-slate-800">
+<div class="flex items-center space-x-3">
+<img alt="Samy Ali" class="w-7 h-7 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGrD0XtTSOrxRl05p0wYM55BW371S94ry4Rt-WuX7iJsYNAA7Mnu-ww7oazf8id_bPZ_H140F9uK4J7fJPVhIm8-pbmennacdT4cRE1WmnjGKVgnfEhrXUL3u-cC-KaTwAAc0WRubwl6SZh27_xHoURhmAf2uLUq7WGgv7sRdi_8PSTrk6F0ILE1Vd-SuBZXroDzitbGeV3plkJiwI1ttDCnwg7VjPaMlEVVsiGiBA">
+<span>Samy Ali</span>
+</div>
+</td>
+<td class="py-3.5 px-6 text-slate-600">Active</td>
+<td class="py-3.5 px-6 text-center text-slate-600">500</td>
+<td class="py-3.5 px-8 text-right text-slate-600">11</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-3.5 px-8 font-normal text-slate-500">PRE2516</td>
+<td class="py-3.5 px-6 font-medium text-slate-800">
+<div class="flex items-center space-x-3">
+<img alt="Alaa Ahmed" class="w-7 h-7 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQrGnnRxqB6y6urifELekO0psAr6Oil7NvGkiEWrPcy_o7RRNHH8B_wv8Saru9zTIb8R1Qafkn1eVYMf4uXHACs5aLi4lUXzWLTWdnDb56pVmC-YzMfqHkJ2VZX6ARvPDgTPTMO4o58xG0qO6juh7zdKbkneMnXtl7NdAbjZ8chKTiW8tMpalDwNSjJD6wdT23X5P078T3bZp4xp5680dwc-IkBCycexqv3WyznV-P">
+<span>Alaa Ahmed</span>
+</div>
+</td>
+<td class="py-3.5 px-6 text-slate-600">Active</td>
+<td class="py-3.5 px-6 text-center text-slate-600">1000</td>
+<td class="py-3.5 px-8 text-right text-slate-600">30</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-3.5 px-8 font-normal text-slate-500">PRE2209</td>
+<td class="py-3.5 px-6 font-medium text-slate-800">
+<div class="flex items-center space-x-3">
+<img alt="Sana Amer" class="w-7 h-7 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHMcjr6TRcka6Uy4m0nEQTvk4jK5Nj0rxO-ji0w4MnkG93FZ3dIsnKRNd4xi_jEy-DVn7AnOmoNDld5u4bgNpbD_Y2JClRD-F6pokdABiJd7NYf3cIbWGkxn9FGDO9Bj-ubMSeC49-iqkyy2Idc-UH_g-KglzJT-fS8b6F73EJK22-yXzV5-ps_5PyC7VzS3IOhSlxaWoJFQC-uQ4bSpQVTgvKb7BgBX33byU9d8We">
+<span>Sana Amer</span>
+</div>
+</td>
+<td class="py-3.5 px-6 text-slate-600">Active</td>
+<td class="py-3.5 px-6 text-center text-slate-600">700</td>
+<td class="py-3.5 px-8 text-right text-slate-600">22</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- END: StarUsersTable -->
+</main>
+</div>
+<!-- END: MainContentArea -->
+
+
+</body></html>

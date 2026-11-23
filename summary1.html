@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - AI Session Summary &amp; Quiz</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#0066cc',
+              600: '#0052b3',
+              700: '#00408d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 select-none" data-purpose="sidebar-navigation">
+<div class="p-6">
+<!-- App Logo -->
+<div class="px-3 mb-8">
+<span class="text-xl font-extrabold tracking-tight text-[#005fb8]">SKILLSWAP</span>
+</div>
+<!-- Navigation Section -->
+<div>
+<p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-3">Overview</p>
+<nav class="space-y-1">
+<!-- Active Nav Item: Home -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-blue-50/70 text-[#0066cc] font-semibold text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 9.75L12 3l9 9.75M4.5 10.5V20.25A1.5 1.5 0 006 21.75h12a1.5 1.5 0 001.5-1.5V10.5M9.75 21.75v-6a2.25 2.25 0 012.25-2.25h0a2.25 2.25 0 012.25 2.25v6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Inactive Nav Item: Search -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Inactive Nav Item: Swap -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Inactive Nav Item: Chat -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Inactive Nav Item: Session -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Inactive Nav Item: Points Wallet -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Inactive Nav Item: Coins Wallet -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<rect height="14" rx="2" stroke-linecap="round" stroke-linejoin="round" width="18" x="3" y="5"></rect>
+<circle cx="12" cy="12" r="2.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Inactive Nav Item: Notifications -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Inactive Nav Item: Profile -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-50 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Settings & Logout Section -->
+<div class="p-6 border-t border-slate-100">
+<p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Settings</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-rose-500 hover:bg-rose-50/60 font-medium text-sm transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 p-8 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
+<!-- Header Title Section -->
+<header class="mb-6" data-purpose="page-header">
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight mb-2">AI Session Summary &amp; Quiz</h1>
+<h2 class="text-base font-bold text-slate-800 mb-1">Your learning session is complete!</h2>
+<p class="text-sm text-slate-500">Review the key points from your session and test what you learned.</p>
+</header>
+<!-- Content Stack -->
+<div class="space-y-6">
+<!-- Session Status Banner Card -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-center justify-between" data-purpose="session-status-banner">
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-1">Session: Python Programming – Fundamentals</h3>
+<p class="text-xs text-slate-400 font-medium">With Salma Mohammed • 22 Nov 2026 • 60 minutes</p>
+</div>
+<!-- Completed Badge -->
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#eaf7ee] text-[#1e8a44]">
+<svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Completed
+          </span>
+</div>
+</section>
+<!-- Two-Column Grid: Summary & Topics/Progress -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Card: AI Session Summary -->
+<article class="lg:col-span-7 bg-white rounded-2xl p-6 shadow-sm border border-slate-100 min-h-[300px] flex flex-col justify-between" data-purpose="session-summary-card">
+<div>
+<h3 class="text-lg font-bold text-slate-900 mb-3">AI Session Summary</h3>
+<!-- Summary Description with bullet -->
+<ul class="text-sm text-slate-600 mb-6 space-y-2">
+<li class="flex items-start gap-2.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#0066cc] mt-2 shrink-0"></span>
+<span class="leading-relaxed">In this session, you learned the fundamentals of Python programming, including variables, data types, conditional statements, and loops</span>
+</li>
+</ul>
+<!-- Key Takeaways -->
+<h4 class="text-sm font-bold text-slate-800 mb-3">Key takeaways</h4>
+<ul class="space-y-3 text-sm text-slate-600">
+<li class="flex items-center gap-2.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#0066cc] shrink-0"></span>
+<span>Variables are used to store data.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#0066cc] shrink-0"></span>
+<span>Python supports different data types such as strings, integers, and floats.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#0066cc] shrink-0"></span>
+<span>Conditional statements control program execution.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#0066cc] shrink-0"></span>
+<span>Loops are used to repeat a block of code.</span>
+</li>
+</ul>
+</div>
+</article>
+<!-- Right Card: Key Topics & Learning Progress -->
+<article class="lg:col-span-5 bg-white rounded-2xl p-6 shadow-sm border border-slate-100 min-h-[300px] flex flex-col justify-between" data-purpose="key-topics-progress-card">
+<div>
+<h3 class="text-lg font-bold text-slate-900 mb-4">Key Topics</h3>
+<!-- Topics Pill Badges -->
+<div class="flex flex-wrap gap-2.5 mb-8">
+<span class="px-3.5 py-2 rounded-full bg-[#e8f1fc] text-[#0060c4] text-xs font-semibold">
+                Variables &amp; Data Types
+              </span>
+<span class="px-3.5 py-2 rounded-full bg-[#e8f1fc] text-[#0060c4] text-xs font-semibold">
+                If / Else Statements
+              </span>
+<span class="px-3.5 py-2 rounded-full bg-[#e8f1fc] text-[#0060c4] text-xs font-semibold">
+                For &amp; While Loops
+              </span>
+<span class="px-3.5 py-2 rounded-full bg-[#e8f1fc] text-[#0060c4] text-xs font-semibold">
+                Python Functions
+              </span>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="pt-4 border-t border-slate-100">
+<h4 class="text-sm font-bold text-slate-900 mb-3">Learning progress</h4>
+<!-- Progress Bar -->
+<div class="w-full bg-slate-100 rounded-full h-2.5 mb-2 overflow-hidden">
+<div class="bg-[#0066cc] h-2.5 rounded-full" style="width: 80%"></div>
+</div>
+<!-- Progress Subtext -->
+<div class="flex justify-between text-xs font-medium text-slate-500">
+<span>4 topics covered</span>
+<span class="font-bold text-[#0066cc]">80%</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Bottom Card: Knowledge Check / Quiz -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100" data-purpose="knowledge-check-quiz">
+<!-- Quiz Header & Submit Button -->
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-lg font-bold text-slate-900">Knowledge Check</h3>
+<button class="px-6 py-2 bg-[#0060c4] hover:bg-[#0052b3] text-white text-sm font-semibold rounded-full shadow-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#0060c4]" type="button">
+            Submit
+          </button>
+</div>
+<p class="text-xs text-slate-400 mb-5">Answer these quick questions to review your understanding.</p>
+<!-- Question Prompt -->
+<p class="text-sm font-bold text-slate-800 mb-4">1. Which keyword is used to define a function in Python?</p>
+<!-- Radio Options Container -->
+<fieldset aria-label="Question 1 Answers" class="space-y-3">
+<!-- Option 1: Unselected -->
+<label class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+<input class="sr-only" name="python_quiz_q1" type="radio" value="function"/>
+<span class="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center shrink-0"></span>
+<span class="text-sm font-medium text-slate-700">function</span>
+</label>
+<!-- Option 2: Selected -->
+<label class="flex items-center gap-3.5 p-3.5 rounded-xl border-2 border-[#0066cc] bg-[#eaf3fe] cursor-pointer transition-colors">
+<input checked="" class="sr-only" name="python_quiz_q1" type="radio" value="def"/>
+<span class="w-4 h-4 rounded-full border-2 border-[#0066cc] flex items-center justify-center shrink-0 bg-white">
+<span class="w-2 h-2 rounded-full bg-[#0066cc]"></span>
+</span>
+<span class="text-sm font-bold text-slate-900">def</span>
+</label>
+<!-- Option 3: Unselected -->
+<label class="flex items-center gap-3.5 p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+<input class="sr-only" name="python_quiz_q1" type="radio" value="define"/>
+<span class="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center shrink-0"></span>
+<span class="text-sm font-medium text-slate-700">define</span>
+</label>
+</fieldset>
+</section>
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

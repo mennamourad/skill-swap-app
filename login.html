@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Log in</title>
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0052cc',
+              navy: '#0b2545',
+              green: '#10b981',
+              inputBg: '#f8fafc',
+              inputBorder: '#e2e8f0',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for refined elements -->
+<style data-purpose="custom-styling">
+    /* Subtle custom transitions and font smoothing */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col justify-between font-sans selection:bg-blue-100 selection:text-blue-900">
+<!-- BEGIN: MainContent -->
+<main class="w-full flex-grow flex flex-col items-center pt-24 pb-12 px-4 sm:px-6">
+<div class="w-full max-w-[980px] flex flex-col items-center">
+<!-- BEGIN: LogoAndBranding -->
+<div class="flex flex-col items-center text-center mb-8" data-purpose="branding-header">
+<!-- SVG Vector representation of SkillSwap lightbulb logo -->
+<div class="relative w-14 h-14 mb-2 flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><!-- Warm vibrant radiant rays around the top of the bulb with balanced radial symmetry -->
+  <line stroke="#F59E0B" stroke-linecap="round" stroke-width="2.5" x1="32" x2="32" y1="5" y2="11"></line>
+  <line stroke="#F59E0B" stroke-linecap="round" stroke-width="2.5" x1="17.5" x2="21.5" y1="11" y2="15"></line>
+  <line stroke="#F59E0B" stroke-linecap="round" stroke-width="2.5" x1="46.5" x2="42.5" y1="11" y2="15"></line>
+  <line stroke="#F59E0B" stroke-linecap="round" stroke-width="2.5" x1="10" x2="15.5" y1="25.5" y2="27"></line>
+  <line stroke="#F59E0B" stroke-linecap="round" stroke-width="2.5" x1="54" x2="48.5" y1="25.5" y2="27"></line>
+  <!-- Deep blue bulb contour -->
+  <path d="M20 30C20 23.3726 25.3726 18 32 18C38.6274 18 44 23.3726 44 30C44 34.35 41.68 38.16 38.25 40.28C36.75 41.2 35.8 42.75 35.6 44.5L35.4 47H28.6L28.4 44.5C28.2 42.75 27.25 41.2 25.75 40.28C22.32 38.16 20 34.35 20 30Z" stroke="#0052cc" stroke-linejoin="round" stroke-width="2.5"></path>
+  <!-- Inside Avatars swapping arrows (blue & teal green) -->
+  <circle cx="27.5" cy="27.5" fill="#0052cc" r="2"></circle>
+  <circle cx="36.5" cy="33.5" fill="#10b981" r="2"></circle>
+  <path d="M31 25.5C33.5 25 36.5 26.2 37 28.5M37 28.5V26.2M37 28.5H34.8" stroke="#0052cc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+  <path d="M33 35.5C30.5 36 27.5 34.8 27 32.5M27 32.5V34.8M27 32.5H29.2" stroke="#10b981" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+  <!-- Screw base with horizontal ridges -->
+  <path d="M28.4 47H35.6" stroke="#0052cc" stroke-linecap="round" stroke-width="2"></path>
+  <path d="M28.8 50H35.2" stroke="#0052cc" stroke-linecap="round" stroke-width="2"></path>
+  <path d="M29.5 53H34.5" stroke="#0052cc" stroke-linecap="round" stroke-width="2"></path>
+  <path d="M30.5 56C30.5 57 31.2 57.8 32 57.8C32.8 57.8 33.5 57 33.5 56H30.5Z" fill="#0052cc"></path></svg>
+</div>
+<!-- Brand Name -->
+<h1 class="text-2xl font-bold tracking-tight">
+<span class="text-[#0b2545]">Skill</span><span class="text-[#10b981]">Swap</span>
+</h1>
+<!-- Tagline -->
+<p class="text-slate-500 text-sm mt-3 font-normal">
+          Learn something. Teach something.
+        </p>
+</div>
+<!-- END: LogoAndBranding -->
+<!-- BEGIN: LoginForm -->
+<form action="#" class="w-full space-y-4" data-purpose="login-form" method="POST">
+<!-- Email Input -->
+<div>
+<label class="sr-only" for="email">Email</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 bg-[#f8fafc] text-slate-700 placeholder-slate-400 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052cc] focus:border-transparent transition-colors shadow-sm" id="email" name="email" placeholder="Email" required="" type="email">
+</div>
+<!-- Password Input -->
+<div>
+<label class="sr-only" for="password">Password</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 bg-[#f8fafc] text-slate-700 placeholder-slate-400 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0052cc] focus:border-transparent transition-colors shadow-sm" id="password" name="password" placeholder="Password" required="" type="password">
+</div>
+<!-- Submit Button -->
+<div class="pt-1">
+<button class="w-full h-12 rounded-full bg-[#0052cc] hover:bg-[#0047b3] active:bg-[#003d99] text-white font-medium text-sm transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0052cc]" type="submit">
+            Log in
+          </button>
+</div>
+<!-- Forgot Password Link -->
+<div class="text-center pt-1">
+<a class="text-xs font-semibold text-[#0052cc] hover:text-[#0041a8] transition-colors" href="#">
+            Forgot password?
+          </a>
+</div>
+</form>
+<!-- END: LoginForm -->
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: PageFooter -->
+<footer class="w-full py-6 text-center" data-purpose="page-footer">
+<a class="text-xs font-semibold text-[#0052cc] hover:text-[#0041a8] transition-colors" href="#">
+      New here? Create an account
+    </a>
+</footer>
+<!-- END: PageFooter -->
+
+
+
+
+</body></html>

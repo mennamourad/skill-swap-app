@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - Swap with Amira Ahmed</title>
+<!-- Load Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style data-purpose="custom-colors">
+    /* Custom brand accents matching the high-fidelity UI */
+    .brand-blue {
+      color: #0d59cf;
+    }
+    .bg-brand-blue {
+      background-color: #0d59cf;
+    }
+    .bg-calendar-box {
+      background-color: #ebf3ff;
+    }
+    .bg-brand-green {
+      background-color: #10b981;
+    }
+    .text-brand-green {
+      color: #10b981;
+    }
+    .btn-red {
+      background-color: #c92127;
+    }
+  </style>
+</head>
+<body class="bg-[#f8faff] text-gray-800 antialiased min-h-screen flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-[#eaecf0] min-h-screen flex flex-col justify-between p-6 shrink-0" data-purpose="sidebar">
+<!-- Top Nav Section -->
+<div>
+<!-- Brand Logo -->
+<div class="px-2 mb-8">
+<h1 class="brand-blue font-bold text-2xl tracking-wide">SKILLSWAP</h1>
+</div>
+<!-- Navigation Section: Overview -->
+<div>
+<p class="text-xs font-semibold text-gray-600 tracking-wider uppercase px-3 mb-4">OVERVIEW</p>
+<nav aria-label="Main Navigation" class="space-y-1.5">
+<!-- Home Link (Active) -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium brand-blue transition-colors" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3 9.75l9-7.5 9 7.5v10.5a1.5 1.5 0 01-1.5 1.5H4.5A1.5 1.5 0 013 20.25V9.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Search Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Swap Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M4.5 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M19.5 12h-4.5m4.5 0l-2.25 2.25M4.5 12h4.5m-4.5 0l2.25-2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Chat Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Session Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Points Wallet Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 002.25 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0 0H3a.75.75 0 01.75.75v.75m0-9.75H21m-17.25 0h17.25m0 0v9.75m0-9.75a.75.75 0 01.75-.75h.75m0 0v8.25m0 0h-.75a.75.75 0 01-.75-.75v-.75m0-6.75a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Profile Link -->
+<a class="flex items-center gap-3.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Settings Section -->
+<div class="pt-6">
+<p class="text-xs font-semibold text-gray-600 tracking-wider uppercase px-3 mb-4">SETTINGS</p>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-red-500 hover:text-red-600 transition-colors" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-12 py-8 overflow-y-auto">
+<!-- Header Title -->
+<header class="mb-8">
+<h2 class="brand-blue font-bold text-2xl">Swap with Amira Ahmed</h2>
+</header>
+<!-- Booking Layout Wrapper -->
+<div class="max-w-4xl mx-auto space-y-8">
+<!-- BEGIN: CalendarCard -->
+<section class="bg-calendar-box rounded-3xl p-8 shadow-sm" data-purpose="calendar-picker">
+<div class="max-w-md mx-auto">
+<!-- Calendar Month Navigation -->
+<div class="flex items-center justify-between mb-8 px-4">
+<button aria-label="Previous Month" class="p-1 text-gray-600 hover:text-gray-900 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h3 class="text-xl font-bold text-gray-900 tracking-tight">Nov, 2026</h3>
+<button aria-label="Next Month" class="p-1 text-gray-600 hover:text-gray-900 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Calendar Days Grid -->
+<div class="grid grid-cols-7 gap-y-4 text-center items-center text-sm mb-8 font-medium">
+<!-- Day Names -->
+<div class="text-gray-800 py-1">S</div>
+<div class="text-gray-800 py-1">M</div>
+<div class="text-gray-800 py-1">T</div>
+<div class="text-gray-800 py-1">W</div>
+<div class="text-gray-800 py-1">T</div>
+<div class="text-gray-800 py-1">F</div>
+<div class="text-gray-800 py-1">S</div>
+<!-- Row 1 -->
+<div class="text-gray-800 py-1">1</div>
+<div class="text-gray-800 py-1">2</div>
+<div class="text-gray-800 py-1">3</div>
+<div class="text-gray-800 py-1">4</div>
+<div class="text-gray-800 py-1">5</div>
+<!-- Highlighted Active Date: 6 -->
+<div class="flex justify-center items-center py-0.5">
+<span class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-semibold shadow-sm">6</span>
+</div>
+<div class="text-gray-800 py-1">7</div>
+<!-- Row 2 -->
+<div class="text-gray-800 py-1">8</div>
+<div class="text-gray-800 py-1">9</div>
+<div class="text-gray-800 py-1">10</div>
+<div class="text-gray-800 py-1">11</div>
+<div class="text-gray-800 py-1">12</div>
+<div class="text-gray-800 py-1">13</div>
+<div class="text-gray-800 py-1">14</div>
+<!-- Row 3 -->
+<div class="text-gray-800 py-1">15</div>
+<div class="text-gray-800 py-1">16</div>
+<div class="text-gray-800 py-1">17</div>
+<div class="text-gray-800 py-1">18</div>
+<div class="text-gray-800 py-1">19</div>
+<div class="text-gray-800 py-1">20</div>
+<div class="text-gray-800 py-1">21</div>
+<!-- Row 4 -->
+<div class="text-gray-800 py-1">22</div>
+<div class="text-gray-800 py-1">23</div>
+<div class="text-gray-800 py-1">24</div>
+<div class="text-gray-800 py-1">25</div>
+<div class="text-gray-800 py-1">26</div>
+<div class="text-gray-800 py-1">27</div>
+<div class="text-gray-800 py-1">28</div>
+<!-- Row 5 (Trailing dates for Dec) -->
+<div class="text-gray-800 py-1">29</div>
+<div class="text-gray-800 py-1">30</div>
+<div class="text-gray-800 py-1">31</div>
+<div class="text-gray-500 py-1">2</div>
+<div class="text-gray-500 py-1">3</div>
+<div class="text-gray-500 py-1">4</div>
+<div class="text-gray-500 py-1">5</div>
+</div>
+<!-- Calendar Card Action Buttons -->
+<div class="flex items-center justify-center gap-4">
+<button class="btn-red text-white text-sm font-medium px-8 py-2 rounded-lg flex items-center gap-1.5 shadow-sm hover:opacity-90 transition" type="button">
+<svg class="w-3.5 h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Cancel</span>
+</button>
+<button class="bg-brand-blue text-white text-sm font-medium px-10 py-2 rounded-lg shadow-sm hover:opacity-90 transition" type="button">
+              Apply
+            </button>
+</div>
+</div>
+</section>
+<!-- END: CalendarCard -->
+<!-- BEGIN: AvailableSlots -->
+<section class="space-y-3" data-purpose="slot-selection">
+<h4 class="text-xs font-semibold text-gray-600 tracking-wider uppercase">AVAILABLE SLOTS</h4>
+<!-- Slot 1 (Unselected) -->
+<button class="w-full bg-white hover:bg-gray-50 text-[#0d59cf] font-semibold text-sm py-3 px-4 rounded-xl border border-gray-200 transition text-center shadow-xs" type="button">
+          10:00 AM
+        </button>
+<!-- Slot 2 (Selected Active) -->
+<button class="w-full bg-brand-blue text-white font-semibold text-sm py-3 px-4 rounded-xl shadow-sm transition text-center" type="button">
+          4:00 PM
+        </button>
+<!-- Slot 3 (Unselected) -->
+<button class="w-full bg-white hover:bg-gray-50 text-[#0d59cf] font-semibold text-sm py-3 px-4 rounded-xl border border-gray-200 transition text-center shadow-xs" type="button">
+          5:30 PM
+        </button>
+</section>
+<!-- END: AvailableSlots -->
+<!-- BEGIN: BookingConfirmation -->
+<section class="pt-4 text-center space-y-4" data-purpose="booking-action">
+<!-- Trade Context Detail -->
+<p class="text-xs font-medium text-gray-700">
+          You'll trade: <span class="text-brand-green font-semibold">Cooking</span>
+</p>
+<!-- Big Primary CTA -->
+<button class="w-full bg-brand-green hover:bg-emerald-600 text-white font-medium text-base py-3.5 px-6 rounded-full shadow-sm transition" type="button">
+          Confirm booking
+        </button>
+</section>
+<!-- END: BookingConfirmation -->
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

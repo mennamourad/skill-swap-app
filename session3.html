@@ -1,0 +1,106 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Session - Samy Ali</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sessionBg: '#0d1527',
+            controlBg: '#1e293b',
+            accentRed: '#ef4444',
+            panelBorder: '#334155'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #0d1527;
+      color: #ffffff;
+      user-select: none;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="h-full w-full overflow-hidden flex flex-col justify-between p-6 relative font-sans antialiased">
+<!-- BEGIN: TopNavigation -->
+<header class="w-full flex items-center justify-between z-20" data-purpose="top-navigation">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-slate-800/80 hover:bg-slate-700/80 text-white flex items-center justify-center transition shadow-lg" type="button">
+<svg class="w-5 h-5 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Recording Indicator Pill -->
+<div class="flex items-center gap-1.5 bg-[#e13b3b] text-white px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-md" data-purpose="rec-status">
+<span>REC 45:12</span>
+</div>
+</header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: MainSpeakerCenter -->
+<main class="flex-1 flex flex-col items-center justify-center -mt-6 z-10" data-purpose="active-speaker-display">
+<!-- Speaker Avatar with White Border -->
+<div class="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-[3px] border-white/80 shadow-2xl mb-4">
+<img alt="Samy Ali" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk7aCs4H6xYnNBzSWVI44i8tq4MVtEIz65cev7_xG8vgpe8w1unoi7UVvwb0-eLbzN-SBDBjmNP0WQRxTM8d4MWtutwF5w1mhjzpXXl8impJndXytFb86xFLMKPOfIUSnaqw0t1DVlG7FUz2lfUWRlzwyR0UvmtrRPORrBSAcsmnQd3LhNXHCs9Fb6yscDA8wqmus1C2UmA9Xt7WwVPSVNsReOAx-j2OY1S7KPMmS4SLamsPxAHqLi5w">
+</div>
+<!-- Speaker Details -->
+<h1 class="text-xl md:text-2xl font-bold tracking-tight text-white mb-1">
+      Samy Ali
+    </h1>
+<p class="text-sm font-normal text-slate-300 tracking-wide mb-8">
+      Teaching Figma Design
+    </p>
+<!-- Call Control Action Buttons -->
+<div class="flex items-center gap-4" data-purpose="call-controls">
+<!-- Microphone Toggle -->
+<button aria-label="Microphone" class="w-12 h-12 rounded-full bg-[#1e2738] hover:bg-[#28354c] text-white flex items-center justify-center transition shadow-lg" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Video Camera Toggle -->
+<button aria-label="Video camera" class="w-12 h-12 rounded-full bg-[#1e2738] hover:bg-[#28354c] text-white flex items-center justify-center transition shadow-lg" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- End Call Button -->
+<button aria-label="End call" class="w-12 h-12 rounded-full bg-[#ea3943] hover:bg-[#d62832] text-white flex items-center justify-center transition shadow-lg" type="button">
+<svg class="w-5 h-5 rotate-[135deg]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"></path>
+</svg>
+</button>
+</div>
+</main>
+<!-- END: MainSpeakerCenter -->
+<!-- BEGIN: RightSidebarCards -->
+<aside class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20" data-purpose="floating-side-panels">
+<!-- User Thumbnail Card -->
+<div class="w-24 h-28 bg-[#172133]/90 border border-slate-700/80 rounded-2xl flex flex-col items-center justify-center p-3 shadow-xl backdrop-blur-sm transition-transform hover:scale-105 cursor-pointer">
+<div class="w-11 h-11 rounded-full overflow-hidden border border-white/60 mb-2 shadow-inner">
+<img alt="Salma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_j5Vkx7CWR74GgDVxc05y0GTSieeBhTfsNlKl5hatZ8UeYdba02L8RCa-dDg5qYmeEuryb1dbsLHvkxf6BaUsIAcmrgKEpLgowlDYlc-KcHf7-U9PV4wLQb2t_Rzexm7wisCY7_J5X8NU-Ep-yUX0VxorfODpgvEfOc9vt9Dq_2XnJZ42fQicYtpvD6-NxjjKvDTZuGKJA2adbiENIfGr15wvGML5FEFybdQk0E83hwVq9GFCiyE-Ow">
+</div>
+<span class="text-[11px] font-medium text-slate-200 tracking-tight text-center truncate w-full">
+        Salma (You)
+      </span>
+</div>
+<!-- AI Learning Summary Card -->
+<div class="w-24 h-28 bg-[#172133]/90 border border-slate-700/80 rounded-2xl flex flex-col items-center justify-center p-2 shadow-xl backdrop-blur-sm transition-transform hover:scale-105 cursor-pointer">
+<div class="w-10 h-10 flex items-center justify-center mb-1 text-2xl">
+        🤖
+      </div>
+<span class="text-[10px] font-medium text-slate-200 text-center leading-tight px-1">
+        Learning Summary
+      </span>
+</div>
+</aside>
+<!-- END: RightSidebarCards -->
+
+
+</body></html>

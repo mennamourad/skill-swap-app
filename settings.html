@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap Admin Settings</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Phosphor Icons for precise line icons -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#0052B4',
+              600: '#00479e',
+              700: '#003a82',
+            },
+            sidebar: '#FFFFFF',
+            canvas: '#F8FAFC',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Subtle custom borders and scroll refinement */
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0052B4 !important;
+      box-shadow: 0 0 0 1px #0052B4 !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased text-slate-800 bg-[#F8FAFC] flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col shrink-0 min-h-screen py-6 px-6" data-purpose="sidebar-navigation">
+<!-- Brand Logo -->
+<div class="mb-8 px-2 flex items-center">
+<h1 class="text-xl font-black tracking-wide text-[#0052B4]">SKILLSWAP</h1>
+</div>
+<!-- Admin Dashboard Action Button -->
+<div class="mb-8">
+<button class="w-full bg-[#0052B4] hover:bg-blue-700 text-white font-medium text-sm py-2.5 px-4 rounded-lg shadow-sm transition-colors text-center flex items-center justify-center">
+        Admin Dashboard
+      </button>
+</div>
+<!-- Navigation Section: Management -->
+<div>
+<p class="text-xs font-semibold text-slate-400 tracking-wider uppercase mb-3 px-3">Management</p>
+<nav class="space-y-1">
+<!-- Users Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<i class="ph ph-users text-lg text-slate-400"></i>
+<span>Users</span>
+</a>
+<!-- Skills Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<i class="ph ph-chalkboard-teacher text-lg text-slate-400"></i>
+<span>Skills</span>
+</a>
+<!-- Sessions Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<i class="ph ph-briefcase text-lg text-slate-400"></i>
+<span>Sessions</span>
+</a>
+<!-- Wallets Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<i class="ph ph-wallet text-lg text-slate-400"></i>
+<span>Wallets</span>
+</a>
+<!-- Fees Link -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<i class="ph ph-currency-circle-dollar text-lg text-slate-400"></i>
+<span>Fees</span>
+</a>
+<!-- Settings Link (Active) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#0052B4] font-medium text-sm transition-colors" href="#">
+<i class="ph ph-gear-six text-lg text-[#0052B4]"></i>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentWrapper -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- BEGIN: TopBar -->
+<header class="h-20 bg-transparent flex items-center justify-between px-10 pt-4" data-purpose="top-navigation">
+<!-- Search Input Container -->
+<div class="w-80">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+<i class="ph ph-magnifying-glass text-base"></i>
+</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100/80 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:bg-white transition" placeholder="Search here" type="text">
+</div>
+</div>
+<!-- Right Profile & Notification Utilities -->
+<div class="flex items-center gap-4">
+<!-- Notification Button -->
+<button aria-label="Notifications" class="w-10 h-10 rounded-full bg-slate-100/80 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+<i class="ph ph-bell text-lg"></i>
+</button>
+<!-- Fullscreen Button -->
+<button aria-label="Fullscreen" class="w-10 h-10 rounded-full bg-slate-100/80 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition">
+<i class="ph ph-corners-out text-lg"></i>
+</button>
+<!-- User Profile Dropdown -->
+<div class="flex items-center gap-3 pl-2 cursor-pointer">
+<img alt="Rana Maher" class="w-10 h-10 rounded-full object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-YtC3Te4FykK9yt9z3xgFiaUlQkdgEx-_HEjtP-l3rVtWy0gtT4pezuwTJAMvwvhERDaw0aFrERyqHX3zqPkKDfBl-r-BFQtE5-zpaA3-gTb3PxzgvS2Rgc_dzbD8tfAIfvvBNsC3_KnRmPisResEdsvblWZcMxwxHgC8yAtSDF7Qqp5jwPQ5eZJCF6kWDrtP7pDGy7j-yf1wr0xyul-a0tVo-Scx0yVZrwR1sx4sgKFCDI9n6M3thg">
+<div class="flex flex-col text-left">
+<span class="text-sm font-semibold text-slate-800 leading-tight">Rana Maher</span>
+<span class="text-xs font-medium text-[#0052B4]">Administrator</span>
+</div>
+<i class="ph ph-caret-down text-xs text-slate-500 ml-1"></i>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: SettingsMain -->
+<main class="flex-1 px-10 py-6 max-w-[1320px] w-full" data-purpose="settings-content">
+<!-- Page Title & CTA Area -->
+<div class="flex items-start justify-between mb-8">
+<div>
+<h2 class="text-2xl font-bold text-slate-900 tracking-tight">Settings</h2>
+<p class="text-sm text-slate-500 mt-1">Manage your account, platform preferences, and system configuration.</p>
+</div>
+<div>
+<button class="bg-[#0052B4] hover:bg-blue-700 text-white font-medium text-sm px-6 py-2.5 rounded-lg shadow-sm transition">
+            Save All Changes
+          </button>
+</div>
+</div>
+<!-- Navigation Tabs Container -->
+<div class="bg-white rounded-xl border border-slate-100 shadow-sm p-1.5 mb-8">
+<nav class="flex items-center space-x-1" data-purpose="settings-tabs">
+<!-- Active Tab: General -->
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-[#0052B4] bg-[#EAF2FF] transition">
+            General
+          </button>
+<!-- Other Tabs -->
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+            Account
+          </button>
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+            Notifications
+          </button>
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+            Security
+          </button>
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+            Payment Settings
+          </button>
+<button class="px-6 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 transition">
+            Platform Rules
+          </button>
+</nav>
+</div>
+<!-- Two-Column Form Cards Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ==================== LEFT COLUMN ==================== -->
+<div class="lg:col-span-7 space-y-6">
+<!-- BEGIN: GeneralInformationCard -->
+<section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6" data-purpose="general-information-card">
+<h3 class="text-base font-bold text-slate-900">General Information</h3>
+<p class="text-xs text-slate-500 mt-0.5 mb-5">Update the basic information and identity of your platform.</p>
+<form class="space-y-4" onsubmit="event.preventDefault()">
+<!-- Platform Name -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Platform Name</label>
+<input class="w-full rounded-lg border-slate-200 text-sm text-slate-800 px-3.5 py-2.5 focus:border-[#0052B4]" type="text" value="SkillSwap">
+</div>
+<!-- Platform Email -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Platform Email</label>
+<input class="w-full rounded-lg border-slate-200 text-sm text-slate-800 px-3.5 py-2.5 focus:border-[#0052B4]" type="email" value="support@skillswap.com">
+</div>
+<!-- Platform Description -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Platform Description</label>
+<textarea class="w-full rounded-lg border-slate-200 text-sm text-slate-800 px-3.5 py-2.5 focus:border-[#0052B4] resize-none" rows="3">A community where people exchange skills, share knowledge, and learn together.</textarea>
+</div>
+</form>
+</section>
+<!-- END: GeneralInformationCard -->
+<!-- BEGIN: PlatformPreferencesCard -->
+<section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6" data-purpose="platform-preferences-card">
+<h3 class="text-base font-bold text-slate-900">Platform Preferences</h3>
+<p class="text-xs text-slate-500 mt-0.5 mb-6">Set default behavior for SkillSwap.</p>
+<div class="space-y-5">
+<!-- Preference 1: Allow new user registrations -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-semibold text-slate-800">Allow new user registrations</h4>
+<p class="text-xs text-slate-500">Let new members create an account.</p>
+</div>
+<!-- Active Toggle Switch -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-[#0052B4] transition-colors duration-200 ease-in-out focus:outline-none" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<hr class="border-slate-100">
+<!-- Preference 2: Require email verification -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-semibold text-slate-800">Require email verification</h4>
+<p class="text-xs text-slate-500">Verify user email addresses on signup.</p>
+</div>
+<!-- Active Toggle Switch -->
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-[#0052B4] transition-colors duration-200 ease-in-out focus:outline-none" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<hr class="border-slate-100">
+<!-- Preference 3: Maintenance mode -->
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-sm font-semibold text-slate-800">Maintenance mode</h4>
+<p class="text-xs text-slate-500">Temporarily pause access to the platform.</p>
+</div>
+<!-- Inactive Toggle Switch -->
+<button aria-checked="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-200 transition-colors duration-200 ease-in-out focus:outline-none" role="switch" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- END: PlatformPreferencesCard -->
+</div>
+<!-- ==================== RIGHT COLUMN ==================== -->
+<div class="lg:col-span-5 space-y-6">
+<!-- BEGIN: BrandingCard -->
+<section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6" data-purpose="branding-card">
+<h3 class="text-base font-bold text-slate-900">Branding</h3>
+<p class="text-xs text-slate-500 mt-0.5 mb-5">Customize your platform appearance.</p>
+<div class="space-y-5">
+<!-- Platform Logo Upload Area -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Platform Logo</label>
+<div class="border border-dashed border-slate-200 rounded-xl p-4 flex items-center gap-4 bg-slate-50/30">
+<div class="w-12 h-12 rounded-xl bg-[#0052B4] flex items-center justify-center text-white shrink-0 shadow-sm">
+<i class="ph ph-plus text-xl font-bold"></i>
+</div>
+<div>
+<h5 class="text-sm font-bold text-slate-800">SkillSwap Logo</h5>
+<p class="text-xs text-slate-400">SVG, PNG • Max 2 MB</p>
+<button class="text-xs font-semibold text-[#0052B4] hover:underline mt-0.5 inline-block" type="button">
+                      Upload new logo
+                    </button>
+</div>
+</div>
+</div>
+<!-- Primary Color Selection -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Primary Color</label>
+<div class="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2.5 cursor-pointer hover:border-slate-300 transition">
+<div class="flex items-center gap-2.5">
+<span class="w-4 h-4 rounded bg-[#0052B4] inline-block"></span>
+<span class="text-sm text-slate-800 font-medium">#0052B4</span>
+</div>
+<i class="ph ph-caret-down text-xs text-slate-400"></i>
+</div>
+</div>
+<!-- Language Selection -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1.5">Language</label>
+<div class="py-1">
+<span class="text-sm text-slate-800">English (US)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: BrandingCard -->
+<!-- BEGIN: AdminAccountCard -->
+<section class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6" data-purpose="admin-account-card">
+<h3 class="text-base font-bold text-slate-900">Admin Account</h3>
+<p class="text-xs text-slate-500 mt-0.5 mb-5">Your administrator profile and access details.</p>
+<!-- User Info Row -->
+<div class="flex items-center gap-3.5 mb-6">
+<img alt="Admin Manager" class="w-12 h-12 rounded-full object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZXx_7ddLrLC7jUZNlRpqKZJxXB3adL4vTsCcBKB2ebC4yOxKcLyPlrXYT9jFbz5KCCegnm5gRmoLEYmQ1tt-cNDhOYPhqxVawb8c1CNYTG7ZEpXL0GaqOe98w8AdUlskxlFcFoBQvpAKWhbVc1lUXrkifF0I-QP4dB5L5TknW4KQcEBM-mUqUZ1OPPUApr0PVPtQVtRRD--ZrxQxsige-DCUwq62PcGwJWhC5ubLA">
+<div>
+<h4 class="text-sm font-bold text-slate-900 leading-tight">Admin Manager</h4>
+<p class="text-xs text-slate-400 mt-0.5">admin@skillswap.com</p>
+</div>
+</div>
+<hr class="border-slate-100 mb-5">
+<!-- Password Field Container -->
+<div class="mb-5">
+<label class="block text-[11px] font-bold tracking-wider text-slate-400 uppercase mb-1">PASSWORD</label>
+<div class="flex items-center justify-between">
+<span class="tracking-widest text-slate-800 text-sm font-semibold select-none">••••••••••••</span>
+<button class="text-xs font-semibold text-[#0052B4] hover:underline" type="button">
+                  Change
+                </button>
+</div>
+</div>
+<!-- Footer Details -->
+<div class="text-[12px] text-slate-400 pt-1">
+              Last login: Nov 22, 2026 • 09:42 AM
+            </div>
+</section>
+<!-- END: AdminAccountCard -->
+</div>
+</div>
+</main>
+<!-- END: SettingsMain -->
+</div>
+<!-- END: MainContentWrapper -->
+
+
+</body></html>

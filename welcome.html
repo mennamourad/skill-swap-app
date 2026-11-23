@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Welcome</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-bg': '#f6f8fd',
+            'brand-blue': '#0052cc',
+            'brand-blue-hover': '#0047b3',
+            'brand-dark': '#0b3b70',
+            'brand-green': '#009a60',
+            'brand-accent-yellow': '#f5a623'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Typography and Fine-tuning -->
+<style data-purpose="custom-styling">
+    body {
+      background-color: #f6f8fd;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="min-h-screen w-full flex flex-col justify-center items-center px-4 font-sans select-none">
+<!-- BEGIN: MainContent -->
+<main class="w-full max-w-4xl flex flex-col items-center justify-center -mt-10" data-purpose="welcome-container">
+<!-- BEGIN: BrandLogoAndIcon -->
+<div class="flex flex-col items-center mb-5" data-purpose="brand-presentation">
+<!-- Custom SVG Lightbulb Logo with Exchange Concept -->
+<div class="relative w-36 h-36 flex items-center justify-center" data-purpose="brand-icon">
+<svg aria-label="SkillSwap Lightbulb Logo" class="w-full h-full drop-shadow-sm overflow-visible" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Golden Radiant Rays Emanating Outward -->
+<g data-purpose="radiant-sparks" stroke="#F59E0B" stroke-linecap="round" stroke-width="4.5">
+<!-- Top Left Ray -->
+<line x1="28" x2="40" y1="28" y2="38"></line>
+<!-- Mid Left Ray -->
+<line x1="23" x2="36" y1="56" y2="56"></line>
+<!-- Bottom Left Ray -->
+<line x1="28" x2="38" y1="84" y2="76"></line>
+<!-- Top Right Ray -->
+<line x1="92" x2="80" y1="28" y2="38"></line>
+<!-- Mid Right Ray -->
+<line x1="97" x2="84" y1="56" y2="56"></line>
+<!-- Bottom Right Ray -->
+<line x1="92" x2="82" y1="84" y2="76"></line>
+</g>
+<!-- Lightbulb Outer Contour / Glass Bulb Silhouette -->
+<path d="M60 16C43.5 16 33 28.5 33 46C33 57.5 40 68 47.5 76H72.5C80 68 87 57.5 87 46C87 28.5 76.5 16 60 16Z" fill="#FFFFFF" stroke="#0A3B7B" stroke-linejoin="round" stroke-width="5"></path>
+<!-- Lightbulb Base Thread Rings -->
+<path d="M49 84H71" stroke="#0A3B7B" stroke-linecap="round" stroke-width="5"></path>
+<path d="M51 92H69" stroke="#0A3B7B" stroke-linecap="round" stroke-width="5"></path>
+<!-- Lightbulb Bottom Contact Tip -->
+<path d="M55 99H65" stroke="#0A3B7B" stroke-linecap="round" stroke-width="4"></path>
+<!-- Reciprocal Exchange Graphics Inside Bulb -->
+<g data-purpose="inner-exchange-avatars">
+<!-- Left Person (Blue) -->
+<!-- Head -->
+<circle cx="49" cy="40" fill="#0A3B7B" r="5"></circle>
+<!-- Torso / Shoulders -->
+<path d="M41 55C41 49.5 44.5 47 49 47C53.5 47 57 49.5 57 55" fill="#0A3B7B"></path>
+<!-- Right Person (Green) -->
+<!-- Head -->
+<circle cx="71" cy="40" fill="#00A865" r="5"></circle>
+<!-- Torso / Shoulders -->
+<path d="M63 55C63 49.5 66.5 47 71 47C75.5 47 79 49.5 79 55" fill="#00A865"></path>
+<!-- Circular Curved Exchange Arrows -->
+<!-- Top Arrow: Flowing from Left to Right (Blue) -->
+<path d="M52 30C55 28 64 28 68 31" fill="none" stroke="#0A3B7B" stroke-linecap="round" stroke-width="3"></path>
+<polygon fill="#0A3B7B" points="69,27 75,32 68,36"></polygon>
+<!-- Bottom Arrow: Flowing from Right to Left (Green) -->
+<path d="M68 62C65 65 56 65 52 62" fill="none" stroke="#00A865" stroke-linecap="round" stroke-width="3"></path>
+<polygon fill="#00A865" points="51,65 45,61 52,57"></polygon>
+</g>
+</svg>
+</div>
+<!-- Wordmark -->
+<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mt-1 flex items-center justify-center">
+<span class="text-[#0a3871]">Skill</span><span class="text-[#009a60]">Swap</span>
+</h1>
+</div>
+<!-- END: BrandLogoAndIcon -->
+<!-- BEGIN: Tagline -->
+<div class="text-center mb-9" data-purpose="tagline">
+<p class="text-base sm:text-lg font-medium text-[#0a3871] leading-relaxed">
+        Share what you know,<br>
+        learn what you want to learn.
+      </p>
+</div>
+<!-- END: Tagline -->
+<!-- BEGIN: ActionButtons -->
+<div class="w-full max-w-xl flex flex-col gap-4 px-2" data-purpose="auth-actions">
+<!-- Sign Up Button -->
+<a class="w-full py-3.5 sm:py-4 px-6 rounded-full bg-[#0052cc] hover:bg-[#0045b0] active:scale-[0.99] transition duration-150 text-white font-semibold text-center text-sm sm:text-base shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300" href="#signup" id="btn-signup">
+        Sign UP
+      </a>
+<!-- Log In Button -->
+<a class="w-full py-3.5 sm:py-4 px-6 rounded-full bg-[#0052cc] hover:bg-[#0045b0] active:scale-[0.99] transition duration-150 text-white font-semibold text-center text-sm sm:text-base shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300" href="#login" id="btn-login">
+        Log In
+      </a>
+</div>
+<!-- END: ActionButtons -->
+</main>
+<!-- END: MainContent -->
+
+
+</body></html>

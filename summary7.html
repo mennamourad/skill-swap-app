@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - AI Session Summary &amp; Quiz</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0056D2',
+              'blue-light': '#EBF2FE',
+              'blue-text': '#0A58CA',
+              dark: '#0B2046',
+              bg: '#F3F6FA',
+              green: '#137333',
+              'green-bg': '#E6F4EA'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<!-- Google Fonts Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Custom Core Styles -->
+<style data-purpose="custom-layout">
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #F3F6FA;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 flex overflow-x-hidden">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 min-h-screen flex flex-col justify-between shrink-0 select-none" data-purpose="sidebar-navigation">
+<div class="px-6 py-7">
+<!-- App Brand Logo -->
+<div class="mb-10 px-1">
+<a class="text-xl font-extrabold tracking-wider text-[#0056D2]" href="#">SKILLSWAP</a>
+</div>
+<!-- Main Overview Navigation Menu -->
+<nav data-purpose="main-navigation">
+<p class="text-[11px] font-bold tracking-wider text-slate-800 uppercase mb-4 px-1">Overview</p>
+<ul class="space-y-3.5 text-sm font-medium">
+<!-- Active Nav Item: Home -->
+<li>
+<a class="flex items-center gap-3.5 text-[#0056D2] font-semibold transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-[#0056D2]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9.75l9-7.5 9 7.5v10.5a1.5 1.5 0 01-1.5 1.5H4.5A1.5 1.5 0 013 20.25V9.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9 21V12h6v9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+</li>
+<!-- Nav Item: Search -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+</li>
+<!-- Nav Item: Swap -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M4.5 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M7.5 7.5l-3 3 3 3M16.5 16.5l3-3-3-3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+</li>
+<!-- Nav Item: Chat -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+</li>
+<!-- Nav Item: Session -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M5 3l-2 2M19 3l2 2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+</li>
+<!-- Nav Item: Points Wallet -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+</li>
+<!-- Nav Item: Coins Wallet -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0 0h19.5m-19.5 0A2.25 2.25 0 004.5 16.5h15a2.25 2.25 0 002.25-2.25m-19.5 0v-8.25m19.5 0v8.25m0-8.25H2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+</svg>
+<span>Coins Wallet</span>
+</a>
+</li>
+<!-- Nav Item: Notifications -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+</li>
+<!-- Nav Item: Profile -->
+<li>
+<a class="flex items-center gap-3.5 text-slate-600 hover:text-slate-900 transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<!-- Bottom Settings Section -->
+<div class="px-6 py-6 border-t border-slate-100" data-purpose="settings-menu">
+<p class="text-[11px] font-bold tracking-wider text-slate-800 uppercase mb-4 px-1">Settings</p>
+<a class="flex items-center gap-3 text-red-500 hover:text-red-600 font-medium text-sm transition-colors duration-150" href="#">
+<svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-10 py-9 overflow-y-auto" data-purpose="main-workspace">
+<div class="max-w-[1080px]">
+<!-- Header Title Section -->
+<header class="mb-7" data-purpose="page-header">
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">AI Session Summary &amp; Quiz</h1>
+<h2 class="text-lg font-semibold text-slate-800 mt-2">Your learning session is complete!</h2>
+<p class="text-sm text-slate-500 mt-0.5">Review the key points from your session and test what you learned.</p>
+</header>
+<!-- BEGIN: SessionDetailsCard -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 mb-6 flex items-center justify-between" data-purpose="session-status-banner">
+<div>
+<h3 class="text-base font-bold text-slate-900">Session: Python Programming – Fundamentals</h3>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">With Nada Mohammed • 22 Nov 2026 • 60 minutes</p>
+</div>
+<!-- Status Pill Tag -->
+<div>
+<span class="inline-flex items-center gap-1.5 bg-[#E6F4EA] text-[#137333] text-xs font-semibold px-4 py-1.5 rounded-full">
+<svg class="w-3.5 h-3.5 stroke-current" fill="none" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Completed
+          </span>
+</div>
+</section>
+<!-- END: SessionDetailsCard -->
+<!-- BEGIN: ContentTwoColumnGrid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+<!-- Column Left: AI Session Summary -->
+<article class="lg:col-span-8 bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 flex flex-col justify-between" data-purpose="session-summary-card">
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3.5">AI Session Summary</h3>
+<!-- Primary overview summary bullet -->
+<ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+<li class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0056D2] shrink-0 mt-2"></span>
+<span class="text-slate-600">In this session, you learned the fundamentals of Python programming, including variables, data types, conditional statements, and loops</span>
+</li>
+</ul>
+<h4 class="text-sm font-bold text-slate-900 mt-5 mb-3">Key takeaways</h4>
+<!-- Key takeaways bullets -->
+<ul class="space-y-2.5 text-sm text-slate-600 leading-relaxed">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0056D2] shrink-0"></span>
+<span>Variables are used to store data.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0056D2] shrink-0"></span>
+<span>Python supports different data types such as strings, integers, and floats.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0056D2] shrink-0"></span>
+<span>Conditional statements control program execution.</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0056D2] shrink-0"></span>
+<span>Loops are used to repeat a block of code.</span>
+</li>
+</ul>
+</div>
+</article>
+<!-- Column Right: Key Topics & Learning Progress -->
+<aside class="lg:col-span-4 bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 flex flex-col justify-between" data-purpose="topics-progress-card">
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-4">Key Topics</h3>
+<!-- 2x2 Tag Pills Grid -->
+<div class="grid grid-cols-2 gap-2.5 mb-6">
+<div class="bg-[#EBF2FE] text-[#0056D2] text-xs font-semibold px-2.5 py-3 rounded-full text-center flex items-center justify-center leading-snug">
+                Variables &amp; Data Types
+              </div>
+<div class="bg-[#EBF2FE] text-[#0056D2] text-xs font-semibold px-2.5 py-3 rounded-full text-center flex items-center justify-center leading-snug">
+                If / Else Statements
+              </div>
+<div class="bg-[#EBF2FE] text-[#0056D2] text-xs font-semibold px-2.5 py-3 rounded-full text-center flex items-center justify-center leading-snug">
+                For &amp; While Loops
+              </div>
+<div class="bg-[#EBF2FE] text-[#0056D2] text-xs font-semibold px-2.5 py-3 rounded-full text-center flex items-center justify-center leading-snug">
+                Python Functions
+              </div>
+</div>
+</div>
+<!-- Progress Section -->
+<div class="pt-3 border-t border-slate-100">
+<h4 class="text-xs font-bold text-slate-900 mb-2.5">Learning progress</h4>
+<!-- Progress Bar -->
+<div class="w-full bg-[#E9EEF5] rounded-full h-2 overflow-hidden mb-2">
+<div class="bg-[#0056D2] h-2 rounded-full" style="width: 80%;"></div>
+</div>
+<!-- Progress Subtext -->
+<div class="flex items-center justify-between text-xs font-medium text-slate-500">
+<span>4 topics covered</span>
+<span class="font-bold text-[#0056D2]">80%</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- END: ContentTwoColumnGrid -->
+<!-- BEGIN: KnowledgeCheckQuiz -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80" data-purpose="knowledge-check-section">
+<!-- Knowledge Check Header -->
+<div class="flex items-start justify-between pb-2 mb-2">
+<div>
+<h3 class="text-base font-bold text-slate-900">Knowledge Check</h3>
+<p class="text-xs sm:text-sm text-slate-500 mt-0.5">Answer these quick questions to review your understanding.</p>
+</div>
+<!-- Submit Button -->
+<button class="bg-[#0056D2] hover:bg-[#0047B3] text-white text-sm font-semibold px-9 py-2 rounded-full transition-colors duration-150 shadow-sm" data-purpose="submit-quiz-button" type="button">
+            Submit
+          </button>
+</div>
+<!-- Question Prompt -->
+<form class="mt-4" data-purpose="quiz-form" onsubmit="event.preventDefault();">
+<p class="text-sm font-bold text-slate-900 mb-3.5">1. Which keyword is used to define a function in Python?</p>
+<!-- Radio Options Group -->
+<div class="space-y-2.5">
+<!-- Option 1: Unselected -->
+<label class="flex items-center gap-3.5 p-3 px-4 border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-colors group">
+<input class="w-4 h-4 text-[#0056D2] border-slate-300 focus:ring-0 focus:ring-offset-0" name="python_function_keyword" type="radio" value="function"/>
+<span class="text-sm font-medium text-slate-700">function</span>
+</label>
+<!-- Option 2: Selected Option -->
+<label class="flex items-center gap-3.5 p-3 px-4 border border-[#0056D2] bg-[#EBF2FE]/60 rounded-xl cursor-pointer">
+<input checked="" class="w-4 h-4 text-[#0056D2] border-slate-300 focus:ring-0 focus:ring-offset-0" name="python_function_keyword" type="radio" value="def"/>
+<span class="text-sm font-bold text-[#0A58CA]">def</span>
+</label>
+<!-- Option 3: Unselected -->
+<label class="flex items-center gap-3.5 p-3 px-4 border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-colors group">
+<input class="w-4 h-4 text-[#0056D2] border-slate-300 focus:ring-0 focus:ring-offset-0" name="python_function_keyword" type="radio" value="define"/>
+<span class="text-sm font-medium text-slate-700">define</span>
+</label>
+</div>
+</form>
+</section>
+<!-- END: KnowledgeCheckQuiz -->
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

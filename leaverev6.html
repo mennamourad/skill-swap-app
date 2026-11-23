@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leave a Review</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0057b8',
+              hoverBlue: '#004aa0',
+              textBlue: '#0d5bb5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #f1f4f9;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex flex-col justify-between p-6 md:p-8">
+<!-- Main Outer Container -->
+<div class="max-w-[1400px] w-full mx-auto flex flex-col justify-between flex-1">
+<div>
+<!-- BEGIN: Header -->
+<header class="relative flex items-center justify-center mb-8" data-purpose="header">
+<!-- Back Button -->
+<a aria-label="Go back" class="absolute left-0 w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors" href="#">
+<svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+<!-- Page Title -->
+<h1 class="text-xl font-bold text-slate-900 tracking-tight">Leave a Review</h1>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Session Info Card -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100/80 mb-8" data-purpose="session-info-card">
+<div class="flex items-center gap-4">
+<!-- Amira Ahmed Avatar -->
+<div class="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Amira Ahmed" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz2irqyWcKUD2quH6592A-m244_11tfaPZpySQJD1IjAaExZIRAbBR4XnmejugddiTua3wwE2Qn4XguPih4RrAITYVk9S2dMQgGWOheAG3g-SXg8BuUJb-GDZkQ-PBpEh889UcRlXVsOgXr9Ecar5Vm-PddEQOfGCMLV_lxd68siUf_iSqmuGJeD6FTbtXhAkjPTU3A0MJRengy5fx7PYHBiE-0WmmAd-oBTIkkhlHTYojq_wI_dZ4VQ">
+</div>
+<!-- Profile Text Information -->
+<div class="flex flex-col">
+<span class="text-[11px] font-semibold text-slate-400 tracking-wider uppercase mb-0.5">SESSION WITH</span>
+<span class="text-xl font-bold text-brand-blue tracking-tight leading-tight">Amira Ahmed</span>
+<span class="text-xs text-slate-500 font-normal mt-0.5">IT Engineer</span>
+</div>
+</div>
+</section>
+<!-- END: Session Info Card -->
+<!-- BEGIN: Rating Section -->
+<section class="text-center mb-9" data-purpose="experience-rating">
+<h2 class="text-sm font-semibold text-slate-800 mb-3">How was your experience?</h2>
+<!-- Star Rating Icons -->
+<div class="flex items-center justify-center gap-2 mb-2">
+<!-- Star 1 (Gold) -->
+<button aria-label="Rate 1 star" class="text-amber-500 hover:scale-110 transition-transform focus:outline-none" type="button">
+<svg class="w-7 h-7 fill-none stroke-amber-500 stroke-[1.75]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 2 (Gold) -->
+<button aria-label="Rate 2 stars" class="text-amber-500 hover:scale-110 transition-transform focus:outline-none" type="button">
+<svg class="w-7 h-7 fill-none stroke-amber-500 stroke-[1.75]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 3 (Gold) -->
+<button aria-label="Rate 3 stars" class="text-amber-500 hover:scale-110 transition-transform focus:outline-none" type="button">
+<svg class="w-7 h-7 fill-none stroke-amber-500 stroke-[1.75]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 4 (Gold) -->
+<button aria-label="Rate 4 stars" class="text-amber-500 hover:scale-110 transition-transform focus:outline-none" type="button">
+<svg class="w-7 h-7 fill-none stroke-amber-500 stroke-[1.75]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+<!-- Star 5 (Gray outline) -->
+<button aria-label="Rate 5 stars" class="text-slate-400 hover:scale-110 transition-transform focus:outline-none" type="button">
+<svg class="w-7 h-7 fill-none stroke-slate-400 stroke-[1.75]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</button>
+</div>
+<p class="text-xs font-semibold text-emerald-500">Very Good (4/5)</p>
+</section>
+<!-- END: Rating Section -->
+<!-- BEGIN: Topic Selection Section -->
+<section class="mb-7" data-purpose="topic-selection">
+<label class="block text-xs font-bold text-slate-700 mb-2.5">What topic did you learn? (Optional)</label>
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Selected Pill: Cybersecurity -->
+<button class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold text-emerald-800 bg-emerald-50/70 border border-emerald-500 transition-colors" type="button">
+<svg class="w-3.5 h-3.5 text-emerald-600 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Cybersecurity
+          </button>
+<!-- Pill: Fitness Training -->
+<button class="px-4 py-1.5 rounded-full text-xs font-medium text-slate-700 bg-white border border-slate-200 hover:border-slate-300 transition-colors" type="button">
+            Fitness Training
+          </button>
+<!-- Pill: French -->
+<button class="px-4 py-1.5 rounded-full text-xs font-medium text-slate-700 bg-white border border-slate-200 hover:border-slate-300 transition-colors" type="button">
+            French
+          </button>
+</div>
+</section>
+<!-- END: Topic Selection Section -->
+<!-- BEGIN: Written Review Section -->
+<section class="mb-12" data-purpose="written-review">
+<label class="block text-xs font-bold text-slate-700 mb-2.5" for="review-text">Write your review</label>
+<textarea class="w-full bg-white border border-slate-200/80 rounded-2xl p-4 text-xs md:text-sm text-slate-700 leading-relaxed shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none transition" id="review-text" rows="6">Amira was incredibly patient during our Python Programming session! She broke down the chord transitions in a way that finally clicked for me. Definitely recommend her.</textarea>
+</section>
+<!-- END: Written Review Section -->
+</div>
+<!-- BEGIN: Submit Button Section -->
+<div class="w-full pt-4 pb-2" data-purpose="submit-action">
+<button class="w-full py-4 bg-brand-blue hover:bg-brand-hoverBlue text-white font-bold rounded-full shadow-sm text-sm tracking-wide transition-colors focus:ring-4 focus:ring-blue-200 focus:outline-none" type="button">
+        Submit Review
+      </button>
+</div>
+<!-- END: Submit Button Section -->
+</div>
+
+
+</body></html>

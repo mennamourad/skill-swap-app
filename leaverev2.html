@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leave a Review</title>
+<!-- Tailwind CSS v3 CDN with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="base-typography">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F8FB] text-slate-800 min-h-screen flex flex-col">
+<!-- BEGIN: TopNavigationBar -->
+<header class="w-full px-6 pt-5 pb-3" data-purpose="top-bar">
+<div class="relative flex items-center justify-center">
+<!-- Circular light-blue back arrow button -->
+<button aria-label="Go back" class="absolute left-0 w-9 h-9 rounded-full bg-[#E3EFFD] hover:bg-[#D4E6FB] text-[#0056B3] flex items-center justify-center transition-colors" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Centered page title -->
+<h1 class="text-base font-bold text-slate-900">Leave a Review</h1>
+</div>
+</header>
+<!-- END: TopNavigationBar -->
+<!-- BEGIN: MainReviewContent -->
+<main class="flex-1 w-full px-6 py-3 flex flex-col">
+<!-- BEGIN: SessionInfoCard -->
+<section class="bg-white rounded-2xl shadow-[0_2px_10px_rgba(15,23,42,0.04)] p-4 px-5 flex items-center gap-3.5" data-purpose="session-card">
+<!-- Circular mentor avatar -->
+<img alt="Mohammed Ahmed" class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHN71uzFTfUyMubg3Nrs0NXyXebJPoOtD5HJOhAojlWYMB7P952ayFYiXvS3Uyt8v_C6qQjbNU58C84kHBBxz4tONV60NEYwj3bGxcinGCqtcykFghzOeoKMMdVR4T1A8EPMn7_97u1G7fy9I2lkslEXzitZJP4xVeJQF4w3xHe6Z4Dw7xNgMGCLUNT7eDVd2iATWnE9qvBfvV2taiT6FOr7Qx5qWbyHj2C4SM9cy2LEvtfsd3xBJuPw">
+<!-- Mentor details -->
+<div class="flex flex-col">
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Session With</span>
+<h2 class="text-[15px] font-bold text-[#0056B3] leading-snug">Mohammed Ahmed</h2>
+<span class="text-xs text-slate-500">IT Engineer</span>
+</div>
+</section>
+<!-- END: SessionInfoCard -->
+<!-- BEGIN: StarRatingSection -->
+<section class="mt-6 flex flex-col items-center text-center" data-purpose="experience-rating">
+<p class="text-xs font-semibold text-slate-700">How was your experience?</p>
+<!-- 5-star rating row (4 amber, 1 grey) -->
+<div aria-label="Experience rating" class="flex items-center justify-center gap-2.5 my-2.5" id="star-rating" role="radiogroup">
+<!-- Star 1 (Selected) -->
+<button aria-label="1 star" class="text-amber-500 focus:outline-none" type="button">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Star 2 (Selected) -->
+<button aria-label="2 stars" class="text-amber-500 focus:outline-none" type="button">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Star 3 (Selected) -->
+<button aria-label="3 stars" class="text-amber-500 focus:outline-none" type="button">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Star 4 (Selected) -->
+<button aria-label="4 stars" class="text-amber-500 focus:outline-none" type="button">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Star 5 (Unselected) -->
+<button aria-label="5 stars" class="text-slate-400 focus:outline-none" type="button">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Rating label -->
+<span class="text-xs font-medium text-emerald-600">Very Good (4/5)</span>
+</section>
+<!-- END: StarRatingSection -->
+<!-- BEGIN: TopicSelectionSection -->
+<section class="mt-5" data-purpose="topic-selection">
+<p class="text-xs font-semibold text-slate-700 mb-2.5">What topic did you learn? (Optional)</p>
+<div class="flex flex-wrap items-center gap-2">
+<!-- Selected topic pill -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-50 border border-emerald-500 text-emerald-700 transition-colors" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Cybersecurity
+        </button>
+<!-- Unselected topic pills -->
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-medium bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors" type="button">
+          Fitness Training
+        </button>
+<button class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-medium bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors" type="button">
+          French
+        </button>
+</div>
+</section>
+<!-- END: TopicSelectionSection -->
+<!-- BEGIN: ReviewTextareaSection -->
+<section class="mt-5" data-purpose="review-input">
+<label class="block text-xs font-semibold text-slate-700 mb-2" for="review-textarea">
+        Write your review
+      </label>
+<textarea class="w-full h-36 bg-white border border-slate-200 rounded-xl p-4 text-xs text-slate-700 leading-relaxed resize-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" id="review-textarea" rows="5">Mohammed was incredibly patient during our guitar session! He broke down the chord transitions in a way that finally clicked for me. Definitely recommend him.</textarea>
+</section>
+<!-- END: ReviewTextareaSection -->
+<!-- BEGIN: SubmitFooter -->
+<footer class="mt-auto pt-6 pb-4" data-purpose="submit-action">
+<button class="w-full bg-[#0052B4] hover:bg-[#004494] text-white font-semibold text-sm py-3.5 rounded-full shadow-sm transition-colors" type="submit">
+        Submit Review
+      </button>
+</footer>
+<!-- END: SubmitFooter -->
+</main>
+<!-- END: MainReviewContent -->
+
+
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap Dashboard</title>
+<!-- Tailwind CSS v3 CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0058b8',
+              'blue-hover': '#004aa0',
+              accent: '#0d6efd',
+            },
+            badge: {
+              greenBg: '#d7fbe8',
+              greenText: '#106437',
+              blueBg: '#e6efff',
+              blueText: '#1a5ec8',
+              ratingBg: '#f0f6ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F7FC] text-slate-800 antialiased min-h-screen flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 min-h-screen py-6 px-6 fixed top-0 bottom-0 left-0 z-20" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="px-2 mb-8">
+<span class="text-2xl font-black tracking-wide text-[#0058b8] uppercase">SKILLSWAP</span>
+</div>
+<!-- Navigation Section -->
+<div class="space-y-6">
+<div>
+<span class="px-3 text-[11px] font-bold tracking-wider text-slate-400 uppercase">OVERVIEW</span>
+<nav aria-label="Main Navigation" class="mt-3 space-y-1">
+<!-- Home (Active) -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#0058b8] hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10.25L12 3l9 7.25M4.5 9v11.25a.75.75 0 00.75.75H9.75v-6a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v6h4.5a.75.75 0 00.75-.75V9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Swap -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Chat -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+<!-- Settings / Logout Area -->
+<div class="pt-6 border-t border-slate-100">
+<span class="px-3 text-[11px] font-bold tracking-wider text-slate-400 uppercase">SETTINGS</span>
+<div class="mt-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-rose-500 hover:bg-rose-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 ml-64 min-h-screen px-10 py-7 max-w-7xl">
+<!-- User Welcome Header Bar -->
+<header class="flex items-center justify-between mb-5">
+<div>
+<p class="text-xs font-medium text-slate-500">Welcome back,</p>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 mt-0.5">Dina Akram</h1>
+</div>
+<!-- User profile avatar -->
+<div class="relative">
+<img alt="Dina Akram" class="w-11 h-11 rounded-full object-cover shadow-sm ring-2 ring-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIdX-glPPI_wiECBHGQ16Fspzd_dx3RwW0FM8e5c7XBySnGIPj9HoXjorYUagEdmqXzy4tPrVmWvsZns2n2P5yGInMmExqTD8Q1lPqp0e6HnzeOD4wjWrsHs32VVvAP4usinDf5_iay8RfJr1J_8WxODv68d9fhvA82Ov041gFvxmDSKb1_71SApNq4Ypp8M2ekh0bptQftC86NhpbHh9zn3Ui_kLZJIH9fgMzbRg2Dli30hqCGFPgbA">
+</div>
+</header>
+<!-- Search Input -->
+<div class="mb-6">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<svg class="h-4 w-4 text-slate-400 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="block w-full pl-11 pr-4 py-2.5 text-sm bg-white border border-slate-200/80 rounded-xl placeholder-slate-400 text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" placeholder="Search skills or peers..." type="text">
+</div>
+</div>
+<!-- Section Heading -->
+<div class="flex items-center gap-1.5 mb-4">
+<h2 class="text-sm font-bold text-slate-900 tracking-tight">Highly Recommended Match</h2>
+<span class="text-xs text-slate-800">✦</span>
+</div>
+<!-- Cards Container -->
+<div class="space-y-4" data-purpose="match-cards-list">
+<!-- BEGIN: Card 1 - Salma Mohammed -->
+<article class="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)]" data-purpose="match-card">
+<!-- Top Info Row -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<img alt="Salma Mohammed" class="w-11 h-11 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGtnZGqPU-gNlVhoUl8611RuMexmaX_LPjkSfcTeZ6i4MGmeKk_J_lek7caJdf-rrQHm7OJ6-bkOy58JsYR8Lmp8dy4DLaNq4sFbNGkEdcVha-_akH9V6K0-7TFbbG7w9SYtiln_KiX10Wna2LKxwzpV0xIv4b8XQkfeRuLwwBr42BVPg81C-ZDtcvyDO-hyKkVznpY1bDom4gnqLoki3-V5h2NtP1wpQMW9ZG-C554l6LAj6aOSsKJQ">
+<div>
+<h3 class="text-sm font-bold text-slate-900 leading-tight">Salma Mohammed</h3>
+<p class="text-xs text-slate-400 font-medium">Programmer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#f2f6fe] border border-blue-100 text-xs font-semibold text-[#0058b8]">
+<span class="text-amber-400 text-xs">★</span>
+<span class="text-[11px] font-bold">4.9</span>
+<span class="text-[9px]">✦</span>
+</div>
+</div>
+<!-- Skills Area with Inner Grayish Card Container -->
+<div class="bg-[#F8FAFC] rounded-xl p-4 mb-4 space-y-2.5">
+<!-- Teaches Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">TEACHES:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Python Programming</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Data Structures</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Web Development</span>
+</div>
+</div>
+<!-- Learns Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">LEARNS:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">UI/Ux</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">React</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Node.js</span>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-2.5 bg-[#0058b8] hover:bg-[#004ba0] text-white font-semibold text-sm rounded-full transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0058b8]/40" type="button">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: Card 1 -->
+<!-- BEGIN: Card 2 - Mohammed Ahmed -->
+<article class="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)]" data-purpose="match-card">
+<!-- Top Info Row -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<img alt="Mohammed Ahmed" class="w-11 h-11 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbnuumzMcfwdkCz_AzyfhoxiFpbWfnt3pDcFwzbYzMX2orgv9icRmcQZK7bRJl5chy8GhGnEM7zHEipnEh-4mffj7IePqvcHPg6V025eK3Ba3Bg62r8cyQafgr4RhHE6iQh5dr3MkIFoW5pUVrOTSvfF6jfK2BOV3eMU9eBxi3VP250r9EFgkdJiSOO8RGpXSvr870PWq8iZU9awHdVo6t2jFFnJ0OCSBIzSAS1O0ddHRLO9xUVvnYyQ">
+<div>
+<h3 class="text-sm font-bold text-slate-900 leading-tight">Mohammed Ahmed</h3>
+<p class="text-xs text-slate-400 font-medium">IT Engineer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#f2f6fe] border border-blue-100 text-xs font-semibold text-[#0058b8]">
+<span class="text-amber-400 text-xs">★</span>
+<span class="text-[11px] font-bold">4.6</span>
+<span class="text-[9px]">✦</span>
+</div>
+</div>
+<!-- Skills Area with Inner Grayish Card Container -->
+<div class="bg-[#F8FAFC] rounded-xl p-4 mb-4 space-y-2.5">
+<!-- Teaches Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">TEACHES:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Cybersecurity</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Fitness Training</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">French</span>
+</div>
+</div>
+<!-- Learns Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">LEARNS:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Guitar</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Animation</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Spanish</span>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-2.5 bg-[#0058b8] hover:bg-[#004ba0] text-white font-semibold text-sm rounded-full transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0058b8]/40" type="button">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: Card 2 -->
+<!-- BEGIN: Card 3 - Samy Ali -->
+<article class="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)]" data-purpose="match-card">
+<!-- Top Info Row -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<img alt="Samy Ali" class="w-11 h-11 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDei6Sn4YCWGX5ISbja1XOHB47d5QNirSdg47fI4TgrNDONNCKaIcN8Y2WO_NAHRdAdxq2F1Ey8usTc-IgMPKeP8Z2qzoLYVb5lPWRhTmaJA3ZEyZw5890sPWJQFR0angSJOkarWOUwvmRIolPW6nlEzWqffbh-u9HVugYR2HUL0C1uEgLJjNNjiISfn7f8SJgsyE5kPX2tBgZR0ywj4bFd0fUU3EQ_WEc3MytxG-zAhs5TcDmVvefU3w">
+<div>
+<h3 class="text-sm font-bold text-slate-900 leading-tight">Samy Ali</h3>
+<p class="text-xs text-slate-400 font-medium">Designer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#f2f6fe] border border-blue-100 text-xs font-semibold text-[#0058b8]">
+<span class="text-amber-400 text-xs">★</span>
+<span class="text-[11px] font-bold">4.1</span>
+<span class="text-[9px]">✦</span>
+</div>
+</div>
+<!-- Skills Area with Inner Grayish Card Container -->
+<div class="bg-[#F8FAFC] rounded-xl p-4 mb-4 space-y-2.5">
+<!-- Teaches Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">TEACHES:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Figma Design</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">Adobe Photoshop</span>
+<span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#D7FBE8] text-[#136C3D]">React</span>
+</div>
+</div>
+<!-- Learns Row -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 w-16 shrink-0">LEARNS:</span>
+<div class="flex flex-wrap gap-2">
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Cooking</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Content Writing</span>
+<span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-[#E4EFFF] text-[#1B5ECC]">Excel</span>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-2.5 bg-[#0058b8] hover:bg-[#004ba0] text-white font-semibold text-sm rounded-full transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0058b8]/40" type="button">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: Card 3 -->
+</div>
+</main>
+<!-- END: MainContent -->
+
+
+
+
+</body></html>

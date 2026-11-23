@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interests Setup</title>
+<!-- Tailwind CSS v3 CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0056b3',
+              hover: '#004494',
+            },
+            badge: {
+              teachBg: '#d1fae5',
+              teachText: '#065f46',
+              teachCross: '#059669',
+              learnBg: '#e0f2fe',
+              learnText: '#0369a1',
+              learnCross: '#0284c7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom style definitions -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #ffffff;
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 antialiased selection:bg-blue-100">
+<!-- BEGIN: MainContent -->
+<main class="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 py-8 flex flex-col min-h-screen justify-between">
+<!-- Top Section Container -->
+<div class="space-y-7">
+<!-- BEGIN: NavigationHeader -->
+<header class="space-y-3">
+<!-- Back Arrow and Title -->
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="p-1 -ml-1 text-gray-800 hover:text-gray-600 transition-colors focus:outline-none" type="button">
+<svg class="w-6 h-6 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-2xl sm:text-[26px] font-bold tracking-tight text-gray-900">Interests Setup</h1>
+</div>
+<!-- Subtitle description -->
+<p class="text-[15px] text-gray-500 font-normal leading-relaxed">
+          Select the skills you excel at and would like to teach, and what you are eager to pick up.
+        </p>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: SkillsTeachingSection -->
+<section class="space-y-4 pt-1" data-purpose="skills-teach-container">
+<h2 class="text-[17px] font-bold text-gray-900 tracking-tight">Skills I can teach</h2>
+<!-- Search / Add input field -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-blue-600 font-bold">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full bg-[#f4f7fb] hover:bg-[#edf2f7] focus:bg-white text-gray-800 placeholder-gray-400 text-sm rounded-xl py-3 pl-11 pr-4 border border-transparent focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none" placeholder="Add a skill to teach..." type="text"/>
+</div>
+<!-- Teach Skills Tag Cloud -->
+<div class="flex flex-wrap gap-2.5 pt-1" data-purpose="teach-tag-cloud">
+<!-- Tag Item Generator Style: Light emerald with border radius full -->
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Python <button aria-label="Remove Python" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Data Structures <button aria-label="Remove Data Structures" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Mathematics <button aria-label="Remove Mathematics" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Web Development <button aria-label="Remove Web Development" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Guitar <button aria-label="Remove Guitar" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Spanish <button aria-label="Remove Spanish" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            UI Design <button aria-label="Remove UI Design" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Photography <button aria-label="Remove Photography" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Blockchain <button aria-label="Remove Blockchain" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Public Speaking <button aria-label="Remove Public Speaking" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Cooking <button aria-label="Remove Cooking" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Machine Learning <button aria-label="Remove Machine Learning" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Digital Marketing <button aria-label="Remove Digital Marketing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Piano <button aria-label="Remove Piano" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Video Editing <button aria-label="Remove Video Editing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Yoga <button aria-label="Remove Yoga" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            French <button aria-label="Remove French" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Personal Finance <button aria-label="Remove Personal Finance" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Chess <button aria-label="Remove Chess" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Data Science <button aria-label="Remove Data Science" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Singing <button aria-label="Remove Singing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Copywriting <button aria-label="Remove Copywriting" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Figma <button aria-label="Remove Figma" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Japanese <button aria-label="Remove Japanese" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            3D Modeling <button aria-label="Remove 3D Modeling" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Drawing <button aria-label="Remove Drawing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Photography <button aria-label="Remove Photography" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Illustration <button aria-label="Remove Illustration" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Fitness Training <button aria-label="Remove Fitness Training" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Content Writing <button aria-label="Remove Content Writing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Banking <button aria-label="Remove Banking" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            JavaScript <button aria-label="Remove JavaScript" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            React <button aria-label="Remove React" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            SEO <button aria-label="Remove SEO" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Sign Language <button aria-label="Remove Sign Language" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Resume Building <button aria-label="Remove Resume Building" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Meditation <button aria-label="Remove Meditation" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Video Production <button aria-label="Remove Video Production" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Arabic <button aria-label="Remove Arabic" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Cloud Computing <button aria-label="Remove Cloud Computing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Acting <button aria-label="Remove Acting" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Dance <button aria-label="Remove Dance" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Statistics <button aria-label="Remove Statistics" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Fashion Design <button aria-label="Remove Fashion Design" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Sales <button aria-label="Remove Sales" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Motion Graphics <button aria-label="Remove Motion Graphics" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Animation <button aria-label="Remove Animation" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Excel <button aria-label="Remove Excel" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Investing <button aria-label="Remove Investing" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Cybersecurity <button aria-label="Remove Cybersecurity" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Node.js <button aria-label="Remove Node.js" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Graphic Design <button aria-label="Remove Graphic Design" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Adobe Photoshop <button aria-label="Remove Adobe Photoshop" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Product Management <button aria-label="Remove Product Management" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#ccfbf1] text-[#115e59]">
+            Photography <button aria-label="Remove Photography" class="text-[#0d9488] hover:text-[#115e59] ml-0.5 text-xs" type="button">×</button>
+</span>
+</div>
+</section>
+<!-- END: SkillsTeachingSection -->
+<!-- BEGIN: SkillsLearningSection -->
+<section class="space-y-4 pt-4" data-purpose="skills-learn-container">
+<h2 class="text-[17px] font-bold text-gray-900 tracking-tight">Skills I want to learn</h2>
+<!-- Search / Add input field -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-blue-600 font-bold">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<input class="w-full bg-[#f4f7fb] hover:bg-[#edf2f7] focus:bg-white text-gray-800 placeholder-gray-400 text-sm rounded-xl py-3 pl-11 pr-4 border border-transparent focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none" placeholder="Add what you want to learn..." type="text"/>
+</div>
+<!-- Learn Skills Tag Cloud -->
+<div class="flex flex-wrap gap-2.5 pt-1" data-purpose="learn-tag-cloud">
+<!-- Tag Item Generator Style: Light blue with border radius full -->
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Guitar <button aria-label="Remove Guitar" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            UI/UX Design <button aria-label="Remove UI/UX Design" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            French Speaking <button aria-label="Remove French Speaking" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Animation <button aria-label="Remove Animation" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Excel <button aria-label="Remove Excel" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Cybersecurity <button aria-label="Remove Cybersecurity" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Node.js <button aria-label="Remove Node.js" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Python <button aria-label="Remove Python" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Mathematics <button aria-label="Remove Mathematics" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Blockchain <button aria-label="Remove Blockchain" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Graphic Design <button aria-label="Remove Graphic Design" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Investing <button aria-label="Remove Investing" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Adobe Photoshop <button aria-label="Remove Adobe Photoshop" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Product Management <button aria-label="Remove Product Management" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Video Production <button aria-label="Remove Video Production" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Arabic <button aria-label="Remove Arabic" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Cloud Computing <button aria-label="Remove Cloud Computing" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Personal Finance <button aria-label="Remove Personal Finance" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Acting <button aria-label="Remove Acting" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Statistics <button aria-label="Remove Statistics" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Fashion Design <button aria-label="Remove Fashion Design" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Fitness Training <button aria-label="Remove Fitness Training" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Content Writing <button aria-label="Remove Content Writing" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Banking <button aria-label="Remove Banking" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            JavaScript <button aria-label="Remove JavaScript" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Web Development <button aria-label="Remove Web Development" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Illustration <button aria-label="Remove Illustration" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Dance <button aria-label="Remove Dance" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            React <button aria-label="Remove React" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            SEO <button aria-label="Remove SEO" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Sign Language <button aria-label="Remove Sign Language" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Resume Building <button aria-label="Remove Resume Building" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Drawing <button aria-label="Remove Drawing" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            3D Modeling <button aria-label="Remove 3D Modeling" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Spanish <button aria-label="Remove Spanish" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            UI Design <button aria-label="Remove UI Design" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Meditation <button aria-label="Remove Meditation" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Japanese <button aria-label="Remove Japanese" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Figma <button aria-label="Remove Figma" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Copywriting <button aria-label="Remove Copywriting" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Singing <button aria-label="Remove Singing" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Data Science <button aria-label="Remove Data Science" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Public Speaking <button aria-label="Remove Public Speaking" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Data Structures <button aria-label="Remove Data Structures" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Photography <button aria-label="Remove Photography" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            French <button aria-label="Remove French" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[13px] font-medium bg-[#e0f2fe] text-[#0369a1]">
+            Motion Graphics <button aria-label="Remove Motion Graphics" class="text-[#0284c7] hover:text-[#0369a1] ml-0.5 text-xs" type="button">×</button>
+</span>
+</div>
+</section>
+<!-- END: SkillsLearningSection -->
+</div>
+<!-- BEGIN: ActionFooter -->
+<footer class="pt-10 pb-4">
+<button class="w-full bg-[#005bb5] hover:bg-[#004f9e] active:bg-[#00448a] text-white font-medium text-[17px] py-3.5 px-6 rounded-full transition duration-150 ease-in-out shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-200 text-center" data-purpose="continue-button" type="button">
+        Continue
+      </button>
+</footer>
+<!-- END: ActionFooter -->
+</main>
+<!-- END: MainContent -->
+</body></html>

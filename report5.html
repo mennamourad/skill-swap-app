@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report User - SkillSwap</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0252CC',
+              lightBlue: '#EBF3FF',
+              bgBlue: '#F4F7FC',
+              dark: '#111827',
+              grayText: '#64748B',
+            },
+            danger: {
+              tint: '#FEE2E2',
+              text: '#991B1B'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="custom-layout">
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F7FC] text-slate-800 min-h-screen flex antialiased select-none">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between py-8 px-6 shrink-0 min-h-screen" data-purpose="sidebar-navigation">
+<!-- Top Section: Brand & Nav Links -->
+<div class="flex flex-col space-y-8">
+<!-- Brand Logo -->
+<div class="px-2">
+<h1 class="text-xl font-black tracking-wide text-[#0252CC] uppercase">SKILLSWAP</h1>
+</div>
+<!-- Navigation Menu Group -->
+<div class="space-y-4">
+<span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase px-2">OVERVIEW</span>
+<nav aria-label="Main Navigation" class="space-y-1">
+<!-- Home (Active) -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#0252CC] transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Swap -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Chat -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 2.25 19.5Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6H2.25m0 0v1.5c0 .414.336.75.75.75H3m0 0h.375m15 0h.375c.414 0 .75-.336.75-.75V6h-.75m0 0v-.75A.75.75 0 0 0 18.75 4.5H3.75m15 0a3.75 3.75 0 0 1 3.75 3.75v5.25a3.75 3.75 0 0 1-3.75 3.75H3.75A3.75 3.75 0 0 1 0 13.5V8.25a3.75 3.75 0 0 1 3.75-3.75h15Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors" data-purpose="nav-item" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Section: Settings & Logout -->
+<div class="space-y-4 pt-6">
+<span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase px-2">SETTINGS</span>
+<button class="flex items-center gap-3.5 px-3 py-2 rounded-lg text-sm font-medium text-red-500 hover:text-red-600 transition-colors w-full text-left" data-purpose="logout-button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</button>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 flex flex-col px-10 py-8 overflow-y-auto" data-purpose="report-form-container">
+<div class="max-w-[1040px] w-full mx-auto flex flex-col justify-between flex-1">
+<div>
+<!-- Top Navigation / Back Title -->
+<header class="flex items-center gap-3.5 mb-8" data-purpose="page-header">
+<button aria-label="Go back" class="text-slate-800 hover:text-slate-600 focus:outline-none" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h2 class="text-[17px] font-bold text-slate-900 tracking-tight">Report User</h2>
+</header>
+<!-- Section Title & Description -->
+<section class="mb-6" data-purpose="report-intro">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Report Sana Amer</h3>
+<p class="text-[13px] text-slate-500">Help us maintain a safe and productive exchange workspace. Why are you reporting this user?</p>
+</section>
+<!-- Reason Selection Radio Group -->
+<fieldset class="space-y-3 mb-6" data-purpose="report-options">
+<legend class="sr-only">Select reason for reporting</legend>
+<!-- Option 1: Didn't show up -->
+<label class="flex items-center justify-between px-5 py-3.5 bg-white border border-slate-200/80 rounded-xl cursor-pointer hover:border-slate-300 transition-all">
+<span class="text-[13px] font-semibold text-slate-800">Didn't show up</span>
+<input class="sr-only peer" name="report_reason" type="radio" value="no_show"/>
+<!-- Custom Radio Circle Unchecked -->
+<div class="w-5 h-5 rounded-full border-2 border-slate-400 peer-checked:border-[#0252CC] peer-checked:border-[6px] transition-all shrink-0"></div>
+</label>
+<!-- Option 2: Inappropriate behavior (Active/Selected) -->
+<label class="flex items-center justify-between px-5 py-3.5 bg-[#EBF3FF] border border-[#0252CC] rounded-xl cursor-pointer transition-all">
+<span class="text-[13px] font-semibold text-[#0252CC]">Inappropriate behavior</span>
+<input checked="" class="sr-only peer" name="report_reason" type="radio" value="inappropriate_behavior"/>
+<!-- Custom Radio Circle Checked -->
+<div class="w-5 h-5 rounded-full border-[5px] border-[#0252CC] bg-[#0252CC] flex items-center justify-center shrink-0">
+<div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+</div>
+</label>
+<!-- Option 3: Poor skill competency -->
+<label class="flex items-center justify-between px-5 py-3.5 bg-white border border-slate-200/80 rounded-xl cursor-pointer hover:border-slate-300 transition-all">
+<span class="text-[13px] font-semibold text-slate-800">Poor skill competency</span>
+<input class="sr-only peer" name="report_reason" type="radio" value="poor_competency"/>
+<div class="w-5 h-5 rounded-full border-2 border-slate-400 shrink-0"></div>
+</label>
+<!-- Option 4: Spam or scam attempt -->
+<label class="flex items-center justify-between px-5 py-3.5 bg-white border border-slate-200/80 rounded-xl cursor-pointer hover:border-slate-300 transition-all">
+<span class="text-[13px] font-semibold text-slate-800">Spam or scam attempt</span>
+<input class="sr-only peer" name="report_reason" type="radio" value="spam_scam"/>
+<div class="w-5 h-5 rounded-full border-2 border-slate-400 shrink-0"></div>
+</label>
+</fieldset>
+<!-- Details Textarea Container -->
+<section class="mb-10" data-purpose="details-box">
+<label class="sr-only" for="report-details">Details</label>
+<div class="relative w-full h-52 bg-white border border-slate-200/90 rounded-2xl flex items-center justify-center p-4">
+<textarea class="w-full h-full text-center border-0 focus:ring-0 resize-none text-[17px] text-slate-500 placeholder-slate-400 focus:placeholder-transparent flex items-center justify-center pt-20" id="report-details" name="report_details" placeholder="Details" rows="6"></textarea>
+</div>
+</section>
+</div>
+<!-- Submit Action Button -->
+<footer class="pt-4 pb-2" data-purpose="form-actions">
+<button class="w-full py-3.5 px-6 rounded-2xl bg-[#FEE2E2] hover:bg-[#FCD2D2] text-[#991B1B] font-bold text-sm text-center transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1" type="button">
+          Submit Report
+        </button>
+</footer>
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

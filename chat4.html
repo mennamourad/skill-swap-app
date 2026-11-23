@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Chat with Alaa Ahmed</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0D5BE1',
+              darkBlue: '#0A48B3',
+              bgLight: '#F3F6FB'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#F3F6FB] text-slate-800 antialiased h-screen overflow-hidden flex m-0 p-0">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-60 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 select-none z-10 h-full" data-purpose="sidebar-navigation">
+<!-- Top Section: Brand Logo & Overview Menu -->
+<div class="px-7 pt-7">
+<!-- App Brand Logo -->
+<div class="mb-9">
+<h1 class="text-[#0D5BE1] text-xl font-black tracking-wider uppercase">SKILLSWAP</h1>
+</div>
+<!-- Overview Navigation Section -->
+<nav data-purpose="overview-navigation">
+<h2 class="text-[11px] font-bold tracking-wider text-slate-700 uppercase mb-4">OVERVIEW</h2>
+<ul class="space-y-3.5 text-[13px] font-medium text-slate-600">
+<!-- Home -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+</li>
+<!-- Search -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+</li>
+<!-- Swap -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+</li>
+<!-- Chat (Active Link) -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+</li>
+<!-- Session -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+</li>
+<!-- Points Wallet -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15A2.25 2.25 0 0 0 2.25 6.75v10.5A2.25 2.25 0 0 0 4.5 19.5Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+</li>
+<!-- Coins Wallet -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6H2.25m0 0v8.25m0 0h19.5m-19.5 0v.75c0 .414.336.75.75.75H3m16.5-9V4.5m0 0v-.75A.75.75 0 0 0 18.75 3H3.75m16.5 1.5v.75m0 0h1.5A.75.75 0 0 1 22.5 6v8.25a.75.75 0 0 1-.75.75H21.75m0-9H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+</li>
+<!-- Notifications -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+</li>
+<!-- Profile -->
+<li>
+<a class="flex items-center gap-3 text-slate-600 hover:text-[#0D5BE1] transition-colors py-0.5" href="#">
+<svg class="w-4 h-4 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<!-- Bottom Section: Settings & Logout -->
+<div class="px-7 pb-8" data-purpose="sidebar-footer">
+<h2 class="text-[11px] font-bold tracking-wider text-slate-700 uppercase mb-4">SETTINGS</h2>
+<a class="flex items-center gap-2.5 text-rose-500 font-medium text-[13px] hover:text-rose-600 transition-colors" href="#">
+<svg class="w-4 h-4 stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col h-full bg-[#F3F6FB] overflow-hidden relative">
+<!-- BEGIN: ChatHeader -->
+<header class="h-14 bg-[#0D5BE1] flex items-center px-5 shrink-0 z-10 shadow-sm" data-purpose="chat-header">
+<div class="flex items-center gap-3.5">
+<!-- Back Navigation Arrow -->
+<button aria-label="Go back" class="text-white hover:opacity-80 transition-opacity focus:outline-none" type="button">
+<svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- User Avatar -->
+<div class="relative w-8 h-8 rounded-full overflow-hidden shrink-0 border border-white/20">
+<img alt="Alaa Ahmed avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQIPvvNRKespyGspu_yzS3SX2Ybun6FmEplUN1Td56kPi_ulyX5JuUObsRnWJOQEa8zqDKFIE3Kb9iUBTER4G4KVI6lNlq8H4wRori12SDq2Se809q3ETZqZcTFO0x7DJB-8Vyk2s3hKp-ESIPPuWX1sPfhJE7vujEDmUOudKdgGoyfNv4PrFoK53BKDwkv-0G5ybG_TEfYgE1mskbMi3oC7RSX80CRLyrLZsW7Fjq-kFk4T2gV1kRA">
+</div>
+<!-- Contact Name -->
+<h2 class="text-white font-bold text-[17px] tracking-tight leading-none">Alaa Ahmed</h2>
+</div>
+</header>
+<!-- END: ChatHeader -->
+<!-- BEGIN: ConversationStream -->
+<section class="flex-1 overflow-y-auto px-6 py-6 flex flex-col space-y-4" data-purpose="message-stream">
+<!-- Message 1: Incoming Left -->
+<div class="flex justify-start">
+<div class="bg-white text-slate-700 text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tl-sm shadow-[0_1px_3px_rgba(0,0,0,0.04)] max-w-md leading-relaxed" data-purpose="incoming-message">
+          Hi! Can you teach UI/UX?
+        </div>
+</div>
+<!-- Message 2: Outgoing Right -->
+<div class="flex justify-end pt-1">
+<div class="bg-[#0D5BE1] text-white text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tr-sm shadow-[0_1px_3px_rgba(0,0,0,0.06)] max-w-md leading-relaxed" data-purpose="outgoing-message">
+          Sure! Sat 4pm? Swap for<br>Network help?
+        </div>
+</div>
+<!-- Message 3: Incoming Left -->
+<div class="flex justify-start pt-1">
+<div class="bg-white text-slate-700 text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tl-sm shadow-[0_1px_3px_rgba(0,0,0,0.04)] max-w-md leading-relaxed" data-purpose="incoming-message">
+          Deal! Swapped.
+        </div>
+</div>
+</section>
+<!-- END: ConversationStream -->
+<!-- BEGIN: ChatInputBar -->
+<footer class="p-6 pt-0 bg-[#F3F6FB] shrink-0" data-purpose="chat-input-bar">
+<form class="flex items-center gap-3 w-full" onsubmit="event.preventDefault();">
+<!-- Message Input Field -->
+<div class="flex-1 relative flex items-center">
+<input class="w-full bg-white text-slate-800 placeholder-slate-400 text-sm rounded-full py-3 px-5 border border-slate-200 focus:outline-none focus:ring-1 focus:ring-[#0D5BE1] focus:border-[#0D5BE1] transition-all shadow-[0_1px_3px_rgba(0,0,0,0.02)]" placeholder="Type a message" type="text">
+</div>
+<!-- Send Action Button -->
+<button aria-label="Send message" class="w-11 h-11 bg-[#0D5BE1] hover:bg-[#0A48B3] text-white rounded-full flex items-center justify-center shrink-0 shadow-[0_2px_4px_rgba(13,91,225,0.25)] transition-all transform active:scale-95 focus:outline-none" type="submit">
+<svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</form>
+</footer>
+<!-- END: ChatInputBar -->
+</main>
+<!-- END: MainContentArea -->
+
+
+</body></html>

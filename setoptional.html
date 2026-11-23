@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Tell Us More About You</title>
+<!-- Load Tailwind CSS v3 with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#005bbf',
+              700: '#0052b3',
+              800: '#004394'
+            },
+            canvasBg: '#f0f3f8',
+            subtleBorder: '#e2e8f0',
+            badgeBg: '#e6f0fa',
+            badgeText: '#0062d2'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-elements">
+    /* Remove default textarea resize bar handle styling */
+    textarea {
+      resize: none;
+    }
+    /* Subtle custom scrollbar if needed */
+    textarea::-webkit-scrollbar {
+      width: 6px;
+    }
+    textarea::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-canvasBg min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8 text-slate-800 font-sans antialiased">
+<!-- BEGIN: MainContainer -->
+<!-- Outer card with gentle rounding matching the reference design -->
+<main class="w-full max-w-[1040px] bg-white rounded-3xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-slate-100/80 px-6 sm:px-12 md:px-16 pt-10 pb-8 transition-all" data-purpose="main-form-card">
+<!-- BEGIN: HeaderSection -->
+<header class="flex flex-col items-center text-center mb-8">
+<!-- Avatar Placeholder Container -->
+<div class="relative mb-3 flex items-center justify-center" data-purpose="avatar-container">
+<div class="w-24 h-24 rounded-full border-2 border-brand-600 bg-brand-50/40 flex items-center justify-center overflow-hidden">
+<svg aria-hidden="true" class="w-14 h-14 text-brand-600 translate-y-1" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.118a7.5 7.5 0 0115 0"></path></svg>
+</div>
+</div>
+<!-- Upload Photo Action Button -->
+<button class="inline-flex items-center px-5 py-1.5 rounded-full border border-brand-600 text-brand-600 font-medium text-xs sm:text-sm hover:bg-brand-50 transition-colors mb-5" data-purpose="upload-photo-btn" type="button">
+        + Upload photo
+      </button>
+<!-- User Name Heading -->
+<h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-2">
+        Dina Akram
+      </h1>
+<!-- Subtitle & Context Note -->
+<h2 class="text-base sm:text-lg font-semibold text-slate-800 mb-1">
+        Tell us more about you
+      </h2>
+<p class="text-xs sm:text-sm text-slate-500 max-w-xl">
+        These two sections are optional. Adding them helps others find you and improves your match score.
+      </p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: ContentSections -->
+<section aria-label="Profile Details" class="space-y-6 mb-8">
+<!-- BEGIN: BioSection -->
+<div class="border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-[0_1px_3px_rgba(0,0,0,0.02)]" data-purpose="bio-box">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-1.5">
+<h3 class="text-lg font-bold text-slate-900">Bio</h3>
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-semibold bg-badgeBg text-badgeText tracking-wide" data-purpose="optional-badge">
+            Optional
+          </span>
+</div>
+<p class="text-xs sm:text-sm text-slate-500 mb-4">
+          Introduce yourself, your experience, and what you want to learn or teach.
+        </p>
+<!-- Bio Text Area Box -->
+<div class="relative border border-slate-300 rounded-xl focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-all bg-white overflow-hidden p-4">
+<textarea class="w-full border-0 p-0 text-slate-700 placeholder-slate-400 focus:ring-0 text-xs sm:text-sm leading-relaxed" data-purpose="bio-textarea" id="bio-input" maxlength="300" placeholder="e.g. Computer science student who loves web design. I can teach HTML/CSS and want to learn public speaking." rows="3"></textarea>
+<!-- Character Count Tracker -->
+<div class="text-right pt-2">
+<span class="text-xs text-slate-400 font-medium select-none" data-purpose="char-count" id="char-counter">0 / 300</span>
+</div>
+</div>
+</div>
+<!-- END: BioSection -->
+<!-- BEGIN: PortfolioSection -->
+<div class="border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-[0_1px_3px_rgba(0,0,0,0.02)]" data-purpose="portfolio-box">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-900">Portfolio</h3>
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-semibold bg-badgeBg text-badgeText tracking-wide" data-purpose="optional-badge">
+            Optional
+          </span>
+</div>
+<!-- Dashed Empty State Box -->
+<div class="border-2 border-dashed border-slate-300 rounded-2xl py-10 px-4 flex flex-col items-center justify-center text-center cursor-pointer hover:border-brand-500/60 hover:bg-slate-50/50 transition-all group" data-purpose="portfolio-dropzone">
+<!-- Portfolio Briefcase Icon -->
+<div aria-hidden="true" class="mb-3 text-brand-600 transition-transform group-hover:scale-105 duration-200">
+<svg class="w-10 h-10 stroke-current" fill="none" stroke-width="1.6" viewBox="0 0 24 24">
+<rect height="14" rx="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" x="2" y="7"></rect>
+<path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h4 class="text-base font-bold text-slate-900 mb-1">
+            No projects yet
+          </h4>
+<p class="text-xs sm:text-sm text-slate-500 max-w-sm">
+            Show your work to build trust. Add a title, a short description, and a link.
+          </p>
+</div>
+</div>
+<!-- END: PortfolioSection -->
+</section>
+<!-- END: ContentSections -->
+<!-- BEGIN: FooterActionSection -->
+<footer class="pt-4 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 border-t border-transparent" data-purpose="form-footer">
+<!-- Left Info Hint -->
+<span class="text-xs sm:text-sm text-slate-500 select-none">
+        You can add these later from your profile.
+      </span>
+<!-- Right Action Buttons -->
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="w-full sm:w-auto px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-50 hover:border-slate-400 active:scale-[0.98] transition-all" data-purpose="skip-button" type="button">
+          Skip for now
+        </button>
+<button class="w-full sm:w-auto px-7 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs sm:text-sm shadow-sm active:scale-[0.98] transition-all" data-purpose="save-button" type="button">
+          Save &amp; Continue
+        </button>
+</div>
+</footer>
+<!-- END: FooterActionSection -->
+</main>
+<!-- END: MainContainer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="char-counter">
+    // Update character counter in real time
+    const bioTextarea = document.getElementById('bio-input');
+    const charCounter = document.getElementById('char-counter');
+
+    if (bioTextarea && charCounter) {
+      bioTextarea.addEventListener('input', () => {
+        const length = bioTextarea.value.length;
+        charCounter.textContent = `${length} / 300`;
+      });
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report User</title>
+<!-- Tailwind CSS v3 with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            page: '#F4F7FB',
+            selectBlue: '#2563EB',
+            selectBlueBg: '#EBF3FE',
+            textPrimary: '#1E293B',
+            textSecondary: '#64748B',
+            borderDefault: '#E2E8F0',
+            borderActive: '#3B82F6',
+            btnPink: '#FEE2E2',
+            btnTextRed: '#DC2626'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background-color: #F4F7FB;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    /* Custom styling for the details textarea placeholder centering */
+    .details-textarea::placeholder {
+      text-align: center;
+      color: #64748B;
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 12rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-900 antialiased flex flex-col justify-between p-6 sm:p-10 lg:p-12">
+<!-- BEGIN: MainContent -->
+<main class="w-full max-w-7xl mx-auto flex-1 flex flex-col justify-between" data-purpose="report-container">
+<!-- Top Section: Header & Form Elements -->
+<div>
+<!-- BEGIN: NavigationHeader -->
+<header class="flex items-center gap-3 mb-8" data-purpose="page-header">
+<button aria-label="Go back" class="p-1 -ml-1 text-slate-800 hover:text-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md" type="button">
+<svg class="w-6 h-6 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-xl font-bold text-slate-900 tracking-tight">Report User</h1>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: UserReportIntro -->
+<section class="mb-8" data-purpose="report-intro">
+<h2 class="text-lg font-bold text-slate-900 mb-1">Report Samy Ali</h2>
+<p class="text-sm text-slate-500 font-normal">
+          Help us maintain a safe and productive exchange workspace. Why are you reporting this user?
+        </p>
+</section>
+<!-- END: UserReportIntro -->
+<!-- BEGIN: ReportOptionsForm -->
+<form class="space-y-4 mb-8" data-purpose="reasons-form" id="report-form">
+<!-- Option 1: Didn't show up -->
+<label class="flex items-center justify-between px-6 py-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-all shadow-sm">
+<span class="text-sm font-semibold text-slate-900">Didn't show up</span>
+<input class="w-5 h-5 text-blue-600 border-slate-300 focus:ring-0 focus:ring-offset-0 transition" name="report_reason" type="radio" value="didnt_show_up"/>
+</label>
+<!-- Option 2: Inappropriate behavior (Active / Selected) -->
+<label class="flex items-center justify-between px-6 py-4 bg-[#EBF3FE] border-2 border-[#2563EB] rounded-xl cursor-pointer shadow-sm">
+<span class="text-sm font-semibold text-[#1D4ED8]">Inappropriate behavior</span>
+<!-- Checked radio button style -->
+<div class="relative flex items-center justify-center">
+<input checked="" class="w-5 h-5 text-blue-600 border-blue-600 focus:ring-0 focus:ring-offset-0 transition cursor-pointer" name="report_reason" type="radio" value="inappropriate_behavior"/>
+</div>
+</label>
+<!-- Option 3: Poor skill competency -->
+<label class="flex items-center justify-between px-6 py-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-all shadow-sm">
+<span class="text-sm font-semibold text-slate-900">Poor skill competency</span>
+<input class="w-5 h-5 text-blue-600 border-slate-300 focus:ring-0 focus:ring-offset-0 transition" name="report_reason" type="radio" value="poor_skill"/>
+</label>
+<!-- Option 4: Spam or scam attempt -->
+<label class="flex items-center justify-between px-6 py-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-all shadow-sm">
+<span class="text-sm font-semibold text-slate-900">Spam or scam attempt</span>
+<input class="w-5 h-5 text-blue-600 border-slate-300 focus:ring-0 focus:ring-offset-0 transition" name="report_reason" type="radio" value="spam_scam"/>
+</label>
+</form>
+<!-- END: ReportOptionsForm -->
+<!-- BEGIN: DetailsContainer -->
+<!-- Details text input box with center aligned placeholder -->
+<section class="w-full mb-12" data-purpose="details-input-section">
+<div class="w-full bg-white border-2 border-slate-400/80 rounded-2xl h-48 sm:h-52 relative flex items-center justify-center p-4 shadow-sm focus-within:border-blue-500 transition-colors">
+<textarea class="w-full h-full border-none resize-none focus:ring-0 text-slate-800 text-center details-textarea bg-transparent font-normal text-lg" id="details-field" name="details" placeholder="Details"></textarea>
+</div>
+</section>
+<!-- END: DetailsContainer -->
+</div>
+<!-- BEGIN: SubmitAction -->
+<!-- Submit report bottom button -->
+<div class="w-full pt-4 pb-2" data-purpose="action-buttons">
+<button class="w-full py-4 px-6 rounded-full bg-[#FCE8E8] hover:bg-[#fad7d7] text-[#D93025] font-semibold text-sm tracking-wide transition-colors text-center shadow-none focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2" type="button">
+        Submit Report
+      </button>
+</div>
+<!-- END: SubmitAction -->
+</main>
+<!-- END: MainContent -->
+</body></html>

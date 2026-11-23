@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Direct Chat</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0052cc',
+              header: '#0056b3',
+              darkBlue: '#004fc4',
+              bgChat: '#f2f5fa',
+              sidebarText: '#5e6c84',
+              activeText: '#0052cc'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scrollbars">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 h-screen w-screen overflow-hidden flex font-sans antialiased">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 flex-shrink-0 h-full border-r border-gray-100 flex flex-col justify-between py-8 px-6 bg-white z-10 select-none" data-purpose="sidebar-navigation">
+<div class="flex flex-col space-y-8">
+<!-- App Brand Logo -->
+<div class="px-2" data-purpose="brand-logo">
+<h1 class="text-xl font-extrabold tracking-tight text-[#0052cc] uppercase">SKILLSWAP</h1>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col space-y-6" data-purpose="main-navigation">
+<div>
+<span class="text-[11px] font-bold text-gray-400 tracking-wider uppercase px-2">OVERVIEW</span>
+<ul class="mt-3 space-y-1.5 text-sm font-medium">
+<!-- Home (Active) -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-[#0052cc] rounded-lg transition-colors group" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+</li>
+<!-- Search -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+</li>
+<!-- Swap -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+</li>
+<!-- Chat -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+</li>
+<!-- Session -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+</li>
+<!-- Points Wallet -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+</li>
+<!-- Coins Wallet -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+</li>
+<!-- Notifications -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+</li>
+<!-- Profile -->
+<li>
+<a class="flex items-center space-x-3.5 px-3 py-2 text-gray-500 hover:text-gray-900 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Bottom Settings & Logout -->
+<div class="pt-4" data-purpose="sidebar-settings">
+<span class="text-[11px] font-bold text-gray-400 tracking-wider uppercase px-2">SETTINGS</span>
+<div class="mt-3">
+<a class="flex items-center space-x-3.5 px-3 py-2 text-red-500 hover:text-red-600 font-medium text-sm rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainChatContainer -->
+<main class="flex-1 flex flex-col h-full bg-[#f2f5fa] relative overflow-hidden" data-purpose="chat-main">
+<!-- BEGIN: ChatHeader -->
+<header class="bg-[#0056b3] text-white px-5 py-3.5 flex items-center space-x-4 shadow-sm z-10 flex-shrink-0" data-purpose="chat-header">
+<!-- Back Button -->
+<button aria-label="Go back" class="text-white hover:text-gray-200 focus:outline-none transition-colors" type="button">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Avatar & Name -->
+<div class="flex items-center space-x-3">
+<img alt="Amira Ahmed" class="w-8 h-8 rounded-full object-cover ring-2 ring-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN1iAryOKXQBXd288LBsSmSRsDQzjPEIXpirTE03SQFjNUx1cyAXrkCehXyU6r8w449IfVIgM37Py5ZjYJ6CwCNnwtMT8K2mRoyk-urL-lTiJbeDR7ITACddAPKbkmkS52iBjO2bV1_OsKKY3oPIG8_YRbQtn1kb1mlftuZmynARrn6x3708LwcgAPLyyrPFYnlkQGxfceIOMYhRb4FMrUVo44wrmMqx_ny8hO7TOw5FeqnO3kzEfqEg">
+<span class="font-bold text-base tracking-wide leading-none">Amira Ahmed</span>
+</div>
+</header>
+<!-- END: ChatHeader -->
+<!-- BEGIN: MessagesArea -->
+<section class="flex-1 overflow-y-auto px-6 py-6 space-y-4" data-purpose="message-thread">
+<!-- Incoming Message 1 -->
+<div class="flex justify-start">
+<div class="bg-white text-gray-800 text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tl-sm shadow-[0_1px_2px_rgba(0,0,0,0.04)] max-w-md">
+          Hi! Can you teach UI/UX?
+        </div>
+</div>
+<!-- Outgoing Message -->
+<div class="flex justify-end pt-3">
+<div class="bg-[#0056b3] text-white text-[13.5px] px-5 py-3 rounded-2xl rounded-tr-sm shadow-sm max-w-md leading-snug">
+          Sure! Sat 4pm? Swap for<br>Network help?
+        </div>
+</div>
+<!-- Incoming Message 2 -->
+<div class="flex justify-start pt-1">
+<div class="bg-white text-gray-800 text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tl-sm shadow-[0_1px_2px_rgba(0,0,0,0.04)] max-w-md">
+          Deal! Swapped.
+        </div>
+</div>
+</section>
+<!-- END: MessagesArea -->
+<!-- BEGIN: ChatInputBar -->
+<footer class="p-6 bg-transparent flex-shrink-0" data-purpose="message-input-form">
+<form class="flex items-center space-x-3 max-w-full" onsubmit="event.preventDefault();">
+<!-- Input field -->
+<div class="relative flex-1">
+<input class="w-full bg-white text-gray-700 placeholder-gray-400 text-sm px-6 py-3.5 rounded-full border border-gray-100 shadow-[0_1px_3px_rgba(0,0,0,0.03)] focus:outline-none focus:ring-2 focus:ring-[#0056b3]/30 focus:border-transparent transition-all" placeholder="Type a message" type="text">
+</div>
+<!-- Send Button -->
+<button aria-label="Send message" class="w-12 h-12 bg-[#0056b3] hover:bg-[#004bb0] text-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm transition-transform active:scale-95 focus:outline-none" type="submit">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</form>
+</footer>
+<!-- END: ChatInputBar -->
+</main>
+<!-- END: MainChatContainer -->
+
+
+</body></html>

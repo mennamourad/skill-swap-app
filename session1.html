@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Live Video Session</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            session: {
+              bg: '#0F1728',
+              card: '#111827',
+              btn: '#1E293B',
+              red: '#EF4444'
+            }
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      background-color: #0d1527;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen overflow-hidden text-white flex flex-col justify-between select-none relative">
+<!-- BEGIN: TopNavigation -->
+<header class="w-full flex items-center justify-between p-6 z-20" data-purpose="header-controls">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-[#1e293b]/70 hover:bg-[#334155] text-slate-300 flex items-center justify-center transition-colors" type="button">
+<i class="fa-solid fa-arrow-left text-sm"></i>
+</button>
+<!-- Recording Indicator Badge -->
+<div class="flex items-center gap-1.5 bg-[#ef4444] text-white px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider shadow-sm">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse inline-block"></span>
+<span>REC 45:12</span>
+</div>
+</header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: MainContent -->
+<main class="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none" data-purpose="call-center-display">
+<div class="flex flex-col items-center pointer-events-auto">
+<!-- Main Presenter Avatar -->
+<div class="relative mb-5" data-purpose="avatar-container">
+<div class="w-28 h-28 rounded-full p-0.5 bg-slate-400/30 overflow-hidden shadow-2xl flex items-center justify-center">
+<img alt="Salma Mohammed portrait" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm_dSGIY2ryZRJ0vh27G7BYn4677gvJmXcJgyFOIl_hSzFMt1pDUmvEFn1OLY9t5XUxtFtFBdClUWdPxAxd7mKWh08c7pYSBQUN493RUTEbatg8EdRu53MntbOPcKVGuv-dRbol6Cl09C5UVjuJeEOQK5wYjSoDA2MJSegu3H-n_IrKVBvnJZIyKyM0OwKgxC21z1gRV1Pk5NVWtIL5nMdoetInbXZs0vM5IBIsdn2vNKMM6O1-PeLOA">
+</div>
+</div>
+<!-- Presenter Information -->
+<h1 class="text-2xl font-bold tracking-tight text-white mb-1.5">
+        Salma Mohammed
+      </h1>
+<p class="text-sm text-slate-400 font-normal mb-8">
+        Teaching Python Programming
+      </p>
+<!-- In-Call Control Buttons -->
+<!-- Call action controls: Mute, Video Toggle, Hangup -->
+<div class="flex items-center gap-4" data-purpose="call-controls">
+<!-- Microphone Button -->
+<button aria-label="Mute microphone" class="w-12 h-12 rounded-full bg-[#1e293b] hover:bg-[#334155] text-slate-200 flex items-center justify-center transition-all shadow-md" type="button">
+<i class="fa-solid fa-microphone text-base"></i>
+</button>
+<!-- Video Off Button -->
+<button aria-label="Turn camera on" class="w-12 h-12 rounded-full bg-[#1e293b] hover:bg-[#334155] text-slate-200 flex items-center justify-center transition-all shadow-md" type="button">
+<i class="fa-solid fa-video-slash text-base"></i>
+</button>
+<!-- End Call Button -->
+<button aria-label="End call" class="w-12 h-12 rounded-full bg-[#ef4444] hover:bg-red-600 text-white flex items-center justify-center transition-all shadow-md" type="button">
+<i class="fa-solid fa-phone-slash text-base"></i>
+</button>
+</div>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: FloatingRightSidebar -->
+<!-- Right side floating participant tile and AI summary widget -->
+<aside class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20" data-purpose="sidebar-tiles">
+<!-- User Thumbnail Card -->
+<div class="w-24 h-28 bg-[#111928]/90 backdrop-blur-sm border-[1.5px] border-white/80 rounded-2xl flex flex-col items-center justify-center p-2.5 shadow-lg transition-transform hover:scale-105 cursor-pointer">
+<div class="w-11 h-11 rounded-full overflow-hidden mb-2 ring-1 ring-slate-400/40">
+<img alt="Salme (You)" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlqiE-jxDWGAighrFpX0-3mHQ1ElyT4sfsqa0RCE9nOBqs0FYjPSmRcPVwWVcyrL3L_EVHATsvW4pXpP414OVrQPkeYfn6FwgGVtbd_Yk76t2ncGQ8zGuJ1aylRVTO1tEsrK5zfZG2mUyt1vHJLPuVbRRT8BwdwCP3Vs9vuzugalqRknpb6v7yGGESIvKsOXxQ3T9DavIxEAaO6ufoZBribJ86ip8C51kZuUA2XY4kcAz4mVGnlLIlPw">
+</div>
+<span class="text-[11px] font-medium text-white text-center leading-tight">
+        Salme (You)
+      </span>
+</div>
+<!-- AI Learning Summary Card -->
+<div class="w-24 h-28 bg-[#111928]/90 backdrop-blur-sm border-[1.5px] border-white/80 rounded-2xl flex flex-col items-center justify-center p-2.5 shadow-lg transition-transform hover:scale-105 cursor-pointer">
+<div class="w-11 h-11 flex items-center justify-center mb-2">
+<!-- AI Bot Icon Representation -->
+<div class="relative flex items-center justify-center text-blue-400">
+<i class="fa-solid fa-robot text-2xl filter drop-shadow"></i>
+<span class="absolute -top-1 -right-1 text-[10px] text-amber-300">
+<i class="fa-solid fa-hand"></i>
+</span>
+</div>
+</div>
+<span class="text-[10px] font-medium text-white text-center leading-tight">
+        Learning Summary
+      </span>
+</div>
+</aside>
+<!-- END: FloatingRightSidebar -->
+
+
+
+
+</body></html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Swap With</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#0052cc',
+              hover: '#0043a8',
+              active: '#0052cc',
+            },
+            canvas: '#F4F7FC',
+            sidebar: '#FFFFFF',
+            tagGreen: '#D7F5E5',
+            tagGreenText: '#105B3A',
+            tagBlue: '#E2EEFE',
+            tagBlueText: '#26548E',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-slate-800 min-h-screen flex antialiased select-none">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white flex flex-col justify-between border-r border-slate-100 flex-shrink-0 min-h-screen py-8 px-6 shadow-[2px_0_12px_rgba(0,0,0,0.02)]" data-purpose="sidebar-navigation">
+<div class="flex flex-col">
+<!-- App Brand Logo -->
+<div class="mb-10 px-2">
+<h1 class="text-2xl font-extrabold tracking-tight text-[#0052cc]">SKILLSWAP</h1>
+</div>
+<!-- Overview Section -->
+<div class="mb-6">
+<p class="text-xs font-bold text-slate-700 tracking-wider uppercase mb-5 px-3">OVERVIEW</p>
+<nav aria-label="Overview Navigation" class="space-y-1.5">
+<!-- Home -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Search</span>
+</a>
+<!-- Swap (Active Menu Item) -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-[#0052cc] font-semibold bg-blue-50/50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Swap</span>
+</a>
+<!-- Chat -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v9.75c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125V6a1.125 1.125 0 00-1.125-1.125H3.375A1.125 1.125 0 002.25 6zM6 12a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zm12 0a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zm-6 2.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 rounded-xl text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Settings & Logout -->
+<div class="px-2 pt-4">
+<p class="text-xs font-bold text-slate-700 tracking-wider uppercase mb-4 px-1">SETTINGS</p>
+<a class="flex items-center gap-3 px-1 py-2 text-rose-500 font-semibold hover:text-rose-600 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-12 py-8 overflow-y-auto max-w-7xl" data-purpose="swap-feed">
+<!-- Header Title -->
+<header class="mb-8">
+<h2 class="text-[26px] font-extrabold text-[#0052cc] tracking-tight">Swap With</h2>
+</header>
+<!-- Cards List Container -->
+<div class="space-y-6">
+<!-- BEGIN: User Card 1 (Laila Ahmed) -->
+<article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)]" data-purpose="user-card">
+<!-- Profile Row -->
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-3.5">
+<img alt="Laila Ahmed avatar" class="w-12 h-12 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgQ2zdk7YgBQDHwtNrKKmRQDguioydwNyLG57la0wd0R3G5SCDly8b7TP0rPqs0OcZq8O0_qAiI6zwKU77bZNKnnGbYTz_ge-pRrpT7ZCG15SOYzolHigyUk2J986-rOpBR3eweXI5-y6EVuLhub-wLuZkD3D-Tfe0MJY_JjLCKwZkulOZXM15I3qL3W1-vriViMVMUI9eJDiP7REPAjo6hOQtQHaQWMjozPvpOI5n4hbAuQZA-r3bTQ">
+<div>
+<h3 class="font-bold text-slate-900 text-base leading-tight">Laila Ahmed</h3>
+<p class="text-xs text-slate-400 font-normal mt-0.5">Programmer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="flex items-center gap-1 bg-[#EEF2F6] px-2.5 py-1 rounded-md text-xs font-bold text-slate-800">
+<span class="text-amber-400 text-xs">⭐</span>
+<span>4.9</span>
+<span class="text-sky-600 text-xs font-semibold">✦</span>
+</div>
+</div>
+<!-- Skills Area -->
+<div class="bg-slate-50/70 rounded-xl p-5 mb-5 space-y-3.5">
+<!-- Teaches Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">TEACHES:</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Python Programming</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Data Structures</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Web Development</span>
+</div>
+<!-- Learns Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">LEARNS:</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">UI/Ux</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">React</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Node.js</span>
+</div>
+</div>
+<!-- Schedule Button -->
+<button class="w-full bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.99] text-white font-semibold py-3.5 rounded-full transition duration-150 shadow-sm text-sm" data-purpose="schedule-swap-btn">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: User Card 1 -->
+<!-- BEGIN: User Card 2 (Amira Ahmed) -->
+<article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)]" data-purpose="user-card">
+<!-- Profile Row -->
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-3.5">
+<img alt="Amira Ahmed avatar" class="w-12 h-12 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKdEmk3hUmDAO__JTTIIKrZ5aW-INCzME8TlEwxuUQxIt3W0_kenq2q3-N1UyuwS671gzgkamRIkCTmVG_vx38M6xFXJ4uOfNvaWuPYAbljS5qQwWWbfoVsJqE6fO-0ZgmzH8sZFaDDDMJN2y2RQudikpXDmzmPfGyeafKOL3tPfsnmk2QkUUiJBbXUjZCab7sVxkE6csCiPEYavgVBU7ZAsz6Z7K0kZXkG3A68ObARkw07GjvRAS36A">
+<div>
+<h3 class="font-bold text-slate-900 text-base leading-tight">Amira Ahmed</h3>
+<p class="text-xs text-slate-400 font-normal mt-0.5">IT Engineer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="flex items-center gap-1 bg-[#EEF2F6] px-2.5 py-1 rounded-md text-xs font-bold text-slate-800">
+<span class="text-amber-400 text-xs">⭐</span>
+<span>4.6</span>
+<span class="text-sky-600 text-xs font-semibold">✦</span>
+</div>
+</div>
+<!-- Skills Area -->
+<div class="bg-slate-50/70 rounded-xl p-5 mb-5 space-y-3.5">
+<!-- Teaches Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">TEACHES:</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Cybersecurity</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Fitness Training</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">French</span>
+</div>
+<!-- Learns Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">LEARNS:</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Guitar</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Animation</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Spanish</span>
+</div>
+</div>
+<!-- Schedule Button -->
+<button class="w-full bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.99] text-white font-semibold py-3.5 rounded-full transition duration-150 shadow-sm text-sm" data-purpose="schedule-swap-btn">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: User Card 2 -->
+<!-- BEGIN: User Card 3 (Nada Mohammed) -->
+<article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)]" data-purpose="user-card">
+<!-- Profile Row -->
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-3.5">
+<img alt="Nada Mohammed avatar" class="w-12 h-12 rounded-full object-cover ring-2 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgD_uhTwemP2rKBCL1xPvBgQCTpay9cJxtbYNRi6EuqMqLIqur1MC2ZHUeoKNsTRCQLQqNbaT79QzHpTNKVwwDXo6iH3NpoNaiE_URXGFk1YorWTiIM20v3iljwoUX4g7a3bpgEaozhLoeA19EXdwgF0hLiRZ2bysESKmhMWYPYmbxUM9fYFNFviafIW5lUqMY2LZ9VYVtFP1O1tdlJrJKCetEr8e1IdaPTLbBCFVtLan9R3dA02_1KQ">
+<div>
+<h3 class="font-bold text-slate-900 text-base leading-tight">Nada Mohammed</h3>
+<p class="text-xs text-slate-400 font-normal mt-0.5">Designer</p>
+</div>
+</div>
+<!-- Rating Badge -->
+<div class="flex items-center gap-1 bg-[#EEF2F6] px-2.5 py-1 rounded-md text-xs font-bold text-slate-800">
+<span class="text-amber-400 text-xs">⭐</span>
+<span>4.1</span>
+<span class="text-sky-600 text-xs font-semibold">✦</span>
+</div>
+</div>
+<!-- Skills Area -->
+<div class="bg-slate-50/70 rounded-xl p-5 mb-5 space-y-3.5">
+<!-- Teaches Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">TEACHES:</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Figma Design</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">Adobe Photoshop</span>
+<span class="bg-[#D7F5E5] text-[#13613D] px-3.5 py-1.5 rounded-full font-medium">React</span>
+</div>
+<!-- Learns Tags -->
+<div class="flex items-center flex-wrap gap-2 text-xs">
+<span class="font-bold text-slate-500 w-20 text-[11px] tracking-wider uppercase">LEARNS:</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Cooking</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Content Writing</span>
+<span class="bg-[#E2EEFE] text-[#1D5494] px-3.5 py-1.5 rounded-full font-medium">Excel</span>
+</div>
+</div>
+<!-- Schedule Button -->
+<button class="w-full bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.99] text-white font-semibold py-3.5 rounded-full transition duration-150 shadow-sm text-sm" data-purpose="schedule-swap-btn">
+          Schedule Swap
+        </button>
+</article>
+<!-- END: User Card 3 -->
+</div>
+</main>
+<!-- END: MainContent -->
+
+
+</body></html>

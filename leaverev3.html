@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leave a Review</title>
+<!-- Load Tailwind CSS v3 with forms plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- BEGIN: Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#F5F7FB',
+              primary: '#0B57D0',
+              hover: '#0848B0',
+              dark: '#1E293B',
+              muted: '#64748B',
+              star: '#F59E0B',
+              success: '#10B981',
+              pillSelectedBg: '#ECFDF5',
+              pillSelectedBorder: '#A7F3D0',
+              pillSelectedText: '#065F46'
+            }
+          }
+        }
+      }
+    };
+  </script>
+<!-- END: Custom Configuration -->
+<style data-purpose="custom-styling">
+    body {
+      background-color: #F5F7FB;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex flex-col justify-between p-6 md:px-12 md:py-8">
+<!-- BEGIN: PageContent -->
+<div class="w-full max-w-7xl mx-auto flex-1 flex flex-col justify-between">
+<div>
+<!-- BEGIN: NavigationHeader -->
+<header class="relative flex items-center justify-between mb-8" data-purpose="header">
+<!-- Back Navigation Button -->
+<a aria-label="Go back" class="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 hover:bg-slate-50 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<!-- Centered Page Title -->
+<h1 class="absolute left-1/2 -translate-x-1/2 text-xl font-bold text-slate-900 tracking-tight">
+          Leave a Review
+        </h1>
+<!-- Empty right placeholder for symmetrical spacing -->
+<div class="w-10"></div>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: SessionDetailsCard -->
+<section class="mb-10" data-purpose="session-info">
+<div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100/80 flex items-center gap-4">
+<!-- Mentor Profile Avatar -->
+<div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Samy Ali" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWO5F_epIPZai-ThccgRCFo4y0-a-uNU4W8HNyp9989MpSZ-6sKvw3A1OoeamAhHVVdVV7bGwFYWDXkSMLYTVM7gxASlOT3i_mSjBDPKXs_u4iclE--DXyjtfGJ6vpEsKDf3Zum9sZW3uUa8AFQs0GFJU3jYVuQUkkkU8r6Ih79yW06J88PASvhEfucc2PtpZzaW1K3JACuUn4RwA6XkLghO-1LIpTSdq4l7dBvATJxlcuxksFAIbshA">
+</div>
+<!-- Session & Mentor Text Info -->
+<div class="flex flex-col">
+<span class="text-xs font-semibold tracking-wider text-slate-400 uppercase">SESSION WITH</span>
+<span class="text-lg font-bold text-slate-900 leading-tight">Samy Ali</span>
+<span class="text-sm text-slate-500 font-medium">Designer</span>
+</div>
+</div>
+</section>
+<!-- END: SessionDetailsCard -->
+<!-- BEGIN: ExperienceRatingSection -->
+<section class="text-center mb-10" data-purpose="rating-selector">
+<h2 class="text-base font-semibold text-slate-700 mb-3">
+          How was your experience?
+        </h2>
+<!-- Interactive 5-Star Group -->
+<div class="flex items-center justify-center gap-2 mb-2" id="star-container">
+<!-- Star 1 (Filled) -->
+<button aria-label="1 Star" class="p-1 focus:outline-none focus:ring-2 focus:ring-amber-400 rounded" type="button">
+<svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24">
+<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+</svg>
+</button>
+<!-- Star 2 (Filled) -->
+<button aria-label="2 Stars" class="p-1 focus:outline-none focus:ring-2 focus:ring-amber-400 rounded" type="button">
+<svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24">
+<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+</svg>
+</button>
+<!-- Star 3 (Filled) -->
+<button aria-label="3 Stars" class="p-1 focus:outline-none focus:ring-2 focus:ring-amber-400 rounded" type="button">
+<svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24">
+<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+</svg>
+</button>
+<!-- Star 4 (Filled) -->
+<button aria-label="4 Stars" class="p-1 focus:outline-none focus:ring-2 focus:ring-amber-400 rounded" type="button">
+<svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24">
+<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+</svg>
+</button>
+<!-- Star 5 (Empty/Outlined) -->
+<button aria-label="5 Stars" class="p-1 focus:outline-none focus:ring-2 focus:ring-slate-300 rounded" type="button">
+<svg class="w-8 h-8 text-slate-300 stroke-current stroke-2 fill-transparent" viewBox="0 0 24 24">
+<path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Rating Feedback Text -->
+<p class="text-sm font-semibold text-emerald-600">
+          Very Good (4/5)
+        </p>
+</section>
+<!-- END: ExperienceRatingSection -->
+<!-- BEGIN: TopicSelectorSection -->
+<section class="mb-8" data-purpose="topic-selection">
+<label class="block text-sm font-semibold text-slate-700 mb-3">
+          What topic did you learn? (Optional)
+        </label>
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Active Pill (Figma Design) -->
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-emerald-400 bg-emerald-50/70 text-emerald-700 text-sm font-medium transition-colors" type="button">
+<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Figma Design
+          </button>
+<!-- Inactive Pill (Adobe Photoshop) -->
+<button class="inline-flex items-center px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors" type="button">
+            Adobe Photoshop
+          </button>
+<!-- Inactive Pill (React) -->
+<button class="inline-flex items-center px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors" type="button">
+            React
+          </button>
+</div>
+</section>
+<!-- END: TopicSelectorSection -->
+<!-- BEGIN: ReviewInputSection -->
+<section class="mb-12" data-purpose="review-input">
+<label class="block text-sm font-semibold text-slate-700 mb-3" for="review-text">
+          Write your review
+        </label>
+<div class="relative">
+<textarea class="w-full rounded-2xl border-slate-200 bg-white p-5 text-sm md:text-base text-slate-700 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-none transition-all placeholder:text-slate-400" id="review-text" name="review" placeholder="Share your experience..." rows="5">Samy was incredibly patient during our guitar session! He broke down the chord transitions in a way that finally clicked for me. Definitely recommend him.</textarea>
+</div>
+</section>
+<!-- END: ReviewInputSection -->
+</div>
+<!-- BEGIN: SubmitAction -->
+<footer class="pt-4 pb-2" data-purpose="submit-section">
+<button class="w-full bg-[#0B57D0] hover:bg-[#0848B0] active:scale-[0.99] text-white font-semibold text-base py-4 rounded-full shadow-md transition duration-150 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-300" type="button">
+        Submit Review
+      </button>
+</footer>
+<!-- END: SubmitAction -->
+</div>
+<!-- END: PageContent -->
+
+
+</body></html>

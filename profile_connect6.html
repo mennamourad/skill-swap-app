@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Skillswap - Amira Ahmed Profile</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="custom-colors">
+    /* Subtle theme tinting matching image */
+    .bg-main-canvas {
+      background-color: #F8FAFC;
+    }
+    .metric-card-bg {
+      background-color: #EEF4FC;
+    }
+    .tag-mint {
+      background-color: #D1F4E0;
+      color: #0E6245;
+    }
+    .tag-blue {
+      background-color: #E2EDFD;
+      color: #2563EB;
+    }
+  </style>
+</head>
+<body class="bg-main-canvas text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-full md:w-64 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 min-h-screen py-7 px-6" data-purpose="sidebar">
+<!-- Top navigation & Branding -->
+<div class="space-y-7">
+<!-- App Logo -->
+<div class="px-2">
+<a class="text-xl font-extrabold tracking-tight text-[#0F52BA]" href="#">
+          SKILLSWAP
+        </a>
+</div>
+<!-- Overview Nav List -->
+<div>
+<h3 class="px-2 text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">OVERVIEW</h3>
+<nav aria-label="Main Navigation" class="space-y-1">
+<!-- Home (Active) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F52BA] hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span>Home</span>
+</a>
+<!-- Search -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.3-4.3"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Swap -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m16 3 4 4-4 4"></path>
+<path d="M20 7H4"></path>
+<path d="m8 21-4-4 4-4"></path>
+<path d="M4 17h16"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Chat -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m3 3 3 9-3 9 19-9Z"></path>
+<path d="M6 12h16"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Session -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="13" r="8"></circle>
+<path d="M12 9v4l2 2"></path>
+<path d="M5 3 2 6"></path>
+<path d="m22 6-3-3"></path>
+<path d="M6.38 18.7 4 21"></path>
+<path d="M17.64 18.67 20 21"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Points Wallet -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Coins Wallet -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<rect height="12" rx="2" width="20" x="2" y="6"></rect>
+<circle cx="12" cy="12" r="2"></circle>
+<path d="M6 12h.01M18 12h.01"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Notifications -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M20 21a8 8 0 0 0-16 0"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Settings Section -->
+<div class="pt-6 border-t border-slate-100">
+<h3 class="px-2 text-xs font-bold uppercase tracking-wider text-slate-700 mb-3">SETTINGS</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-semibold text-rose-500 hover:bg-rose-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+<polyline points="16 17 21 12 16 7"></polyline>
+<line x1="21" x2="9" y1="12" y2="12"></line>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 p-6 md:px-12 md:py-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto space-y-7">
+<!-- BEGIN: ProfileHeaderSection -->
+<section class="text-center pt-2" data-purpose="user-profile-header">
+<!-- Avatar Container -->
+<div class="flex justify-center mb-4">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-white shadow-sm ring-4 ring-white flex items-center justify-center">
+<img alt="Amira Ahmed" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_1Y8XNGWlOfjiUxt14pkh-E8TyPXNRkecYNjOPbsQcE16QP8fGoI4c0Pf1-z8bSoRFKVn7Cp17kYXlNLjtemW_Fd-_CZydr2jiw-t76_9L6B6n02oBZQ4djA2lp-HVO5L5za255zRF-mLmEgMB7OzxMcXZzNUIJJalxQ9AtvmzRIxTjbvqA9L9fQ1zkyRXA60jLhrtErSD1vPVbfTuTC5Hx4-rXK-WngX1Rk3PWlSvpG0t5UXpfgMUw">
+</div>
+</div>
+<!-- User Information -->
+<h1 class="text-2xl font-bold text-[#0F52BA] tracking-tight">Amira Ahmed</h1>
+<p class="text-xs font-medium text-slate-500 mt-0.5">IT Engineer</p>
+<!-- Rating Stars -->
+<div class="flex items-center justify-center gap-1 mt-2">
+<div class="flex text-amber-400 gap-0.5 text-sm">
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<span class="text-xs font-bold text-slate-800 ml-1">4.6</span>
+</div>
+</section>
+<!-- END: ProfileHeaderSection -->
+<!-- BEGIN: MetricsSection -->
+<section class="grid grid-cols-3 gap-4" data-purpose="user-statistics">
+<!-- Taught Metric -->
+<div class="metric-card-bg rounded-xl py-3 px-4 text-center">
+<div class="text-xl font-bold text-[#0F52BA]">30</div>
+<div class="text-xs text-slate-500 font-medium mt-0.5">Taught</div>
+</div>
+<!-- Learned Metric -->
+<div class="metric-card-bg rounded-xl py-3 px-4 text-center">
+<div class="text-xl font-bold text-[#0F52BA]">10</div>
+<div class="text-xs text-slate-500 font-medium mt-0.5">Learned</div>
+</div>
+<!-- Points Metric -->
+<div class="metric-card-bg rounded-xl py-3 px-4 text-center">
+<div class="text-xl font-bold text-[#0F52BA]">70</div>
+<div class="text-xs text-slate-500 font-medium mt-0.5">Points</div>
+</div>
+</section>
+<!-- END: MetricsSection -->
+<!-- BEGIN: SkillPillsSection -->
+<section class="flex flex-wrap items-center gap-2" data-purpose="skills-list">
+<span class="tag-mint text-xs font-medium px-4 py-1.5 rounded-full">Cybersecurity</span>
+<span class="tag-mint text-xs font-medium px-4 py-1.5 rounded-full">Fitness Training</span>
+<span class="tag-mint text-xs font-medium px-4 py-1.5 rounded-full">French</span>
+</section>
+<!-- END: SkillPillsSection -->
+<!-- BEGIN: ActionButtonsSection -->
+<section class="space-y-3 pt-1" data-purpose="action-buttons">
+<!-- Message Action -->
+<button class="w-full bg-[#0F52BA] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full text-sm shadow-sm transition-colors duration-150">
+          Message Amira Ahmed
+        </button>
+<!-- Connect Call Action -->
+<button class="w-full bg-[#10B981] hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-full text-sm shadow-sm transition-colors duration-150">
+          Connect Call
+        </button>
+</section>
+<!-- END: ActionButtonsSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="pt-4" data-purpose="projects-list">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-slate-900">Projects</h2>
+<a class="text-xs font-semibold text-[#0F52BA] hover:underline" href="#">View all</a>
+</div>
+<!-- Projects Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Card 1: Secure Login Authentication System -->
+<div class="bg-white p-4 rounded-xl shadow-xs border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+<!-- Icon Badge -->
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-[#0F52BA] flex items-center justify-center shrink-0">
+<svg class="w-6 h-6 fill-[#0F52BA]" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-xs font-bold text-slate-900 truncate">Secure Login Authentication System</h3>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="tag-blue text-[10px] font-medium px-2 py-0.5 rounded-full">Network</span>
+<span class="tag-blue text-[10px] font-medium px-2 py-0.5 rounded-full">Cybersecurity</span>
+</div>
+<!-- Action Link -->
+<div class="mt-3">
+<a class="text-[11px] font-semibold text-[#0F52BA] hover:underline inline-flex items-center gap-0.5" href="#">
+<span class="text-xs">↗</span> View Project
+                </a>
+</div>
+</div>
+</div>
+<!-- Card 2: Cyber Security -->
+<div class="bg-white p-4 rounded-xl border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+<!-- Icon Badge -->
+<div class="w-12 h-12 rounded-xl bg-[#D1F4E0] text-[#0E6245] flex items-center justify-center shrink-0 font-bold text-sm">
+              CS
+            </div>
+<div class="flex-1 min-w-0">
+<h3 class="text-xs font-bold text-slate-900">Cyber Security</h3>
+<p class="text-[11px] text-slate-400 mt-0.5">Security &amp; threat protection</p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="tag-mint text-[10px] font-medium px-2.5 py-0.5 rounded-full">Cybersecurity</span>
+</div>
+<!-- Action Link -->
+<div class="mt-3">
+<a class="text-[11px] font-semibold text-[#0F52BA] hover:underline inline-flex items-center gap-0.5" href="#">
+<span class="text-xs">↗</span> View Project
+                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: CertificatesSection -->
+<section class="pt-2 pb-8" data-purpose="certificates-list">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-slate-900">Certificates</h2>
+<a class="text-xs font-semibold text-[#0F52BA] hover:underline" href="#">View all</a>
+</div>
+<!-- Certificates Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Card 1: Intro to Cyber Security -->
+<div class="bg-white p-4 rounded-xl border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+<!-- Icon Badge -->
+<div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center shrink-0">
+<svg class="w-5 h-5 fill-amber-400" viewBox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-xs font-bold text-slate-900 truncate">Introduction to Cyber Security</h3>
+<p class="text-[11px] text-slate-500 mt-1">Issued by: Cisco Networking Academ</p>
+<div class="mt-3 text-[10px] text-slate-400">
+                Issued: May 2026 • <a class="text-[#0F52BA] font-medium hover:underline" href="#">View Certificate ↗</a>
+</div>
+</div>
+</div>
+<!-- Card 2: Network Security Fundamentals -->
+<div class="bg-white p-4 rounded-xl border border-slate-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+<!-- Icon Badge -->
+<div class="w-12 h-12 rounded-xl bg-blue-50 text-[#0F52BA] flex items-center justify-center shrink-0">
+<svg class="w-5 h-5 fill-[#0F52BA]" viewBox="0 0 24 24">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-xs font-bold text-slate-900 truncate">Network Security Fundamentals</h3>
+<p class="text-[11px] text-slate-500 mt-1">Issued by: Cisco Networking Academ</p>
+<div class="mt-3 text-[10px] text-slate-400">
+                Issued: March 2026 • <a class="text-[#0F52BA] font-medium hover:underline" href="#">View Certificate ↗</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CertificatesSection -->
+</div>
+</main>
+<!-- END: MainContent -->
+
+
+</body></html>

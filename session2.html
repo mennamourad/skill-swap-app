@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Session - Mohammed Ahmed</title>
+<!-- Tailwind CSS v3 with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="base-theme">
+    body {
+      background-color: #0B1324;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen w-full bg-[#0B1324] text-white relative overflow-hidden select-none">
+<!-- BEGIN: TopNavigation -->
+<header class="w-full flex items-center justify-between px-6 py-5 absolute top-0 left-0 z-10" data-purpose="session-header">
+<!-- Top-left circular dark back arrow button -->
+<button aria-label="Go back" class="w-9 h-9 rounded-full bg-[#1C2536] hover:bg-[#28344A] transition-colors flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-slate-500" data-purpose="back-button" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Top-right red recording pill badge -->
+<div class="bg-[#EF4444] text-white text-[11px] font-semibold tracking-wide px-3.5 py-1.5 rounded-full shadow-sm" data-purpose="recording-badge">
+      REC 45:12
+    </div>
+</header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: MainSessionStage -->
+<main class="min-h-screen w-full flex flex-col items-center justify-center px-4" data-purpose="main-video-stage">
+<!-- Center instructor profile and call controls -->
+<div class="flex flex-col items-center text-center" data-purpose="instructor-profile">
+<!-- Circular avatar of Mohammed Ahmed -->
+<div class="w-28 h-28 rounded-full overflow-hidden bg-white shadow-lg ring-1 ring-white/10">
+<img alt="Mohammed Ahmed" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4yp_LPRmli6-MqcqrcUSsQa4k9Q5Y30tpR2X0YE4rBqOOrnq9DJUUnKUMLtVa4xespOwt6n-OVoOD4ZS6lxWRAUCHvgk0LSivjnhyVotGaT6l_arWrxIUB_cXU9zM3iapIY1E6yDQY1fM3lPPRFMYcwuVT2sJ47k1mRrC6WiQysoAB7nM0jgGtKMjI5K81ihu1jG4zsBq_6dbDZiZLMKYG4ux98VM9T3CnK0eZuk7z41yECdPuv5D2Q">
+</div>
+<!-- Instructor name and subject -->
+<h1 class="mt-4 text-[22px] font-bold tracking-tight text-white">
+        Mohammed Ahmed
+      </h1>
+<p class="mt-1 text-xs font-normal text-[#94A3B8]">
+        Teaching CyberSecurity
+      </p>
+<!-- Call control buttons: Mic, Muted Camera, End Call -->
+<div class="mt-7 flex items-center gap-4" data-purpose="call-controls">
+<!-- Dark microphone button -->
+<button aria-label="Toggle microphone" class="w-12 h-12 rounded-full bg-[#1C2536] hover:bg-[#28344A] transition-colors flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-slate-500" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Dark muted camera button -->
+<button aria-label="Camera muted" class="w-12 h-12 rounded-full bg-[#1C2536] hover:bg-[#28344A] transition-colors flex items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-slate-500" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3 3l18 18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Red end-call button -->
+<button aria-label="End call" class="w-12 h-12 rounded-full bg-[#EF4444] hover:bg-[#DC2626] transition-colors flex items-center justify-center text-white shadow-md focus:outline-none focus:ring-2 focus:ring-red-400" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 3.75L18 6m0 0l2.25 2.25M18 6l2.25-2.25M18 6l-2.25 2.25m-4.243 6.243a15.978 15.978 0 01-4.896-4.896l2.062-2.062a1.125 1.125 0 00.27-1.158l-.846-2.538A1.125 1.125 0 008.76 3H5.25A2.25 2.25 0 003 5.25c0 8.698 7.052 15.75 15.75 15.75A2.25 2.25 0 0021 18.75v-3.51a1.125 1.125 0 00-.786-1.073l-2.538-.846a1.125 1.125 0 00-1.158.27l-2.062 2.062z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</main>
+<!-- END: MainSessionStage -->
+<!-- BEGIN: RightFloatingTiles -->
+<aside class="fixed right-5 top-[45%] -translate-y-1/2 flex flex-col items-end gap-4 z-10" data-purpose="floating-side-tiles">
+<!-- Top floating tile: Salma (You) -->
+<div class="w-[88px] h-[112px] rounded-xl border-[1.5px] border-white/90 bg-[#0F172A]/95 flex flex-col items-center justify-center p-2 shadow-lg cursor-pointer hover:bg-[#1E293B]/90 transition-colors" data-purpose="self-view-tile">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-white mb-2.5">
+<img alt="Salma (You)" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIggFQl4BOrax19vNGOq8QtcLhzxDncjf7SpNr3sd8BcK06pCq3ervSu3rBw6rcusrHjaU6qzSKYKaCutsRgd5xgKFa_5uVHMfEsreisHhTP_6NX9Sjw3SihOrILVBBu0KmIGzON8HMXBQSNTUa7_nYpppYtKFdodFHWWvrga-e-HvmOhOinDVEohROfInF4IA3BviUBD0jyk3_XqzuLrceT9kVZs8zDJbfZwL5spOyhdAsxyx1Uw3aw">
+</div>
+<span class="text-[11px] font-medium text-white text-center leading-tight">
+        Salma (You)
+      </span>
+</div>
+<!-- Bottom floating tile: Learning Summary -->
+<div class="w-[108px] h-[106px] rounded-xl border-[1.5px] border-white/90 bg-[#0F172A]/95 flex flex-col items-center justify-center p-2 shadow-lg cursor-pointer hover:bg-[#1E293B]/90 transition-colors" data-purpose="learning-summary-tile">
+<!-- AI Robot Icon -->
+<div class="w-10 h-10 mb-2 flex items-center justify-center">
+<svg class="w-9 h-9" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<!-- Antenna -->
+<line stroke="#94A3B8" stroke-linecap="round" stroke-width="3" x1="32" x2="32" y1="6" y2="14"></line>
+<circle cx="32" cy="5" fill="#38BDF8" r="3"></circle>
+<!-- Robot Head -->
+<rect fill="#E2E8F0" height="26" rx="8" width="36" x="14" y="14"></rect>
+<!-- Visor -->
+<rect fill="#0F172A" height="14" rx="4" width="26" x="19" y="20"></rect>
+<!-- Eyes -->
+<circle cx="26" cy="27" fill="#38BDF8" r="2.5"></circle>
+<circle cx="38" cy="27" fill="#38BDF8" r="2.5"></circle>
+<!-- Robot Body -->
+<rect fill="#CBD5E1" height="14" rx="5" width="24" x="20" y="42"></rect>
+<circle cx="32" cy="49" fill="#38BDF8" r="3"></circle>
+<!-- Waving Hand / Spark -->
+<circle cx="14" cy="38" fill="#FACC15" r="4"></circle>
+</svg>
+</div>
+<span class="text-[10.5px] font-medium text-white text-center leading-tight">
+        Learning Summary
+      </span>
+</div>
+</aside>
+<!-- END: RightFloatingTiles -->
+
+
+
+
+</body></html>

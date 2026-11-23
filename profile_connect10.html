@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>User Profile - Laila Ahmed</title>
+<!-- Load Tailwind CSS v3 with forms and container-queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0d59b8',
+              hoverBlue: '#0b4a9b',
+              green: '#10b981',
+              hoverGreen: '#059669',
+              lightBg: '#f6f8fc',
+              tagBg: '#d7f3e3',
+              tagText: '#186241',
+              statBg: '#eaf2fd',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography & Micro-adjustments -->
+<style data-purpose="custom-styling">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#f6f8fc] text-slate-800 antialiased min-h-screen flex">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between p-6 shrink-0 min-h-screen" data-purpose="main-sidebar">
+<div>
+<!-- Brand Logo -->
+<div class="px-2 pt-2 pb-8">
+<h1 class="text-2xl font-black tracking-tight text-[#0d59b8] uppercase">SKILLSWAP</h1>
+</div>
+<!-- Navigation Menu -->
+<nav class="space-y-1">
+<div class="px-3 pb-2 text-xs font-bold tracking-wider text-slate-700 uppercase">
+          Overview
+        </div>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold text-[#0d59b8] rounded-xl hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Home
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Search
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Swap
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Chat
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Session
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Points Wallet
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Coins Wallet
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Notifications
+        </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-500 rounded-xl hover:text-slate-800 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Profile
+        </a>
+</nav>
+</div>
+<!-- Sidebar Bottom: Settings & Logout -->
+<div class="space-y-3 pb-4">
+<div class="px-3 text-xs font-bold tracking-wider text-slate-700 uppercase">
+        Settings
+      </div>
+<button class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-rose-500 hover:text-rose-600 w-full transition-colors">
+<svg class="w-5 h-5 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+        Logout
+      </button>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 overflow-y-auto px-12 py-10" data-purpose="profile-page-content">
+<div class="max-w-4xl mx-auto space-y-6">
+<!-- Profile Header Summary -->
+<section class="flex flex-col items-center justify-center text-center pt-2 pb-1" data-purpose="profile-header">
+<!-- User Avatar -->
+<div class="relative w-20 h-20 rounded-full overflow-hidden mb-3.5 shadow-sm ring-1 ring-slate-200">
+<img alt="Laila Ahmed" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbQvCWKjZflqrMbfdneRAnogshrEXGLiLevaTPTNJHKejNCo3y8uGkFnG4OZ4Cf3u7-4NzqDe4Yt5ik1GsvbZhBt2KW8Wdgk84dWaz5A79o1PagnrAWFUwm1skdRCihhIKM8hDGM90s9sRih5sgLPqnORRH2iyHd5rmdwdCUGIsU7eymkd7L1dHPK4PNK_DXNxjMa8oLRGGLRylRLBIKhhReW5CrdERpeYbWN-RvDRJ9jeAOcewifefQ">
+</div>
+<!-- Name & Profession -->
+<h2 class="text-[26px] font-bold text-[#0d59b8] leading-tight mb-1">Laila Ahmed</h2>
+<p class="text-sm text-slate-600 mb-1.5 font-medium">Programmer</p>
+<!-- Rating Stars -->
+<div class="flex items-center gap-1.5 text-amber-400">
+<div class="flex items-center gap-0.5">
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+<svg class="w-4 h-4 fill-amber-400 stroke-amber-400" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+</div>
+<span class="text-sm font-bold text-slate-800 ml-1">4.7</span>
+</div>
+</section>
+<!-- Stats Grid Section -->
+<section class="grid grid-cols-3 gap-5" data-purpose="stats-cards">
+<div class="bg-[#eaf2fd] rounded-2xl py-4 px-6 text-center">
+<div class="text-[22px] font-bold text-[#0d59b8] leading-tight">30</div>
+<div class="text-xs text-slate-600 font-medium mt-0.5">Taught</div>
+</div>
+<div class="bg-[#eaf2fd] rounded-2xl py-4 px-6 text-center">
+<div class="text-[22px] font-bold text-[#0d59b8] leading-tight">10</div>
+<div class="text-xs text-slate-600 font-medium mt-0.5">Learned</div>
+</div>
+<div class="bg-[#eaf2fd] rounded-2xl py-4 px-6 text-center">
+<div class="text-[22px] font-bold text-[#0d59b8] leading-tight">70</div>
+<div class="text-xs text-slate-600 font-medium mt-0.5">Points</div>
+</div>
+</section>
+<!-- Skill Tags Row -->
+<section class="flex flex-wrap gap-2.5 pt-1" data-purpose="skill-tags">
+<span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#d8f5e5] text-[#145d3b]">Python Programming</span>
+<span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#d8f5e5] text-[#145d3b]">Data Structures</span>
+<span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#d8f5e5] text-[#145d3b]">Web Development</span>
+</section>
+<!-- Action CTA Buttons -->
+<section class="space-y-3 pt-2" data-purpose="cta-actions">
+<button class="w-full py-3.5 rounded-full bg-[#0d59b8] text-white font-semibold text-sm hover:bg-[#0b4a9b] transition-all shadow-sm">
+          Message Laila Ahmed
+        </button>
+<button class="w-full py-3.5 rounded-full bg-[#10b981] text-white font-semibold text-sm hover:bg-[#059669] transition-all shadow-sm">
+          Connect Call
+        </button>
+</section>
+<!-- Projects Section -->
+<section class="pt-4" data-purpose="projects-list">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-3.5">
+<h3 class="text-lg font-bold text-slate-900">Projects</h3>
+<a class="text-xs font-bold text-[#0d59b8] hover:underline" href="#">View all</a>
+</div>
+<!-- Projects Cards Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Project 1 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-[#e3effd] flex items-center justify-center shrink-0 text-[#0d59b8] font-mono text-xl font-bold">
+              &lt;/&gt;
+            </div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-bold text-slate-900 leading-snug">Personal Portfolio Website</h4>
+<p class="text-[11px] text-slate-500 mt-1 mb-2.5 leading-normal">Responsive portfolio built with HTML, CSS and JavaScript.</p>
+<div class="flex flex-wrap gap-1.5 mb-2.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#eaf2fd] text-[#0d59b8]">HTML / CSS</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#eaf2fd] text-[#0d59b8]">JavaScript</span>
+</div>
+<a class="inline-flex items-center text-[10px] font-bold text-[#0d59b8] hover:underline" href="#">
+                ↗ View Project
+              </a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-[#dcfce7] flex items-center justify-center shrink-0 text-[#15803d] font-bold text-xl">
+              Py
+            </div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-bold text-slate-900 leading-snug">Python Task Manager</h4>
+<p class="text-[11px] text-slate-500 mt-1 mb-2.5 leading-normal">A simple task management app using Python fundamentals.</p>
+<div class="flex flex-wrap gap-1.5 mb-2.5">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#f0fdf4] text-[#166534] border border-[#dcfce7]">Python</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#f0fdf4] text-[#166534] border border-[#dcfce7]">Beginner</span>
+</div>
+<a class="inline-flex items-center text-[10px] font-bold text-[#0d59b8] hover:underline" href="#">
+                ↗ View Project
+              </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Certificates Section -->
+<section class="pt-2 pb-6" data-purpose="certificates-list">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-3.5">
+<h3 class="text-lg font-bold text-slate-900">Certificates</h3>
+<a class="text-xs font-bold text-[#0d59b8] hover:underline" href="#">View all</a>
+</div>
+<!-- Certificates Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Certificate 1 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-[#fef3c7] flex items-center justify-center shrink-0 text-[#d97706]">
+<svg class="w-6 h-6 fill-[#d97706]" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-bold text-slate-900 leading-snug">Python Programming Certificate</h4>
+<p class="text-[11px] text-slate-500 mt-0.5 mb-2">Issued by: Online Learning Academy</p>
+<div class="text-[10px] font-medium text-slate-500 flex items-center gap-1.5">
+<span>Issued: May 2026</span>
+<span>•</span>
+<a class="text-[#0d59b8] font-bold hover:underline" href="#">View Certificate ↗</a>
+</div>
+</div>
+</div>
+<!-- Certificate 2 -->
+<div class="bg-white rounded-2xl p-4 border border-slate-100 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 rounded-xl bg-[#e0f2fe] flex items-center justify-center shrink-0 text-[#0284c7]">
+<!-- Diamond / Sparkle icon -->
+<svg class="w-6 h-6 fill-[#0284c7]" viewBox="0 0 24 24">
+<path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-xs font-bold text-slate-900 leading-snug">Web Development Fundamentals</h4>
+<p class="text-[11px] text-slate-500 mt-0.5 mb-2">Issued by: Tech Skills Institute</p>
+<div class="text-[10px] font-medium text-slate-500 flex items-center gap-1.5">
+<span>Issued: March 2026</span>
+<span>•</span>
+<a class="text-[#0d59b8] font-bold hover:underline" href="#">View Certificate ↗</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- END: MainContent -->
+
+
+</body></html>

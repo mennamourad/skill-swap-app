@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Wallet Management - SKILLSWAP</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#0052cc',
+              600: '#0052cc',
+              700: '#0043a8',
+            },
+            canvas: '#F4F7FC',
+            sidebar: '#FFFFFF',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    body {
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+  </style>
+</head>
+<body class="bg-[#F4F7FC] text-slate-800 antialiased min-h-screen flex">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex-shrink-0 flex flex-col justify-between min-h-screen p-6" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo -->
+<div class="px-2 pt-2 pb-8">
+<a class="text-[22px] font-black tracking-tight text-[#0052cc] uppercase inline-block" href="#">
+          SKILLSWAP
+        </a>
+</div>
+<!-- Admin Dashboard Primary Action Button -->
+<div class="mb-8">
+<button class="w-full bg-[#0052cc] hover:bg-[#0047b3] text-white font-medium py-2.5 px-4 rounded-lg text-[14px] shadow-sm transition-colors text-left pl-5">
+          Admin Dashboard
+        </button>
+</div>
+<!-- Navigation Section -->
+<div class="space-y-6">
+<div>
+<h3 class="text-xs font-semibold text-slate-400 px-3 uppercase tracking-wider mb-3">
+            Management
+          </h3>
+<nav class="space-y-1">
+<!-- Users -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-[14px] font-normal transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Users</span>
+</a>
+<!-- Skills -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-[14px] font-normal transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Skills</span>
+</a>
+<!-- Sessions -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-[14px] font-normal transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Sessions</span>
+</a>
+<!-- Wallets (Active) -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-[#0052cc] bg-blue-50/50 rounded-lg text-[14px] font-medium transition-colors" href="#">
+<svg class="w-5 h-5 text-[#0052cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Wallets</span>
+</a>
+<!-- Fees -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-[14px] font-normal transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Fees</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3.5 px-3 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-[14px] font-normal transition-colors" href="#">
+<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<div class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<!-- BEGIN: TopBar -->
+<header class="px-8 py-5 flex items-center justify-between" data-purpose="top-navigation">
+<!-- Search Input Container -->
+<div class="relative w-80">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white/80 border border-slate-200/80 rounded-full text-sm text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all" placeholder="Search here" type="text">
+</div>
+<!-- Right Action Items: Notifications, Expand, Profile -->
+<div class="flex items-center gap-4">
+<!-- Notification Button -->
+<button class="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-slate-200/80 text-slate-500 hover:text-slate-700 shadow-sm transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</button>
+<!-- Maximize/Expand Button -->
+<button class="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-slate-200/80 text-slate-500 hover:text-slate-700 shadow-sm transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</button>
+<!-- User Profile Dropdown -->
+<div class="flex items-center gap-3 pl-2 cursor-pointer">
+<img alt="Rana Maher" class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjf8omESicz2kQ9UZVoj2ITqK09uZamkjP9GF8vSGiYDdSfLkHfz0T-kRhHYT64Ybqj84TSvsk2ZTSEc_juM4R0DCbnepgLAcbO9i6HyzoHYsxIF50-RsFXbnraI9d8bBn8UCKPqIcRHunmOmC2mQpKddZx47Ab-vrTmmgHFvXs6Fc5_HGVMeetGnBighRzGL_srGRgPjarjrGsioPLwZ2AYC8w0thEDpSe6P4mbkcObGbkc3kkS9y9A">
+<div class="flex flex-col text-left">
+<span class="text-[13px] font-semibold text-slate-800 leading-tight">Rana Maher</span>
+<span class="text-[11px] text-[#0052cc] font-medium leading-tight">Administrator</span>
+</div>
+<svg class="w-4 h-4 text-slate-400 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainBodyContent -->
+<main class="px-8 pb-10 flex-1">
+<!-- Page Title Header -->
+<div class="mb-6">
+<h1 class="text-[26px] font-bold text-slate-900 tracking-tight">Wallet Management</h1>
+<p class="text-xs text-slate-400 mt-1">Monitor coin transactions, manage balances, and review wallet activity.</p>
+</div>
+<!-- BEGIN: MetricsCardsGrid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-7" data-purpose="metrics-summary">
+<!-- Metric 1: Total Coins in Circulation -->
+<div class="bg-white rounded-xl p-5 border border-slate-100/80 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.03)] text-center">
+<div class="text-[12px] text-slate-400 font-medium mb-1.5">Total Coins in Circulation</div>
+<div class="text-[28px] font-bold text-slate-900 tracking-tight leading-none mb-2">128,450</div>
+<div class="text-[11px] font-semibold text-[#10B981]">+8.4% vs. last month</div>
+</div>
+<!-- Metric 2: Coins Earned -->
+<div class="bg-white rounded-xl p-5 border border-slate-100/80 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.03)] text-center">
+<div class="text-[12px] text-slate-400 font-medium mb-1.5">Coins Earned</div>
+<div class="text-[28px] font-bold text-slate-900 tracking-tight leading-none mb-2">42,680</div>
+<div class="text-[11px] font-semibold text-[#10B981]">+12.2% vs. last month</div>
+</div>
+<!-- Metric 3: Coins Spent -->
+<div class="bg-white rounded-xl p-5 border border-slate-100/80 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.03)] text-center">
+<div class="text-[12px] text-slate-400 font-medium mb-1.5">Coins Spent</div>
+<div class="text-[28px] font-bold text-slate-900 tracking-tight leading-none mb-2">18,320</div>
+<div class="text-[11px] font-semibold text-[#10B981]">+5.6% vs. last month</div>
+</div>
+<!-- Metric 4: Active Wallets -->
+<div class="bg-white rounded-xl p-5 border border-slate-100/80 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.03)] text-center">
+<div class="text-[12px] text-slate-400 font-medium mb-1.5">Active Wallets</div>
+<div class="text-[28px] font-bold text-slate-900 tracking-tight leading-none mb-2">2,846</div>
+<div class="text-[11px] font-semibold text-[#10B981]">+6.1% vs. last month</div>
+</div>
+</div>
+<!-- END: MetricsCardsGrid -->
+<!-- BEGIN: TransactionsTableSection -->
+<section class="bg-white rounded-xl border border-slate-100/80 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.04)] p-6" data-purpose="transactions-table-container">
+<!-- Section Header with Title & Export Action -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-slate-50 gap-4">
+<div>
+<!-- Match the exact wording/typo from snapshot reference: "All SessiWallet Transactionsons" -->
+<h2 class="text-base font-bold text-slate-900 leading-tight">All SessiWallet Transactionsons</h2>
+<p class="text-[12px] text-slate-400 mt-0.5">View and manage all coin movements across user wallets.</p>
+</div>
+<!-- Export Report CTA -->
+<button class="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0052cc] hover:bg-[#0047b3] text-white text-[13px] font-medium rounded-lg shadow-sm transition-colors self-start sm:self-auto">
+<span class="text-base font-light leading-none">+</span>
+<span>Export Report</span>
+</button>
+</div>
+<!-- Filter Controls Bar -->
+<div class="pt-5 pb-6 flex flex-wrap items-center gap-3" data-purpose="filter-bar">
+<!-- Filter: Search user or session -->
+<div class="w-full sm:w-64">
+<input class="w-full text-xs px-3.5 py-2 rounded-lg bg-slate-50/60 border border-slate-200/70 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search user or session..." type="text">
+</div>
+<!-- Filter: All Status -->
+<div class="relative">
+<select class="appearance-none text-xs px-3.5 py-2 pr-8 rounded-lg bg-white border border-slate-200/70 text-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer">
+<option>All Status</option>
+<option>Completed</option>
+<option>Pending</option>
+<option>Failed</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Filter: All Categories -->
+<div class="relative">
+<select class="appearance-none text-xs px-3.5 py-2 pr-8 rounded-lg bg-white border border-slate-200/70 text-slate-600 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer">
+<option>All Categories</option>
+<option>Session Reward</option>
+<option>Skill Exchange</option>
+<option>Admin Adjustment</option>
+<option>Welcome Bonus</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Filter: Date Range -->
+<button class="text-xs px-4 py-2 rounded-lg bg-white border border-slate-200/70 text-slate-600 hover:border-slate-300 transition-colors">
+            Date Range
+          </button>
+</div>
+<!-- Transactions Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="transactions-table">
+<thead>
+<tr class="text-[10px] tracking-wider font-semibold text-slate-400 uppercase">
+<th class="pb-3.5 font-semibold" scope="col">USER</th>
+<th class="pb-3.5 font-semibold" scope="col">TRANSACTION ID</th>
+<th class="pb-3.5 font-semibold" scope="col">TYPE</th>
+<th class="pb-3.5 font-semibold" scope="col">DATE</th>
+<th class="pb-3.5 font-semibold text-center" scope="col">STATUS</th>
+<th class="pb-3.5 font-semibold text-right pr-2" scope="col">AMOUNT</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-xs">
+<!-- Row 1: Sarah Ahmed -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-4">
+<div class="font-bold text-slate-800 text-[13px]">Sarah Ahmed</div>
+<div class="text-[11px] text-slate-400 font-normal">sarah.a@email.com</div>
+</td>
+<td class="py-4 text-slate-600 text-[12px]">#TXN-008421</td>
+<td class="py-4 text-slate-600 text-[12px]">Session Reward</td>
+<td class="py-4 text-slate-600 text-[12px]">Nov 23, 2026</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 text-[11px] font-medium rounded-full bg-[#DEF7EC] text-[#03543F]">
+                    Completed
+                  </span>
+</td>
+<td class="py-4 text-right pr-2 font-semibold text-[13px] text-[#10B981]">
+                  + 50 coins
+                </td>
+</tr>
+<!-- Row 2: Mohamed Khaled -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-4">
+<div class="font-bold text-slate-800 text-[13px]">Mohamed Khaled</div>
+<div class="text-[11px] text-slate-400 font-normal">m.khaled@email.com</div>
+</td>
+<td class="py-4 text-slate-600 text-[12px]">#TXN-008421</td>
+<td class="py-4 text-slate-600 text-[12px]">Skill Exchange</td>
+<td class="py-4 text-slate-600 text-[12px]">Nov 23, 2026</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 text-[11px] font-medium rounded-full bg-[#DEF7EC] text-[#03543F]">
+                    Completed
+                  </span>
+</td>
+<td class="py-4 text-right pr-2 font-semibold text-[13px] text-[#EF4444]">
+                  -30 coins
+                </td>
+</tr>
+<!-- Row 3: Nour Omar -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-4">
+<div class="font-bold text-slate-800 text-[13px]">Nour Omar</div>
+<div class="text-[11px] text-slate-400 font-normal">nour.omar@email.com</div>
+</td>
+<td class="py-4 text-slate-600 text-[12px]">#TXN-008421</td>
+<td class="py-4 text-slate-600 text-[12px]">Admin Adjustment</td>
+<td class="py-4 text-slate-600 text-[12px]">Nov 24, 2026</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 text-[11px] font-medium rounded-full bg-[#FEF08A] text-[#854D0E]">
+                    Pending
+                  </span>
+</td>
+<td class="py-4 text-right pr-2 font-semibold text-[13px] text-[#10B981]">
+                  + 100 coins
+                </td>
+</tr>
+<!-- Row 4: Youssef Ali -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-4">
+<div class="font-bold text-slate-800 text-[13px]">Youssef Ali</div>
+<div class="text-[11px] text-slate-400 font-normal">youssef.a@email.com</div>
+</td>
+<td class="py-4 text-slate-600 text-[12px]">#TXN-008421</td>
+<td class="py-4 text-slate-600 text-[12px]">Welcome Bonus</td>
+<td class="py-4 text-slate-600 text-[12px]">Nov 20, 2026</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 text-[11px] font-medium rounded-full bg-[#FCE8E6] text-[#C81E1E]">
+                    Failed
+                  </span>
+</td>
+<td class="py-4 text-right pr-2 font-semibold text-[13px] text-[#10B981]">
+                  + 20 coins
+                </td>
+</tr>
+<!-- Row 5: Laila Mostafa -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="py-4">
+<div class="font-bold text-slate-800 text-[13px]">Laila Mostafa</div>
+<div class="text-[11px] text-slate-400 font-normal">laila.m@email.com</div>
+</td>
+<td class="py-4 text-slate-600 text-[12px]">#TXN-008421</td>
+<td class="py-4 text-slate-600 text-[12px]">Session Reward</td>
+<td class="py-4 text-slate-600 text-[12px]">Nov 19, 2026</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 text-[11px] font-medium rounded-full bg-[#DEF7EC] text-[#03543F]">
+                    Completed
+                  </span>
+</td>
+<td class="py-4 text-right pr-2 font-semibold text-[13px] text-[#10B981]">
+                  + 75 coins
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- END: TransactionsTableSection -->
+</main>
+<!-- END: MainBodyContent -->
+</div>
+<!-- END: MainContentArea -->
+
+
+</body></html>

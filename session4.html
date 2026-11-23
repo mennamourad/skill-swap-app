@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Live Video Session</title>
+<!-- Tailwind CSS v3 CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-purpose="custom-config">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#0f172a] text-white h-screen w-screen overflow-hidden select-none m-0 p-0 flex flex-col justify-between relative" style="background-color: rgb(13, 21, 39);">
+<!-- BEGIN: TopHeader -->
+<header class="w-full flex items-center justify-between px-6 pt-6 z-20" data-purpose="navigation-header">
+<!-- Back Button -->
+<button aria-label="Go Back" class="w-10 h-10 rounded-full bg-[#1e293b]/70 hover:bg-[#334155] border border-white/10 flex items-center justify-center text-slate-300 transition-colors shadow-sm cursor-pointer" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Recording Indicator Badge -->
+<div class="bg-[#ef4444] text-white px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider flex items-center gap-1.5 shadow-md" data-purpose="recording-status">
+<span>REC 45:12</span>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: CenterParticipantArea -->
+<main class="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none" data-purpose="active-speaker-stage">
+<div class="flex flex-col items-center pointer-events-auto">
+<!-- Active Speaker Circular Profile Image -->
+<div class="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden p-0.5 bg-gradient-to-b from-white/30 to-white/10 shadow-2xl mb-4">
+<img alt="Alaa Ahmed" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpU3gyccYIcMra3u1VBrX0zGMShpiImL_6F3Xrs6_Uv6lGLdPrBxQBuq9pzWL7J_-hV7AHzyitGUbudC-XGqWlVaEqI9Apn-ldEktMoXTROuvp-1OAaE38PRT9KvPP0Avy26xlHvf8cFnfoN1Y0Cev2Atjpgnq3mXDHuC6-DuGX4G_8khvgXUelK4o8DovuospdQKgVYdv778RQT_X55swGrGWZAt19wNhHSDVsnx8p50w_uIxOeCUrA">
+</div>
+<!-- Speaker Name and Network -->
+<h1 class="text-xl md:text-2xl font-bold tracking-tight text-white mb-1">
+        Alaa Ahmed
+      </h1>
+<p class="text-sm font-medium text-slate-400 mb-8">
+        Teaching Network
+      </p>
+<!-- In-Call Control Actions -->
+<div class="flex items-center space-x-4" data-purpose="call-controls">
+<!-- Microphone Button -->
+<button aria-label="Toggle Microphone" class="w-12 h-12 rounded-full bg-[#1e293b]/80 hover:bg-[#334155] border border-white/5 flex items-center justify-center text-slate-200 transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 01-3-3V4.5a3 3 0 016 0V12a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Video Camera Button (Off/Slash) -->
+<button aria-label="Toggle Camera" class="w-12 h-12 rounded-full bg-[#1e293b]/80 hover:bg-[#334155] border border-white/5 flex items-center justify-center text-slate-200 transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+<line stroke="currentColor" stroke-linecap="round" stroke-width="2" x1="3" x2="21" y1="3" y2="21"></line>
+</svg>
+</button>
+<!-- End Call Button -->
+<button aria-label="Leave Call" class="w-12 h-12 rounded-full bg-[#ef4444] hover:bg-red-600 flex items-center justify-center text-white transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer" type="button">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path class="hidden" d="M4.51 15.48l2.12-2.12c.3-.3.72-.45 1.14-.4l2.43.48c.55.11.95.59.95 1.15v2.85c0 .6-.53 1.07-1.12 1.01-6.17-.65-10.27-4.75-10.92-10.92-.06-.59.41-1.12 1.01-1.12h2.85c.56 0 1.04.4 1.15.95l.48 2.43c.05.42-.1.84-.4 1.14L3.06 8.92c1.78 3.51 4.65 6.38 8.16 8.16l1.29-1.29"></path>
+<!-- End call / Phone decline icon -->
+<path class="hidden" clip-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l2.42 2.42A16.036 16.036 0 002.5 12.5a1 1 0 001 1h3.5a1 1 0 001-.804l.58-2.902a1 1 0 00-.285-.898l-1.57-1.57a12.062 12.062 0 014.286-4.286l1.57 1.57a1 1 0 00.898.285l2.902-.58A1 1 0 0016.5 4V1.5a1 1 0 00-1-1c-2.31 0-4.48.562-6.393 1.554L5.12 0.707a1 1 0 00-1.414 1.414l15 15a1 1 0 001.414-1.414l-16.42-16.42z" fill-rule="evenodd"></path>
+<path d="M12 9c-3.1 0-5.87.95-8.15 2.58a1.2 1.2 0 00-.36 1.43l1.83 3.16c.26.45.81.65 1.3.45l2.76-1.15a1.2 1.2 0 00.74-1.11V11.8c.6-.13 1.22-.2 1.88-.2s1.28.07 1.88.2v2.56c0 .48.3.91.74 1.11l2.76 1.15c.49.2 1.04 0 1.3-.45l1.83-3.16a1.2 1.2 0 00-.36-1.43C17.87 9.95 15.1 9 12 9z"></path>
+</svg>
+</button>
+</div>
+</div>
+</main>
+<!-- END: CenterParticipantArea -->
+<!-- BEGIN: RightSidebarThumbnails -->
+<aside class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col space-y-4 z-20" data-purpose="side-participants-panel">
+<!-- User Thumbnail Card (Salme) -->
+<div class="w-24 h-28 bg-[#162032] border border-white/20 rounded-2xl p-2.5 flex flex-col items-center justify-between shadow-xl backdrop-blur-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden mt-1 ring-1 ring-white/20">
+<img alt="Salme (You)" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeShdXQDdlAYz6Yzeoo2gxDw4NL-_yqAhHXOsx6X8l3YB4lfXxCB8L9yRaYRvxL1EJ_pXELK4biVeNsPlXr1djY5hFUudbRFVxw90U278jfnqxOZuCpDZXz-eJL48j0uJVHK0BqNxLgNiGU7k9Lmp_88Ir7rqEM1HlTgcACguvsxFuYslVGQeVcM1hx5c14HdGR-smm-A7rr7nn5cKxeUzs2gctzucpTaWOD4aVzUBdl1QL9YXQJ6gHA">
+</div>
+<span class="text-[11px] font-medium text-slate-200 text-center tracking-tight">Salme (You)</span>
+</div>
+<!-- AI Bot Thumbnail Card (Learning Summary) -->
+<div class="w-24 h-28 bg-[#162032] border border-white/20 rounded-2xl p-2.5 flex flex-col items-center justify-between shadow-xl backdrop-blur-sm cursor-pointer hover:border-white/40 transition-colors">
+<div class="w-12 h-12 flex items-center justify-center mt-1">
+<!-- Cute Robot Assistant SVG Illustration -->
+<svg class="w-11 h-11" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<!-- Antenna -->
+<circle cx="24" cy="7" fill="#38BDF8" r="2.5"></circle>
+<path d="M24 9.5V13" stroke="#38BDF8" stroke-linecap="round" stroke-width="2"></path>
+<!-- Head Outer -->
+<rect fill="#1E293B" height="22" rx="10" stroke="#38BDF8" stroke-width="2.5" width="28" x="10" y="13"></rect>
+<!-- Screen Face -->
+<rect fill="#0F172A" height="15" rx="6" width="21" x="13.5" y="16.5"></rect>
+<!-- Winking Eye Left -->
+<path d="M18 24.5C18 23 20 23 20 24.5" stroke="#38BDF8" stroke-linecap="round" stroke-width="2"></path>
+<!-- Happy Eye Right -->
+<circle cx="27.5" cy="23.5" fill="#38BDF8" r="2"></circle>
+<!-- Rosy Cheeks -->
+<circle cx="16.5" cy="27.5" fill="#F43F5E" r="1"></circle>
+<circle cx="30.5" cy="27.5" fill="#F43F5E" r="1"></circle>
+<!-- Waving Hand Left -->
+<path d="M9 22C6.5 20.5 6 18.5 7.5 17C9 15.5 10.5 18 10 20" stroke="#38BDF8" stroke-linecap="round" stroke-width="2"></path>
+<!-- Hand Right -->
+<path d="M38.5 22C40.5 23.5 41 25.5 40 27" stroke="#38BDF8" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-[10px] font-medium text-slate-200 text-center leading-tight">Learning Summary</span>
+</div>
+</aside>
+<!-- END: RightSidebarThumbnails -->
+<!-- Subtle bottom spacing keeper -->
+<footer class="h-6 w-full pointer-events-none"></footer>
+
+
+
+
+</body></html>

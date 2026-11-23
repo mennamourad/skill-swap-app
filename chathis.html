@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Messages</title>
+<!-- Load Tailwind CSS v3 with forms and container-queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0062D2',
+              hover: '#0052B3',
+              light: '#EBF4FF'
+            },
+            sidebar: '#FFFFFF',
+            canvas: '#F4F7FB',
+            cardBorder: '#E5EBF2'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Style blocks grouped by purpose -->
+<style data-purpose="base-typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style data-purpose="custom-scrollbars">
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="bg-[#F3F6FA] text-slate-800 min-h-screen flex antialiased select-none">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-white min-h-screen flex flex-col justify-between border-r border-slate-100 flex-shrink-0 px-6 py-7" data-purpose="main-navigation-sidebar">
+<!-- Top Nav Section -->
+<div class="flex flex-col space-y-8">
+<!-- Logo -->
+<div class="px-2">
+<a class="text-2xl font-extrabold tracking-tight text-[#0062D2] uppercase" href="#">
+          SKILLSWAP
+        </a>
+</div>
+<!-- Navigation Links -->
+<nav aria-label="Main Navigation" class="flex flex-col space-y-6">
+<div>
+<!-- Section Label -->
+<h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2 mb-3">
+            Overview
+          </h3>
+<ul class="space-y-1">
+<!-- Home -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+</li>
+<!-- Search -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+</li>
+<!-- Swap -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M4.5 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M7.5 14.25L4.5 11.25m0 0l-3 3m3-3v7.5M16.5 9.75l3 3m0 0l3-3m-3 3V5.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+</li>
+<!-- Chat (Active Item) -->
+<li>
+<a aria-current="page" class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-semibold text-[#0062D2] transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[#0062D2] stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+</li>
+<!-- Session -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+</li>
+<!-- Points Wallet -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+</li>
+<!-- Coins Wallet -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0 0a.75.75 0 01.75.75v.75m0-9.75h16.5a1.5 1.5 0 011.5 1.5v7.5a1.5 1.5 0 01-1.5 1.5H3.75m16.5-10.5V4.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v1.5m16.5 0H3.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+</li>
+<!-- Notifications -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+</li>
+<!-- Profile -->
+<li>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-current stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Bottom Section: Settings & Logout -->
+<div class="pt-6">
+<h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-2 mb-3">
+        Settings
+      </h3>
+<a class="flex items-center gap-3.5 px-2.5 py-2 rounded-lg text-[14px] font-medium text-rose-500 hover:bg-rose-50/50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-rose-500 stroke-[1.8] fill-none" viewBox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#F4F7FB]" data-purpose="chat-history-main">
+<!-- Top Content Container -->
+<div class="max-w-7xl w-full mx-auto px-8 pt-7 pb-12 flex-1">
+<!-- BEGIN: ContentHeader -->
+<header class="flex items-center justify-between mb-8" data-purpose="header-section">
+<h1 class="text-[22px] font-bold text-slate-900 tracking-tight">Messages</h1>
+<!-- Search Trigger Icon Button -->
+<button aria-label="Search messages" class="text-slate-700 hover:text-slate-900 p-1.5 transition-colors focus:outline-none" type="button">
+<svg class="w-6 h-6 stroke-current stroke-[2] fill-none" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: ContentHeader -->
+<!-- BEGIN: MessageList -->
+<section aria-label="Recent Conversations" class="space-y-3.5">
+<!-- Message Item 1: Mohammed Ahmed -->
+<article class="bg-white rounded-xl border border-[#E7EDF4] px-5 py-4 flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-all cursor-pointer" data-purpose="chat-card-mohammed">
+<div class="flex items-center gap-4 min-w-0">
+<!-- Avatar with Online Status Indicator -->
+<div class="relative flex-shrink-0">
+<img alt="Mohammed Ahmed avatar" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB648xRDVNWgYakX1kN8anrpIYcYr88X2YX4GtsfkeOWQnvegkrVs_0ovMwfzdeJSwhMH_Sz4pRORe0hco1Ga7cFAkuMUSifMRDMedbQpFYMZVji3jpWzAW4iokU-TvEtMQZAYN28-nceKvW3Ls5vcxtFEQ4tFPTiXkYAxabbfXJQFBzLLCw8aqsPXs0HtvNwTL9KmUGrAC18G3vETGJpdYmI4w_T-ljbo0bAoAE8PA16rkw48JUfNMvg">
+<span class="absolute bottom-0.5 right-0.5 w-3 h-3 bg-[#10B981] border-2 border-white rounded-full" title="Online"></span>
+</div>
+<!-- Name and Message Preview -->
+<div class="min-w-0">
+<h2 class="text-[14.5px] font-bold text-slate-900 leading-snug">Mohammed Ahmed</h2>
+<p class="text-[13px] text-slate-500 truncate mt-0.5">Great! Let's meet tomorrow at 5 pm.</p>
+</div>
+</div>
+<!-- Timestamp -->
+<div class="flex-shrink-0 text-right ml-4">
+<span class="text-[12px] font-normal text-slate-400">2m ago</span>
+</div>
+</article>
+<!-- Message Item 2: Salma Mohammed -->
+<article class="bg-white rounded-xl border border-[#E7EDF4] px-5 py-4 flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-all cursor-pointer" data-purpose="chat-card-salma">
+<div class="flex items-center gap-4 min-w-0">
+<!-- Avatar with Online Status Indicator -->
+<div class="relative flex-shrink-0">
+<img alt="Salma Mohammed avatar" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEzgd_NEw7XDgYePYeuzWaaUqj7oZ3yOU5AjUbOhECCFHc03VrEq0REZCfOBL4zZAuPhuu0L_2RBzhAcWEu36lgjDsfy-Mbo3vIedEu0GGKalRqMW8NNjB8pzvT25xT6AHuX9ByRm_zhPd2LwLTkj9K4JoZgE9jNVXThpWEc8HFp4ezTAu7MQ-qxpd0CVB-K-jR1iQiJTb7UiKBMIqwqDqGApT9GSFB-mPmy1f2BoPa12VJ9SUbkkgxQ">
+<span class="absolute bottom-0.5 right-0.5 w-3 h-3 bg-[#10B981] border-2 border-white rounded-full" title="Online"></span>
+</div>
+<!-- Name and Message Preview -->
+<div class="min-w-0">
+<h2 class="text-[14.5px] font-bold text-slate-900 leading-snug">Salma Mohammed</h2>
+<p class="text-[13px] text-slate-500 truncate mt-0.5">Sure, see you then!</p>
+</div>
+</div>
+<!-- Timestamp -->
+<div class="flex-shrink-0 text-right ml-4">
+<span class="text-[12px] font-normal text-slate-400">1h ago</span>
+</div>
+</article>
+<!-- Message Item 3: Samy Ali -->
+<article class="bg-white rounded-xl border border-[#E7EDF4] px-5 py-4 flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-all cursor-pointer" data-purpose="chat-card-samy">
+<div class="flex items-center gap-4 min-w-0">
+<!-- Avatar without Indicator -->
+<div class="relative flex-shrink-0">
+<img alt="Samy Ali avatar" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC36jMI024-kvfTYEPP-4ixvxkhiXhVXNPOEfdILKW7xO6XRQfu4PC338Qz6rJ-1l90CkT4gXuNNPIEXG-o_obZWs2jnThZozkLsS7pfIqWl1fL78BXrMpjxEQgw16sHShbSl0J7VCnZPXeFXMoq0SNYqFjGfTdxW33Sn5ZQmajIaIDmW3Aux0n_c0S5HtbgYAak-UcKqo9ScciRbO0mqpRpuxFlcYk_NJgSDtX67ZSjNMDjx0VAiaEtg">
+</div>
+<!-- Name and Message Preview -->
+<div class="min-w-0">
+<h2 class="text-[14.5px] font-bold text-slate-900 leading-snug">Samy Ali</h2>
+<p class="text-[13px] text-slate-500 truncate mt-0.5">Thanks for the review!</p>
+</div>
+</div>
+<!-- Timestamp -->
+<div class="flex-shrink-0 text-right ml-4">
+<span class="text-[12px] font-normal text-slate-400">1 day ago</span>
+</div>
+</article>
+</section>
+<!-- END: MessageList -->
+</div>
+</main>
+<!-- END: MainContentArea -->
+
+
+</body></html>

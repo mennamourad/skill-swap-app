@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Reviews</title>
+<!-- Tailwind CSS CDN with forms and container-queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#172554',
+            },
+            star: '#f59e0b',
+            'star-empty': '#d1d5db',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background-color: #f1f5f9;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 antialiased flex flex-row">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 min-h-screen p-6" data-purpose="sidebar-navigation">
+<div>
+<!-- Brand Logo Header -->
+<div class="px-2 pt-2 pb-8">
+<span class="text-xl font-extrabold tracking-wide text-brand-600 uppercase">SKILLSWAP</span>
+</div>
+<!-- Navigation Section -->
+<div>
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">OVERVIEW</p>
+<nav aria-label="Main Navigation" class="space-y-1.5">
+<!-- Active Nav Item: Home -->
+<a aria-current="page" class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-brand-600 bg-brand-50" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 9.75L12 3l9 9.75V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+<!-- Nav Item: Search -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+<!-- Nav Item: Swap -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M4.5 12c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l3-3m15 3l-3-3m3 3l-3 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+<!-- Nav Item: Chat -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+<!-- Nav Item: Session -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+<!-- Nav Item: Points Wallet -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 21.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+<!-- Nav Item: Coins Wallet -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+<!-- Nav Item: Notifications -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<!-- Nav Item: Profile -->
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Sidebar Bottom: Settings & Logout -->
+<div class="pt-6 border-t border-slate-100">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">SETTINGS</p>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-red-500 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors" href="#">
+<svg class="w-5 h-5 stroke-[1.75]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-8 py-6 max-w-7xl mx-auto overflow-y-auto">
+<!-- Header with Back Button -->
+<header class="flex items-center gap-3 mb-6" data-purpose="page-header">
+<a aria-label="Go back" class="w-8 h-8 rounded-full border border-brand-600/30 flex items-center justify-center text-brand-600 hover:bg-blue-50 transition-colors" href="#">
+<svg class="w-4 h-4 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<h1 class="text-xl font-bold text-brand-700 tracking-tight">Reviews</h1>
+</header>
+<!-- BEGIN: RatingOverviewCard -->
+<section class="bg-white rounded-2xl p-6 mb-4 shadow-sm border border-slate-100" data-purpose="rating-overview">
+<div class="flex items-start justify-between">
+<div>
+<!-- Large numeric rating -->
+<div class="text-5xl font-extrabold text-blue-900 tracking-tight leading-none mb-2">4.6</div>
+<!-- Subtext -->
+<p class="text-sm font-normal text-slate-500">out of 5 stars</p>
+</div>
+<!-- Overall Star Rating -->
+<div aria-label="4.6 out of 5 stars" class="flex items-center gap-1.5 pt-1">
+<svg class="w-5 h-5 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-5 h-5 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-5 h-5 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-5 h-5 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-5 h-5 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+</div>
+</section>
+<!-- END: RatingOverviewCard -->
+<!-- BEGIN: ReviewCardsList -->
+<section class="space-y-3.5" data-purpose="reviews-list">
+<!-- Review Card 1: Chris Sharma -->
+<article class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100" data-purpose="review-item">
+<div class="flex items-start justify-between mb-2.5">
+<div class="flex items-center gap-3">
+<img alt="Chris Sharma avatar" class="w-10 h-10 rounded-full object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBONuN3qFgB3aAaPxf_THux4Y4jeZ1VgP5tezMFLAOuX90mfgrH1qgOd8iKPnG0laU2cE0FBiDlxg0C0nb-rmoWZtftEbsFwyoaPmhVVNbu8wAvrcH8X_jlt0QUt5pVqUEOpe2eV6f5uiSnGTKHYaU1bUpKGntNcoHHknJKxpXKwMPDajspgQmL75FXj7pvx6VrTfLL847BkQTC6jJXBM1VbLq7_CCS2O5NmY9Y5KYVd7gJxv5A9984Kw">
+<div>
+<h2 class="text-sm font-bold text-slate-900 leading-snug">Chris Sharma</h2>
+<p class="text-xs text-slate-400">Yesterday</p>
+</div>
+</div>
+<!-- 5 Stars -->
+<div aria-label="Rated 5 out of 5 stars" class="flex items-center gap-1">
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-800">"Great, patient &amp; clear!"</p>
+</article>
+<!-- Review Card 2: Priya -->
+<article class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100" data-purpose="review-item">
+<div class="flex items-start justify-between mb-2.5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center text-sm">
+              P
+            </div>
+<div>
+<h2 class="text-sm font-bold text-slate-900 leading-snug">Priya</h2>
+<p class="text-xs text-slate-400">3 days ago</p>
+</div>
+</div>
+<!-- 5 Stars -->
+<div aria-label="Rated 5 out of 5 stars" class="flex items-center gap-1">
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-800">"Explain really well."</p>
+</article>
+<!-- Review Card 3: Alex -->
+<article class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100" data-purpose="review-item">
+<div class="flex items-start justify-between mb-2.5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center text-sm">
+              A
+            </div>
+<div>
+<h2 class="text-sm font-bold text-slate-900 leading-snug">Alex</h2>
+<p class="text-xs text-slate-400">1 week ago</p>
+</div>
+</div>
+<!-- 4 Gold Stars + 1 Gray Star -->
+<div aria-label="Rated 4 out of 5 stars" class="flex items-center gap-1">
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-slate-300 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-800">"Helped me to learn."</p>
+</article>
+<!-- Review Card 4: Sarah -->
+<article class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100" data-purpose="review-item">
+<div class="flex items-start justify-between mb-2.5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center text-sm">
+              S
+            </div>
+<div>
+<h2 class="text-sm font-bold text-slate-900 leading-snug">Sarah</h2>
+<p class="text-xs text-slate-400">2 weeks ago</p>
+</div>
+</div>
+<!-- 5 Stars -->
+<div aria-label="Rated 5 out of 5 stars" class="flex items-center gap-1">
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 fill-transparent stroke-amber-400 stroke-[1.8]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-800">"Excellent pacing for absolute beginners."</p>
+</article>
+</section>
+<!-- END: ReviewCardsList -->
+</main>
+<!-- END: MainContent -->
+
+
+</body></html>

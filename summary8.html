@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - AI Session Summary &amp; Quiz</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#1d4ed8',
+              600: '#0052cc',
+              700: '#0b57d0',
+            },
+            canvas: '#f8fafc',
+            subtle: '#e2e8f0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scroll">
+    /* Subtle custom styles for neat aesthetics */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased min-h-screen flex">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-100 flex flex-col justify-between shrink-0 min-h-screen py-7 px-6 select-none" data-purpose="main-sidebar">
+<!-- Top Area: Brand & Overview Nav -->
+<div class="space-y-8">
+<!-- Brand Logo -->
+<div class="px-2">
+<h1 class="text-[22px] font-extrabold tracking-tight text-[#0052cc]">SKILLSWAP</h1>
+</div>
+<!-- Navigation Links -->
+<nav class="space-y-6" data-purpose="navigation-section">
+<div>
+<h2 class="text-[11px] font-semibold text-slate-400 tracking-wider uppercase px-2 mb-3">Overview</h2>
+<ul class="space-y-1">
+<!-- Active Home item -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-medium text-[#0052cc] rounded-lg transition-colors group" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Home</span>
+</a>
+</li>
+<!-- Search -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Search</span>
+</a>
+</li>
+<!-- Swap -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Swap</span>
+</a>
+</li>
+<!-- Chat -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Chat</span>
+</a>
+</li>
+<!-- Session -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Session</span>
+</a>
+</li>
+<!-- Points Wallet -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Points Wallet</span>
+</a>
+</li>
+<!-- Coins Wallet -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0 0a2.25 2.25 0 002.25 2.25h13.5a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H3.75A1.5 1.5 0 002.25 5.25zM12 11.25a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Coins Wallet</span>
+</a>
+</li>
+<!-- Notifications -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Notifications</span>
+</a>
+</li>
+<!-- Profile -->
+<li>
+<a class="flex items-center gap-3.5 px-3 py-2 text-[14px] font-normal text-slate-500 hover:text-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<!-- Bottom Area: Settings & Logout -->
+<div class="pt-6 border-t border-slate-50">
+<h2 class="text-[11px] font-semibold text-slate-400 tracking-wider uppercase px-2 mb-3">Settings</h2>
+<a class="flex items-center gap-3 px-2 py-2 text-[14px] font-medium text-rose-500 hover:text-rose-600 transition-colors" href="#">
+<svg class="w-[18px] h-[18px] stroke-[2] stroke-current" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 px-10 py-9 overflow-y-auto max-w-[1240px]">
+<!-- Header Section -->
+<!-- BEGIN: HeaderSection -->
+<header class="mb-7" data-purpose="page-header">
+<h1 class="text-[23px] font-bold text-slate-800 tracking-tight mb-2">AI Session Summary &amp; Quiz</h1>
+<h2 class="text-[17px] font-bold text-slate-800 mb-1">Your learning session is complete!</h2>
+<p class="text-[14px] text-slate-400">Review the key points from your session and test what you learned.</p>
+</header>
+<!-- END: HeaderSection -->
+<!-- Session Info Card -->
+<!-- BEGIN: SessionCard -->
+<section class="bg-white rounded-2xl border border-slate-100 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.02)] mb-6 flex items-center justify-between" data-purpose="session-banner">
+<div>
+<h3 class="text-[16px] font-semibold text-slate-800 tracking-tight mb-1">Session: Figma Design Fundamentals</h3>
+<p class="text-[13px] text-slate-400 font-normal">With Sama Ali • 22 Nov 2026 • 60 minutes</p>
+</div>
+<!-- Completed Status Badge -->
+<div>
+<span class="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-[13px] font-semibold bg-[#e7f7ed] text-[#1b8744]">
+<svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Completed
+        </span>
+</div>
+</section>
+<!-- END: SessionCard -->
+<!-- Grid Container: Summary & Topics -->
+<!-- BEGIN: GridDetails -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+<!-- AI Session Summary Left Card -->
+<section class="lg:col-span-8 bg-white rounded-2xl border border-slate-100 p-7 shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col justify-between" data-purpose="summary-content">
+<div>
+<h3 class="text-[17px] font-bold text-slate-800 mb-4">AI Session Summary</h3>
+<ul class="space-y-4 text-[14px] text-slate-600 leading-relaxed">
+<li class="flex items-start gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-[#0052cc] mt-2 shrink-0"></span>
+<span>In this session, you explored the foundations of UI/UX design and how to create clear, user-friendly digital experiences.</span>
+</li>
+</ul>
+<h4 class="text-[14px] font-bold text-slate-800 mt-6 mb-3">Key takeaways</h4>
+<ul class="space-y-3.5 text-[14px] text-slate-600">
+<li class="flex items-start gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-[#0052cc] mt-1.5 shrink-0"></span>
+<span>UI focuses on the visual layout and interaction elements.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-[#0052cc] mt-1.5 shrink-0"></span>
+<span>UX focuses on the overall user journey and satisfaction.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-[#0052cc] mt-1.5 shrink-0"></span>
+<span>Wireframes help organize content before visual styling.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="inline-block w-2 h-2 rounded-full bg-[#0052cc] mt-1.5 shrink-0"></span>
+<span>Consistency makes interfaces easier to understand.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Key Topics Right Card -->
+<section class="lg:col-span-4 bg-white rounded-2xl border border-slate-100 p-7 shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col justify-between" data-purpose="key-topics">
+<div>
+<h3 class="text-[17px] font-bold text-slate-800 mb-5">Key Topics</h3>
+<!-- Pill Tags 2x2 Grid -->
+<div class="grid grid-cols-2 gap-2.5 mb-8">
+<div class="bg-[#EBF3FF] text-[#0052cc] text-[13px] font-semibold text-center py-2.5 px-3 rounded-full">
+              UI Design
+            </div>
+<div class="bg-[#EBF3FF] text-[#0052cc] text-[13px] font-semibold text-center py-2.5 px-3 rounded-full">
+              UX Principles
+            </div>
+<div class="bg-[#EBF3FF] text-[#0052cc] text-[13px] font-semibold text-center py-2.5 px-3 rounded-full">
+              Wireframing
+            </div>
+<div class="bg-[#EBF3FF] text-[#0052cc] text-[13px] font-semibold text-center py-2.5 px-3 rounded-full">
+              Consistency
+            </div>
+</div>
+</div>
+<!-- Learning Progress Section -->
+<div>
+<hr class="border-slate-100 mb-5"/>
+<div class="space-y-3">
+<span class="text-[14px] font-bold text-slate-800 block">Learning progress</span>
+<!-- Progress Bar -->
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-[#0052cc] rounded-full" style="width: 80%;"></div>
+</div>
+<!-- Progress Details -->
+<div class="flex items-center justify-between text-[12px] font-medium text-slate-400">
+<span>4 topics covered</span>
+<span class="font-bold text-[#0052cc]">80%</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- END: GridDetails -->
+<!-- Knowledge Check Section -->
+<!-- BEGIN: KnowledgeCheck -->
+<section class="bg-white rounded-2xl border border-slate-100 p-7 shadow-[0_1px_2px_rgba(0,0,0,0.02)]" data-purpose="knowledge-quiz">
+<!-- Top header with Submit button -->
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-[17px] font-bold text-slate-800">Knowledge Check</h3>
+<button class="px-7 py-2 bg-[#0052cc] hover:bg-[#0045ab] text-white text-[13px] font-medium rounded-full shadow-sm transition-colors" type="button">
+          Submit
+        </button>
+</div>
+<p class="text-[13px] text-slate-400 mb-5">Answer these quick questions to review your understanding.</p>
+<!-- Question Block -->
+<div class="space-y-4">
+<p class="text-[14px] font-bold text-slate-800">1. What is the main focus of UX design?</p>
+<!-- Options List -->
+<div class="space-y-3">
+<!-- Option 1: Unselected -->
+<label class="flex items-center gap-3.5 px-4 py-3.5 border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-colors">
+<span class="w-[18px] h-[18px] rounded-full border-[1.5px] border-slate-400 flex items-center justify-center shrink-0"></span>
+<span class="text-[13px] font-normal text-slate-700">The visual appearance of buttons and colors</span>
+</label>
+<!-- Option 2: Selected -->
+<label class="flex items-center gap-3.5 px-4 py-3.5 border-[1.5px] border-[#0052cc] bg-[#F1F6FE] rounded-xl cursor-pointer">
+<span class="w-[18px] h-[18px] rounded-full bg-[#0052cc] flex items-center justify-center shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</span>
+<span class="text-[13px] font-bold text-[#0052cc]">The overall user journey and experience</span>
+</label>
+<!-- Option 3: Unselected -->
+<label class="flex items-center gap-3.5 px-4 py-3.5 border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300 transition-colors">
+<span class="w-[18px] h-[18px] rounded-full border-[1.5px] border-slate-400 flex items-center justify-center shrink-0"></span>
+<span class="text-[13px] font-normal text-slate-700">Writing code for the application</span>
+</label>
+</div>
+</div>
+</section>
+<!-- END: KnowledgeCheck -->
+</main>
+<!-- END: MainContent -->
+</body></html>

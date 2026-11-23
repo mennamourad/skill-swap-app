@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillSwap - Role Selection</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'swap-bg': '#f8fafc',
+            'brand-blue': '#0052cc',
+            'brand-blue-hover': '#0047b3',
+            'brand-navy': '#0f4c81',
+            'brand-green': '#10b981',
+            'text-navy': '#1d4ed8',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom typography styles -->
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+<!-- Layout helpers -->
+<style data-purpose="layout-helpers">
+    .role-btn {
+      transition: all 0.15s ease-in-out;
+    }
+    .role-btn:active {
+      transform: scale(0.99);
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col justify-center items-center antialiased select-none px-4">
+<!-- BEGIN: MainContent -->
+<main class="w-full max-w-4xl flex flex-col items-center justify-center -mt-10" data-purpose="role-selection-container">
+<!-- BEGIN: BrandHeader -->
+<header class="flex flex-col items-center text-center" data-purpose="branding-and-headline">
+<!-- Logo Mark (Lightbulb with exchange motif and radiance marks) -->
+<div class="relative w-28 h-28 flex items-center justify-center mb-1" data-purpose="brand-icon">
+<svg class="w-full h-full drop-shadow-sm" fill="none" viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Light rays around the bulb -->
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="28" x2="16" y1="42" y2="40"></line>
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="33" x2="22" y1="26" y2="17"></line>
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="50" x2="48" y1="18" y2="6"></line>
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="92" x2="104" y1="42" y2="40"></line>
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="87" x2="98" y1="26" y2="17"></line>
+<line stroke="#f59e0b" stroke-linecap="round" stroke-width="4.5" x1="70" x2="72" y1="18" y2="6"></line>
+<!-- Lightbulb Outer Contour -->
+<path d="M40 76C34.5 70 30 61.5 30 51C30 34.43 43.43 21 60 21C76.57 21 90 34.43 90 51C90 61.5 85.5 70 80 76C76.5 79.8 74 84 74 89H46C46 84 43.5 79.8 40 76Z" fill="#ffffff" stroke="#0256c4" stroke-linejoin="round" stroke-width="5"></path>
+<!-- Lightbulb Base / Screw Thread -->
+<path d="M48 95H72" stroke="#0256c4" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M51 101H69" stroke="#0256c4" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M55 106H65" stroke="#0256c4" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- Internal Avatars and Exchange Arrows -->
+<!-- Left Person (Navy Blue) -->
+<circle cx="50" cy="46" fill="#0256c4" r="4.5"></circle>
+<path d="M42 59C42 54.5 45.5 53 50 53C54.5 53 58 54.5 58 59" fill="#0256c4"></path>
+<!-- Right Person (Green) -->
+<circle cx="70" cy="46" fill="#10b981" r="4.5"></circle>
+<path d="M62 59C62 54.5 65.5 53 70 53C74.5 53 78 54.5 78 59" fill="#10b981"></path>
+<!-- Curved Exchange Arrows -->
+<!-- Top Arrow (Blue, points towards right user) -->
+<path d="M49 39C54 36.5 63 36.5 67 39" stroke="#0256c4" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M64 36.5L68 39.5L64 42.5" fill="none" stroke="#0256c4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Bottom Arrow (Green, points towards left user) -->
+<path d="M71 63C66 65.5 57 65.5 53 63" stroke="#10b981" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M56 65.5L52 62.5L56 59.5" fill="none" stroke="#10b981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- SkillSwap Brand Wordmark -->
+<h1 class="text-[40px] font-extrabold tracking-tight flex items-center leading-none mb-4" data-purpose="brand-title">
+<span class="text-[#0747a6]">Skill</span><span class="text-[#00aa6c]">Swap</span>
+</h1>
+<!-- Tagline -->
+<p class="text-[17px] font-medium text-[#1a56db] leading-relaxed max-w-sm mb-9" data-purpose="brand-tagline">
+        Share what you know,<br/>
+        learn what you want to learn.
+      </p>
+</header>
+<!-- END: BrandHeader -->
+<!-- BEGIN: ActionButtons -->
+<div class="w-full max-w-[820px] flex flex-col items-stretch space-y-4 px-4" data-purpose="role-buttons-group">
+<!-- Admin Role Button -->
+<button class="role-btn w-full bg-[#0052cc] hover:bg-[#0047b3] text-white font-semibold text-[17px] py-[15px] rounded-full shadow-sm text-center focus:outline-none focus:ring-4 focus:ring-blue-300" data-purpose="select-admin-role" id="admin-btn" type="button">
+        Admin
+      </button>
+<!-- User Role Button -->
+<button class="role-btn w-full bg-[#0052cc] hover:bg-[#0047b3] text-white font-semibold text-[17px] py-[15px] rounded-full shadow-sm text-center focus:outline-none focus:ring-4 focus:ring-blue-300" data-purpose="select-user-role" id="user-btn" type="button">
+        User
+      </button>
+</div>
+<!-- END: ActionButtons -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="role-selection-actions">
+    document.addEventListener('DOMContentLoaded', () => {
+      const adminBtn = document.getElementById('admin-btn');
+      const userBtn = document.getElementById('user-btn');
+
+      adminBtn.addEventListener('click', () => {
+        console.log('Role selected: Admin');
+      });
+
+      userBtn.addEventListener('click', () => {
+        console.log('Role selected: User');
+      });
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>

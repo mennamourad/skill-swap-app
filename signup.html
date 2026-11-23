@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillSwap - Sign Up</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0052cc',
+              hover: '#0047b3',
+              text: '#0043a6',
+              green: '#10b981',
+              yellow: '#facc15'
+            },
+            inputBg: '#f8faff',
+            inputBorder: '#e2e8f0',
+            subtext: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-elements">
+    body {
+      background-color: #ffffff;
+      color: #1e293b;
+    }
+    .form-input-field {
+      background-color: #f8faff;
+      border: 1px solid #dce4ee;
+      border-radius: 0.85rem;
+      height: 48px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      font-size: 0.925rem;
+      color: #334155;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+    .form-input-field::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+    .form-input-field:focus {
+      outline: none;
+      border-color: #0052cc;
+      box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.15);
+      background-color: #ffffff;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen flex flex-col justify-start items-center pt-24 pb-16 px-4 selection:bg-blue-100 selection:text-blue-900 font-sans">
+<!-- BEGIN: SignUpContainer -->
+<main class="w-full max-w-[1380px] mx-auto flex flex-col items-center" data-purpose="signup-card">
+<!-- BEGIN: HeaderSection -->
+<header class="flex flex-col items-center mb-10 text-center" data-purpose="brand-header">
+<!-- SkillSwap Logo Symbol -->
+<div aria-hidden="true" class="relative w-16 h-16 flex items-center justify-center mb-1">
+<!-- SVG Bulb with circular arrows and nodes -->
+<svg aria-label="SkillSwap Lightbulb Logo" class="w-full h-full drop-shadow-sm overflow-visible" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<!-- Golden Radiant Rays Emanating Outward -->
+<g data-purpose="radiant-sparks" stroke="#F59E0B" stroke-linecap="round" stroke-width="4.5"><line x1="24" y1="24" x2="37" y2="36" stroke="#FBBF24" stroke-width="4"></line><line x1="16" y1="54" x2="30" y2="54" stroke="#F59E0B" stroke-width="4.5"></line><line x1="24" y1="84" x2="36" y2="75" stroke="#FBBF24" stroke-width="4"></line><line x1="96" y1="24" x2="83" y2="36" stroke="#FBBF24" stroke-width="4"></line><line x1="104" y1="54" x2="90" y2="54" stroke="#F59E0B" stroke-width="4.5"></line><line x1="96" y1="84" x2="84" y2="75" stroke="#FBBF24" stroke-width="4"></line><circle cx="60" cy="6" r="2.5" fill="#F59E0B"></circle></g>
+<!-- Lightbulb Outer Contour / Glass Bulb Silhouette -->
+<path d="M60 16C43.5 16 33 28.5 33 46C33 57.5 40 68 47.5 76H72.5C80 68 87 57.5 87 46C87 28.5 76.5 16 60 16Z" fill="#FFFFFF" stroke="#0A3B7B" stroke-linejoin="round" stroke-width="5"></path>
+<!-- Lightbulb Base Thread Rings -->
+<path d="M49 84H71" stroke="#0A3B7B" stroke-linecap="round" stroke-width="5"></path>
+<path d="M51 92H69" stroke="#0A3B7B" stroke-linecap="round" stroke-width="5"></path>
+<!-- Lightbulb Bottom Contact Tip -->
+<path d="M55 99H65" stroke="#0A3B7B" stroke-linecap="round" stroke-width="4"></path>
+<!-- Reciprocal Exchange Graphics Inside Bulb -->
+<g data-purpose="inner-exchange-avatars">
+<!-- Left Person (Blue) -->
+<!-- Head -->
+<circle cx="49" cy="40" fill="#0A3B7B" r="5"></circle>
+<!-- Torso / Shoulders -->
+<path d="M41 55C41 49.5 44.5 47 49 47C53.5 47 57 49.5 57 55" fill="#0A3B7B"></path>
+<!-- Right Person (Green) -->
+<!-- Head -->
+<circle cx="71" cy="40" fill="#00A865" r="5"></circle>
+<!-- Torso / Shoulders -->
+<path d="M63 55C63 49.5 66.5 47 71 47C75.5 47 79 49.5 79 55" fill="#00A865"></path>
+<!-- Circular Curved Exchange Arrows -->
+<!-- Top Arrow: Flowing from Left to Right (Blue) -->
+<path d="M52 30C55 28 64 28 68 31" fill="none" stroke="#0A3B7B" stroke-linecap="round" stroke-width="3"></path>
+<polygon fill="#0A3B7B" points="69,27 75,32 68,36"></polygon>
+<!-- Bottom Arrow: Flowing from Right to Left (Green) -->
+<path d="M68 62C65 65 56 65 52 62" fill="none" stroke="#00A865" stroke-linecap="round" stroke-width="3"></path>
+<polygon fill="#00A865" points="51,65 45,61 52,57"></polygon>
+</g>
+</svg>
+</div>
+<!-- Brand Name -->
+<h1 class="text-[26px] font-extrabold tracking-tight text-[#0052cc] flex items-center justify-center">
+        Skill<span class="text-[#059669]">Swap</span>
+</h1>
+<!-- Slogan / Subtitle -->
+<p class="text-sm font-medium text-slate-500 mt-2 tracking-normal">
+        Learn something. Teach something.
+      </p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: SignUpForm -->
+<form action="#" class="w-full space-y-4" data-purpose="registration-form" method="POST" onsubmit="event.preventDefault();">
+<!-- First Name Field -->
+<div data-purpose="input-container">
+<label class="sr-only" for="firstName">First Name</label>
+<input autocomplete="given-name" class="form-input-field" id="firstName" name="firstName" placeholder="First Name" required="" type="text">
+</div>
+<!-- Last Name Field -->
+<div data-purpose="input-container">
+<label class="sr-only" for="lastName">Last Name</label>
+<input autocomplete="family-name" class="form-input-field" id="lastName" name="lastName" placeholder="Last Name" required="" type="text">
+</div>
+<!-- Email Field -->
+<div data-purpose="input-container">
+<label class="sr-only" for="email">Email</label>
+<input autocomplete="email" class="form-input-field" id="email" name="email" placeholder="Email" required="" type="email">
+</div>
+<!-- Password Field -->
+<div data-purpose="input-container">
+<label class="sr-only" for="password">Password</label>
+<input autocomplete="new-password" class="form-input-field" id="password" name="password" placeholder="Password" required="" type="password">
+</div>
+<!-- Confirm Password Field -->
+<div data-purpose="input-container">
+<label class="sr-only" for="confirmPassword">Confirm Password</label>
+<input autocomplete="new-password" class="form-input-field" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="" type="password">
+</div>
+<!-- Submit Button -->
+<div class="pt-2" data-purpose="action-container">
+<button class="w-full bg-[#0052cc] hover:bg-[#0047b3] active:bg-[#003d99] text-white font-medium py-3.5 px-6 rounded-full shadow-sm transition-colors duration-150 text-base flex justify-center items-center tracking-wide" id="submit-button" type="submit">
+          Sign Up
+        </button>
+</div>
+</form>
+<!-- END: SignUpForm -->
+<!-- BEGIN: FooterLinks -->
+<div class="mt-6 text-center" data-purpose="login-link-container">
+<a class="text-sm font-semibold text-[#0052cc] hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-sm" href="#login">
+        Already have an account? Log In
+      </a>
+</div>
+<!-- END: FooterLinks -->
+</main>
+<!-- END: SignUpContainer -->
+
+
+
+
+</body></html>
